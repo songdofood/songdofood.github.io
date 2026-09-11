@@ -21,7 +21,8 @@
   html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans KR",sans-serif}
   body.modal-open{overflow:hidden}
   button,input,select{font:inherit}
-  button{border:0;cursor:pointer}
+  button{border:0;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+  button:focus:not(:focus-visible){outline:none}
   .hidden{display:none!important}
   .wrap{max-width:720px;margin:0 auto;padding:14px 10px calc(34px + env(safe-area-inset-bottom))}
   .card{background:var(--card);border-radius:20px;box-shadow:var(--shadow);padding:16px;margin-bottom:12px}
@@ -344,7 +345,7 @@
     <div id="legend" class="legend hidden"><span><i class="dot day"></i>주간</span><span><i class="dot day2"></i>주2</span><span><i class="dot night"></i>야간</span><span><i class="dot off"></i>휴무</span></div>
     <div id="statusLine" class="status-line"></div>
   </section>
-  <button id="versionHistoryBtn" class="version version-btn" type="button" aria-haspopup="dialog" aria-controls="updateHistoryBackdrop">ver20260911-1806 · 업데이트 내역</button>
+  <button id="versionHistoryBtn" class="version version-btn" type="button" aria-haspopup="dialog" aria-controls="updateHistoryBackdrop">ver20260911-1957 · 업데이트 내역</button>
 </main>
 
 <div id="detailBackdrop" class="backdrop" aria-hidden="true">
@@ -685,7 +686,7 @@
 const SUPABASE_URL = 'https://fnzgjidzdazlodmjhmes.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_asmMoFJpUgX7rLcSkjx1PA_3n2Hk-gG';
 
-const APP_VERSION = 'ver20260911-1806';
+const APP_VERSION = 'ver20260911-1957';
 const UPDATE_HISTORY = [
   {version:'ver20260911-1806',date:'2026.09.11',items:['업데이트 내역 확인 기능 추가']}
 ];

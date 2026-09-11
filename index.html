@@ -166,6 +166,8 @@
   .update-history-items li+li{margin-top:2px}
   .update-history-empty{padding:22px 8px;text-align:center;color:#9ca3af;font-size:calc(12px * var(--text-scale,1))}
   .backdrop{position:fixed;inset:0;z-index:1000;background:rgba(17,24,39,.46);display:none;align-items:flex-end;justify-content:center;padding:10px}
+  /* 날짜 상세창만 높이와 무관하게 기존 최대높이 창의 상단 위치에 맞춰 고정 */
+  #detailBackdrop{align-items:flex-start;padding-top:calc(10dvh - 10px)}
   .backdrop.open{display:flex}
   .modal{width:min(600px,100%);max-height:90dvh;overflow:auto;background:#fff;border-radius:22px 22px 16px 16px;padding:14px;box-shadow:0 20px 70px rgba(0,0,0,.28)}
   .modal-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
@@ -272,6 +274,7 @@
   .text-size-guide span:nth-child(2){text-align:center;color:#6b7280}.text-size-guide span:last-child{text-align:right}
   .loading-cover{position:fixed;inset:0;z-index:2000;background:rgba(255,255,255,.68);display:none;align-items:center;justify-content:center}.loading-cover.show{display:flex}.spinner{width:34px;height:34px;border:4px solid #dbeafe;border-top-color:#2563eb;border-radius:50%;animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
   @media(max-width:520px){
+    #detailBackdrop{padding-top:calc(8dvh - 5px)}
     .admin-tools{margin:-2px 0 10px}.admin-tools-toggle{min-width:61px;min-height:43px;padding:5px 8px}.admin-action-group{gap:5px}.view-tools{gap:5px;margin:-3px 0 9px}.view-tool-actions{gap:5px}.attendance-list-btn,.memo-list-btn,.holiday-work-list-btn,.self-pin-btn,.text-size-open-btn,.usage-guide-open-btn{min-height:35px;padding:0 9px;font-size:calc(11px * var(--text-scale,1))}.company-events-banner{margin:-1px 0 9px;padding:10px 10px;gap:7px}.company-events-banner-icon{font-size:calc(17px * var(--text-scale,1))}.text-size-levels{gap:3px}.text-size-level{min-height:42px;font-size:calc(12px * var(--text-scale,1))}
     .employee-manage-actions{grid-template-columns:1fr;gap:7px}.reset-pins-btn{font-size:calc(12px * var(--text-scale,1));padding:11px 9px}
     .wrap{padding:10px 7px 28px}.card{border-radius:17px}.calendar-card{padding:10px 6px 11px}.title{font-size:calc(21px * var(--text-scale,1))}.calendar-toolbar{grid-template-columns:50px 1fr 44px 50px;gap:5px}.nav-btn{font-size:calc(12px * var(--text-scale,1));padding:0 2px}.today-btn{font-size:calc(11px * var(--text-scale,1));padding:0 2px}.month-title{font-size:calc(18px * var(--text-scale,1))}.day-cell{min-height:72px;padding:4px 2px}.shift-circle{width:33px;height:33px;font-size:calc(14px * var(--text-scale,1))}.shift-day2{font-size:calc(12px * var(--text-scale,1))}.availability{font-size:calc(7.5px * var(--text-scale,1));line-height:1.24}.holiday-mini{font-size:calc(6.5px * var(--text-scale,1));max-width:38px}.day-num{font-size:calc(10px * var(--text-scale,1))}.backdrop{padding:5px}.modal{padding:12px 10px 13px;max-height:92dvh}.form-grid{grid-template-columns:1fr 1fr;gap:7px}.type-grid{gap:5px}.type-grid button{min-height:54px;font-size:calc(10px * var(--text-scale,1));padding:4px 1px}.date-picker-modal{padding:11px 7px 12px}.date-picker-toolbar{grid-template-columns:50px minmax(0,1fr) 44px 50px;gap:5px}.date-picker-nav,.date-picker-today,.date-picker-month-title{height:42px}.date-picker-nav{font-size:calc(12px * var(--text-scale,1));padding:0 2px}.date-picker-today{font-size:calc(11px * var(--text-scale,1));padding:0 2px}.date-picker-month-title{font-size:calc(18px * var(--text-scale,1))}.date-picker-cell{min-height:72px;padding:4px 2px}.date-picker-cell .shift-circle{width:33px;height:33px;font-size:calc(14px * var(--text-scale,1))}.date-picker-cell .shift-day2{font-size:calc(12px * var(--text-scale,1))}.date-picker-cell .holiday-work-badge{min-width:43px;height:30px;font-size:calc(8.5px * var(--text-scale,1))}.date-picker-holiday{font-size:calc(6.5px * var(--text-scale,1));max-width:38px}.date-picker-daynum{font-size:calc(10px * var(--text-scale,1))}.date-picker-term{font-size:calc(6.5px * var(--text-scale,1));padding:2px 3px}.calendar-term-mini{font-size:calc(6.5px * var(--text-scale,1));padding:2px 3px;max-width:34px}}
@@ -350,7 +353,7 @@
     <div id="legend" class="legend hidden"><span><i class="dot day"></i>주간</span><span><i class="dot day2"></i>주2</span><span><i class="dot night"></i>야간</span><span><i class="dot off"></i>휴무</span></div>
     <div id="statusLine" class="status-line"></div>
   </section>
-  <button id="versionHistoryBtn" class="version version-btn" type="button" aria-haspopup="dialog" aria-controls="updateHistoryBackdrop">ver20260911-2109 · 업데이트 내역</button>
+  <button id="versionHistoryBtn" class="version version-btn" type="button" aria-haspopup="dialog" aria-controls="updateHistoryBackdrop">ver20260911-2124 · 업데이트 내역</button>
 </main>
 
 <div id="detailBackdrop" class="backdrop" aria-hidden="true">
@@ -691,7 +694,7 @@
 const SUPABASE_URL = 'https://fnzgjidzdazlodmjhmes.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_asmMoFJpUgX7rLcSkjx1PA_3n2Hk-gG';
 
-const APP_VERSION = 'ver20260911-2109';
+const APP_VERSION = 'ver20260911-2124';
 const UPDATE_HISTORY = [
   {version:'ver20260911-1806',date:'2026.09.11',items:['업데이트 내역 확인 기능 추가']}
 ];

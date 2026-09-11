@@ -353,7 +353,7 @@
     <div id="legend" class="legend hidden"><span><i class="dot day"></i>주간</span><span><i class="dot day2"></i>주2</span><span><i class="dot night"></i>야간</span><span><i class="dot off"></i>휴무</span></div>
     <div id="statusLine" class="status-line"></div>
   </section>
-  <button id="versionHistoryBtn" class="version version-btn" type="button" aria-haspopup="dialog" aria-controls="updateHistoryBackdrop">ver20260911-2124 · 업데이트 내역</button>
+  <button id="versionHistoryBtn" class="version version-btn" type="button" aria-haspopup="dialog" aria-controls="updateHistoryBackdrop">ver20260911-2138 · 업데이트 내역</button>
 </main>
 
 <div id="detailBackdrop" class="backdrop" aria-hidden="true">
@@ -694,8 +694,9 @@
 const SUPABASE_URL = 'https://fnzgjidzdazlodmjhmes.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_asmMoFJpUgX7rLcSkjx1PA_3n2Hk-gG';
 
-const APP_VERSION = 'ver20260911-2124';
+const APP_VERSION = 'ver20260911-2138';
 const UPDATE_HISTORY = [
+  {version:'ver20260911-2138',date:'2026.09.11',items:['휴일근무 기본시간 자동입력 기능 추가']},
   {version:'ver20260911-1806',date:'2026.09.11',items:['업데이트 내역 확인 기능 추가']}
 ];
 const VERSION_CHECK_INTERVAL_MS = 3000; // 새 배포가 활성화되면 열려 있는 화면도 약 3초 이내 감지
@@ -1340,6 +1341,11 @@ function shiftForEmployee(emp, y,m,d){
 }
 function isWorkingShift(shift){ return ['주','주2','야','일근'].includes(shift); }
 function isHolidayWorkEmployee(emp){ return !!emp && (emp.category==='일근(사무)' || emp.category==='일근(현장)'); }
+function holidayWorkDefaultTimesForEmployee(emp){
+  if(emp?.category==='일근(사무)') return {start:'06:00',end:'15:00'};
+  if(emp?.category==='일근(현장)') return {start:'07:00',end:'16:00'};
+  return null;
+}
 function isHolidayWorkDayKey(key){
   const {y,m,d}=parseDateKey(key),wd=new Date(y,m,d).getDay();
   return wd===0 || wd===6 || !!HOLIDAYS[key];
@@ -2463,9 +2469,12 @@ async function deleteSelectedCompanyEvent(){
 
 function renderHolidayWorkDetail(key){
   const target=holidayWorkTargetEmployee(key),row=target?holidayWorkFor(target.id,key):null,ro=accountReadOnly();
+  const defaults=holidayWorkDefaultTimesForEmployee(target);
   $('holidayWorkChecked').checked=!!row;
-  setNumericTime(row?.start_time||'09:00','holidayStartHour','holidayStartMinute');
-  setNumericTime(row?.end_time||'18:00','holidayEndHour','holidayEndMinute');
+  // 신규 휴근은 대상 직원의 근무구분별 기본시간을 자동 입력한다.
+  // 이미 저장된 휴근은 실제 저장시간을 우선해 자동 기본값으로 덮어쓰지 않는다.
+  setNumericTime(row?.start_time||defaults?.start||'09:00','holidayStartHour','holidayStartMinute');
+  setNumericTime(row?.end_time||defaults?.end||'18:00','holidayEndHour','holidayEndMinute');
   ['holidayStartHour','holidayStartMinute','holidayEndHour','holidayEndMinute'].forEach(id=>$(id).readOnly=ro||!target);
   $('holidayWorkChecked').disabled=ro||!target;
   $('deleteHolidayWorkBtn').disabled=!row||ro||!target;

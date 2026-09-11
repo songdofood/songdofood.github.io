@@ -89,6 +89,7 @@
   .employee-list{display:flex;flex-direction:column;gap:7px;margin-top:10px}
   .employee-row{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px;border:1px solid #e5e7eb;border-radius:12px;background:#fff}
   .employee-info{min-width:0;flex:1}.employee-name{font-size:calc(14px * var(--text-scale,1));font-weight:900}.employee-meta{margin-top:2px;color:#6b7280;font-size:calc(11px * var(--text-scale,1));line-height:1.35}
+  .holiday-eligibility-toggle{display:inline-flex;align-items:center;gap:6px;margin-top:7px;padding:5px 8px;border-radius:9px;background:#fff7ed;color:#9a3412;font-size:calc(10px * var(--text-scale,1));font-weight:900;line-height:1.2;cursor:pointer;user-select:none}.holiday-eligibility-toggle input{width:16px;height:16px;margin:0;accent-color:#f97316}.holiday-eligibility-toggle.unavailable{background:#f3f4f6;color:#6b7280;cursor:not-allowed}
   .pin-state-badge{display:inline-flex;align-items:center;margin-top:5px;padding:3px 7px;border-radius:999px;font-size:calc(9px * var(--text-scale,1));font-weight:900;line-height:1.2}
   .pin-state-badge.initial{background:#fff7ed;color:#c2410c;border:1px solid #fed7aa}.pin-state-badge.custom{background:#ecfdf5;color:#047857;border:1px solid #a7f3d0}.pin-state-badge.loading{background:#f3f4f6;color:#6b7280;border:1px solid #e5e7eb}.login-name-badge{display:inline-flex;align-items:center;margin-top:5px;margin-left:4px;padding:3px 7px;border-radius:999px;background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;font-size:calc(9px * var(--text-scale,1));font-weight:900;line-height:1.2}
   .employee-actions{display:flex;gap:5px;flex:0 0 auto}.employee-actions button{padding:7px 8px;border-radius:8px;background:#eef2f7;color:#374151;font-size:calc(10px * var(--text-scale,1));font-weight:850}.employee-actions button.replace{background:#e0f2fe;color:#0369a1}.employee-actions button.pin{background:#f3e8ff;color:#7e22ce}.employee-actions button.exclude{background:#fff1f2;color:#be123c}
@@ -244,7 +245,7 @@
   .self-pin-btn{min-height:36px;padding:0 12px;border-radius:11px;background:#f5f3ff;color:#6d28d9;border:1px solid #ddd6fe;font-size:calc(12px * var(--text-scale,1));font-weight:900;box-shadow:0 2px 7px rgba(0,0,0,.04)}
   .attendance-list-btn{min-height:36px;padding:0 12px;border-radius:11px;background:#ecfeff;color:#0f766e;border:1px solid #a5f3fc;font-size:calc(12px * var(--text-scale,1));font-weight:900;box-shadow:0 2px 7px rgba(0,0,0,.04)}
   .holiday-work-list-btn{min-height:36px;padding:0 12px;border-radius:11px;background:#fff7ed;color:#c2410c;border:1px solid #fed7aa;font-size:calc(12px * var(--text-scale,1));font-weight:900;box-shadow:0 2px 7px rgba(0,0,0,.04)}
-  .holiday-work-detail{padding:11px;border-radius:15px;background:#fff7ed;border:1px solid #fed7aa;margin-bottom:10px}.holiday-work-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}.holiday-work-title{font-size:calc(14px * var(--text-scale,1));font-weight:950;color:#9a3412}.holiday-work-check-label{display:inline-flex;align-items:center;gap:6px;padding:7px 9px;border:1px solid #fdba74;border-radius:10px;background:#fff;color:#9a3412;font-size:calc(12px * var(--text-scale,1));font-weight:900;white-space:nowrap}.holiday-work-check-label input{width:18px;height:18px;margin:0;padding:0;accent-color:#f97316}.holiday-work-help{font-size:calc(11px * var(--text-scale,1));line-height:1.5;color:#9a3412;margin:0 0 9px}.holiday-work-result{margin:7px 0 4px;padding:9px 10px;border-radius:11px;background:#fff;color:#9a3412;font-size:calc(12px * var(--text-scale,1));font-weight:900;line-height:1.45;text-align:center}.holiday-work-result b{color:#ea580c}.holiday-work-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px}.holiday-work-actions.readonly{display:none}.holiday-work-delete,.holiday-work-close,.holiday-work-save{padding:11px 8px;border-radius:11px;font-weight:900;font-size:calc(13px * var(--text-scale,1))}.holiday-work-delete{background:#fff1f2;color:#be123c}.holiday-work-delete:disabled{opacity:.4}.holiday-work-close{background:#eef2f7;color:#4b5563}.holiday-work-save{background:#f97316;color:#fff}.holiday-work-error{min-height:16px;margin-top:5px;color:#dc2626;font-size:calc(10px * var(--text-scale,1));font-weight:800}
+  .holiday-work-detail{padding:11px;border-radius:15px;background:#fff7ed;border:1px solid #fed7aa;margin-bottom:10px}.holiday-work-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}.holiday-work-title{font-size:calc(14px * var(--text-scale,1));font-weight:950;color:#9a3412}.holiday-work-check-label{display:inline-flex;align-items:center;gap:6px;padding:7px 9px;border:1px solid #fdba74;border-radius:10px;background:#fff;color:#9a3412;font-size:calc(12px * var(--text-scale,1));font-weight:900;white-space:nowrap}.holiday-work-check-label input{width:18px;height:18px;margin:0;padding:0;accent-color:#f97316}.holiday-work-help{font-size:calc(11px * var(--text-scale,1));line-height:1.5;color:#9a3412;margin:0 0 9px}.holiday-work-result{margin:7px 0 4px;padding:9px 10px;border-radius:11px;background:#fff;color:#9a3412;font-size:calc(12px * var(--text-scale,1));font-weight:900;line-height:1.45;text-align:center}.holiday-work-result b{color:#ea580c}.holiday-work-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px}.holiday-work-actions.readonly{display:none}.holiday-work-actions.eligibility-locked{grid-template-columns:1fr}.holiday-work-delete,.holiday-work-close,.holiday-work-save{padding:11px 8px;border-radius:11px;font-weight:900;font-size:calc(13px * var(--text-scale,1))}.holiday-work-delete{background:#fff1f2;color:#be123c}.holiday-work-delete:disabled{opacity:.4}.holiday-work-close{background:#eef2f7;color:#4b5563}.holiday-work-save{background:#f97316;color:#fff}.holiday-work-error{min-height:16px;margin-top:5px;color:#dc2626;font-size:calc(10px * var(--text-scale,1));font-weight:800}
   .holiday-work-list-help{padding:9px 10px;border-radius:12px;background:#fff7ed;color:#9a3412;font-size:calc(11px * var(--text-scale,1));font-weight:750;line-height:1.45;margin-bottom:9px}.holiday-work-search-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px;margin-bottom:7px}.holiday-work-search-row input{min-width:0}.holiday-work-search-clear{padding:0 11px;border-radius:11px;background:#eef2f7;color:#4b5563;font-weight:850}.holiday-work-list-count{font-size:calc(11px * var(--text-scale,1));font-weight:800;color:#6b7280;margin:4px 2px 8px}.holiday-work-list{display:flex;flex-direction:column;gap:7px;max-height:50dvh;overflow:auto;padding-right:1px}.holiday-work-list-row{display:grid;grid-template-columns:26px minmax(0,1fr);gap:7px;align-items:flex-start;padding:10px;border:1px solid #e5e7eb;border-radius:12px;background:#fff}.holiday-work-list-row.readonly{grid-template-columns:minmax(0,1fr)}.holiday-work-list-check{width:19px;height:19px;margin:2px 0 0 1px;accent-color:#f97316}.holiday-work-list-date{font-size:calc(12px * var(--text-scale,1));font-weight:950;color:#c2410c;margin-bottom:4px}.holiday-work-list-text{font-size:calc(12px * var(--text-scale,1));line-height:1.45;color:#374151}.holiday-work-list-empty{padding:20px 8px;text-align:center;color:#9ca3af;font-size:calc(12px * var(--text-scale,1))}.holiday-work-list-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.holiday-work-list-actions.readonly{grid-template-columns:1fr}.holiday-work-selected-delete{padding:12px;border-radius:12px;background:#fff1f2;color:#be123c;font-weight:900}.holiday-work-selected-delete:disabled{opacity:.4}.holiday-work-list-close{padding:12px;border-radius:12px;background:#eef2f7;color:#4b5563;font-weight:900}
   .attendance-list{display:flex;flex-direction:column;gap:7px;margin-top:9px}.attendance-list-row{padding:10px 11px;border:1px solid #e5e7eb;border-radius:12px;background:#fff}.attendance-list-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}.attendance-list-type{font-size:calc(13px * var(--text-scale,1));font-weight:900;color:#111827}.attendance-list-date{font-size:calc(11px * var(--text-scale,1));font-weight:850;color:#374151;line-height:1.4}.attendance-list-sub{margin-top:4px;font-size:calc(11px * var(--text-scale,1));color:#6b7280;line-height:1.4}.attendance-list-count{font-size:calc(11px * var(--text-scale,1));color:#6b7280;font-weight:800;margin:3px 2px 8px}.attendance-list-empty{padding:18px 8px;text-align:center;color:#9ca3af;font-size:calc(12px * var(--text-scale,1))}
   .memo-list-btn{min-height:36px;padding:0 12px;border-radius:11px;background:#f5f3ff;color:#6d28d9;border:1px solid #ddd6fe;font-size:calc(12px * var(--text-scale,1));font-weight:900;box-shadow:0 2px 7px rgba(0,0,0,.04)}
@@ -353,7 +354,7 @@
     <div id="legend" class="legend hidden"><span><i class="dot day"></i>주간</span><span><i class="dot day2"></i>주2</span><span><i class="dot night"></i>야간</span><span><i class="dot off"></i>휴무</span></div>
     <div id="statusLine" class="status-line"></div>
   </section>
-  <button id="versionHistoryBtn" class="version version-btn" type="button" aria-haspopup="dialog" aria-controls="updateHistoryBackdrop">ver20260911-2138 · 업데이트 내역</button>
+  <button id="versionHistoryBtn" class="version version-btn" type="button" aria-haspopup="dialog" aria-controls="updateHistoryBackdrop">ver20260911-2234 · 업데이트 내역</button>
 </main>
 
 <div id="detailBackdrop" class="backdrop" aria-hidden="true">
@@ -497,7 +498,7 @@
 <div id="employeeManageBackdrop" class="backdrop" aria-hidden="true">
   <div class="modal">
     <div class="modal-head"><div class="modal-title">직원 관리</div><button class="close-btn" data-close="employeeManage">×</button></div>
-    <div class="employee-help">정기발령은 <b>직원 교체</b>를 사용합니다. 기존 직원은 적용일부터 현재 명단에서 빠지고 <b>조회 전용 계정</b>으로 남아 본인의 과거 근태·휴근·개인 메모를 확인할 수 있습니다. 새 직원은 같은 자리·근무조를 이어받되 별도 계정과 초기비밀번호 0000으로 시작합니다. 과거에 같은 성명의 직원이 있으면 화면 이름은 그대로 두고 로그인 이름만 <b>김주현2, 김주현3…</b>처럼 자동 구분합니다. <b>직원 제외</b>는 적용일부터 로그인까지 차단합니다.</div>
+    <div class="employee-help">정기발령은 <b>직원 교체</b>를 사용합니다. 기존 직원은 적용일부터 현재 명단에서 빠지고 <b>조회 전용 계정</b>으로 남아 본인의 과거 근태·휴근·개인 메모를 확인할 수 있습니다. 새 직원은 같은 자리·근무조를 이어받되 별도 계정과 초기비밀번호 0000으로 시작합니다. 과거에 같은 성명의 직원이 있으면 화면 이름은 그대로 두고 로그인 이름만 <b>김주현2, 김주현3…</b>처럼 자동 구분합니다. <b>직원 제외</b>는 적용일부터 로그인까지 차단합니다. 일근자는 <b>휴일근무 가능</b>이 기본값이며 필요할 때만 체크를 해제합니다. 해제해도 기존 휴근 기록은 삭제되지 않습니다.</div>
     <div class="employee-manage-actions"><button id="addEmployeeBtn" class="primary">＋ 직원 추가</button><button id="resetCurrentPinsBtn" class="reset-pins-btn">전체 비밀번호 0000 초기화</button></div>
     <div class="employee-section-title">현재 직원</div>
     <div id="currentEmployeeList" class="employee-list"></div>
@@ -694,7 +695,7 @@
 const SUPABASE_URL = 'https://fnzgjidzdazlodmjhmes.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_asmMoFJpUgX7rLcSkjx1PA_3n2Hk-gG';
 
-const APP_VERSION = 'ver20260911-2138';
+const APP_VERSION = 'ver20260911-2234';
 const UPDATE_HISTORY = [
   {version:'ver20260911-2138',date:'2026.09.11',items:['휴일근무 기본시간 자동입력 기능 추가']},
   {version:'ver20260911-1806',date:'2026.09.11',items:['업데이트 내역 확인 기능 추가']}
@@ -895,7 +896,7 @@ migrateLegacySessionForDevice();
 
 const state = {
   sessionToken: storedSessionToken(),
-  me:null, employees:[], attendance:[], holidayWorks:[], holidayWorkBackendReady:null, memos:[], memoBackendReady:null, companyEvents:[], companyEventBackendReady:null, view:'mine', selectedDate:null,
+  me:null, employees:[], attendance:[], holidayWorks:[], holidayWorkBackendReady:null, holidayWorkEligibilityReady:null, memos:[], memoBackendReady:null, companyEvents:[], companyEventBackendReady:null, view:'mine', selectedDate:null,
   year:Math.min(Math.max(parseDateKey(todayKey()).y,MIN_YEAR),MAX_YEAR), month:parseDateKey(todayKey()).m,
   pickerYear:Math.min(Math.max(parseDateKey(todayKey()).y,MIN_YEAR),MAX_YEAR), mode:'all_day', dateMode:'single', refreshing:false, employeeAction:null, pinStatus:{}
 };
@@ -1352,17 +1353,30 @@ function isHolidayWorkDayKey(key){
 }
 function holidayWorkFor(employeeId,key){ return state.holidayWorks.find(r=>Number(r.employee_id)===Number(employeeId)&&r.work_date===key)||null; }
 function holidayWorkForMe(key){ return state.me?holidayWorkFor(state.me.employee_id,key):null; }
-function holidayWorkEmployeesOn(key){ return state.employees.filter(e=>isHolidayWorkEmployee(e)&&employeeActiveOn(e,key)).sort(employeeDisplayCompare); }
+function holidayWorkRegistrationEnabled(emp){ return isHolidayWorkEmployee(emp) && (!configured() || state.holidayWorkEligibilityReady===true) && emp?.holiday_work_enabled!==false; }
+function holidayWorkEmployeesOn(key){ return state.employees.filter(e=>holidayWorkRegistrationEnabled(e)&&employeeActiveOn(e,key)).sort(employeeDisplayCompare); }
+function holidayWorkTargetCandidates(key){
+  const list=holidayWorkEmployeesOn(key).slice();
+  // 등록 비활성 직원은 신규 등록 대상에서 숨긴다. 다만 해당 날짜의 기존 기록이 있으면
+  // 관리자에게 그 기록을 조회·삭제할 수 있도록 그 날짜에서만 선택 대상에 남긴다.
+  state.employees.forEach(e=>{
+    if(!isHolidayWorkEmployee(e)||!employeeActiveOn(e,key)||holidayWorkRegistrationEnabled(e))return;
+    if(holidayWorkFor(e.id,key)&&!list.some(x=>Number(x.id)===Number(e.id)))list.push(e);
+  });
+  return list.sort(employeeDisplayCompare);
+}
 function populateHolidayWorkTargetEmployees(key,selectedId=null){
   if(!state.me?.is_admin)return;
-  const list=holidayWorkEmployeesOn(key); const select=$('holidayWorkEmployee');
-  select.innerHTML=list.map(e=>`<option value="${e.id}">${escapeHtml(e.display_name)} · ${escapeHtml(e.category)}</option>`).join('');
-  const wanted=Number(selectedId||select.value||0); if(list.some(e=>Number(e.id)===wanted))select.value=String(wanted);
+  const list=holidayWorkTargetCandidates(key); const select=$('holidayWorkEmployee');
+  const previous=Number(selectedId||select.value||0);
+  select.innerHTML=list.map(e=>`<option value="${e.id}">${escapeHtml(e.display_name)} · ${escapeHtml(e.category)}${holidayWorkRegistrationEnabled(e)?'':' · 기존 기록'}</option>`).join('');
+  if(list.some(e=>Number(e.id)===previous))select.value=String(previous); else if(list.length)select.value=String(list[0].id);
 }
 function holidayWorkTargetEmployee(key=state.selectedDate){
   if(!state.me)return null;
   if(!state.me.is_admin)return state.employees.find(e=>Number(e.id)===Number(state.me.employee_id))||null;
-  const id=Number($('holidayWorkEmployee')?.value||0); return holidayWorkEmployeesOn(key).find(e=>Number(e.id)===id)||holidayWorkEmployeesOn(key)[0]||null;
+  const list=holidayWorkTargetCandidates(key),id=Number($('holidayWorkEmployee')?.value||0);
+  return list.find(e=>Number(e.id)===id)||list[0]||null;
 }
 function holidayWorkForTarget(key){ const emp=holidayWorkTargetEmployee(key); return emp?holidayWorkFor(emp.id,key):null; }
 function populateHolidayWorkListEmployees(){
@@ -1729,7 +1743,7 @@ async function restoreBackupAttendance(){
 
 const CAPACITY_TABLE_LABELS = {
   employees:'직원/발령', attendance_entries:'근태', audit_logs:'변경이력', app_sessions:'로그인 세션',
-  realtime_signals:'실시간 동기화', personal_memos:'개인 메모', memos:'개인 메모', holiday_work_entries:'휴근', company_events:'사내일정'
+  realtime_signals:'실시간 동기화', personal_memos:'개인 메모', memos:'개인 메모', holiday_work_entries:'휴근', company_events:'사내일정', holiday_work_eligibility:'휴근 가능 설정'
 };
 function formatBytes(bytes){
   const n=Math.max(0,Number(bytes)||0);
@@ -1782,12 +1796,18 @@ async function loadCapacity(){
       renderCapacityMeter('db',Number(data.db_bytes)||0,Number(data.db_limit_bytes)||500*1024*1024);
       renderCapacityMeter('storage',Number(data.storage_bytes)||0,Number(data.storage_limit_bytes)||1024*1024*1024);
       const tables=Array.isArray(data.public_tables)?data.public_tables.slice():[];
-      // 기존 용량 RPC가 새 테이블을 자동으로 나열하지 않는 환경에서도 사내일정 용량만 독립적으로 보완합니다.
+      // 기존 용량 RPC가 새 테이블을 자동으로 나열하지 않는 환경에서도 신규 테이블 용량만 독립적으로 보완합니다.
       if(!tables.some(r=>r?.table_name==='company_events')){
         try{
           const eventBytes=Number(await rpc('get_company_event_capacity',{p_token:state.sessionToken},{timeoutMs:3000}));
           if(Number.isFinite(eventBytes)&&eventBytes>=0) tables.push({table_name:'company_events',bytes:eventBytes});
         }catch(e){ /* 사내일정 용량 보완 실패가 기존 용량 화면을 막지 않도록 무시 */ }
+      }
+      if(!tables.some(r=>r?.table_name==='holiday_work_eligibility')){
+        try{
+          const eligibilityBytes=Number(await rpc('get_holiday_work_eligibility_capacity',{p_token:state.sessionToken},{timeoutMs:3000}));
+          if(Number.isFinite(eligibilityBytes)&&eligibilityBytes>=0) tables.push({table_name:'holiday_work_eligibility',bytes:eligibilityBytes});
+        }catch(e){ /* 휴근 가능 설정 용량 보완 실패가 기존 용량 화면을 막지 않도록 무시 */ }
       }
       renderCapacityBreakdown(tables);
     }
@@ -2041,11 +2061,33 @@ async function enterApp(me){
   clearSessionRestoreRetry();
   $('loginError').textContent='';
 }
+async function loadHolidayWorkEligibility(previousEligibility=new Map()){
+  if(!state.employees.length){ state.holidayWorkEligibilityReady=true; return; }
+  if(!configured()){
+    const localById=new Map(localEmployees().map(e=>[Number(e.id),e]));
+    state.employees.forEach(e=>{const src=localById.get(Number(e.id));e.holiday_work_enabled=src?.holiday_work_enabled!==false;});
+    state.holidayWorkEligibilityReady=true;
+    return;
+  }
+  try{
+    const rows=await rpc('list_holiday_work_eligibility',{p_token:state.sessionToken});
+    const enabledById=new Map((rows||[]).map(r=>[Number(r.employee_id),r.holiday_work_enabled!==false]));
+    state.employees.forEach(e=>{e.holiday_work_enabled=enabledById.has(Number(e.id))?enabledById.get(Number(e.id)):true;});
+    state.holidayWorkEligibilityReady=true;
+  }catch(e){
+    // 설정 조회만 일시 실패해도 로그인/근태 등 기존 기능은 그대로 사용 가능해야 한다.
+    // 직전 정상값은 화면 표시용으로 유지하되, 준비상태를 false로 두어 신규 휴근 등록은 안전하게 잠근다.
+    state.employees.forEach(emp=>{emp.holiday_work_enabled=previousEligibility.has(Number(emp.id))?previousEligibility.get(Number(emp.id)):true;});
+    state.holidayWorkEligibilityReady=false;
+  }
+}
 async function loadEmployees(){
+  const previousEligibility=new Map(state.employees.filter(e=>typeof e.holiday_work_enabled==='boolean').map(e=>[Number(e.id),e.holiday_work_enabled]));
   let data;
   if(!configured()) data=localEmployees().map(({pin,...e})=>e);
   else data=await rpc('list_employees',{p_token:state.sessionToken});
   state.employees=(data||[]).map(e=>({...e,id:Number(e.id),login_name:String(e.login_name||e.display_name||'').trim(),sort_order:Number(e.sort_order),is_admin:!!e.is_admin,active_from:e.active_from||'2026-01-01',active_to:e.active_to||null})).sort(employeeDisplayCompare);
+  await loadHolidayWorkEligibility(previousEligibility);
   populateTargetEmployees(todayKey(),state.me?.employee_id);
 }
 async function loadHolidayWorks(){
@@ -2208,8 +2250,9 @@ function renderDetail(key){
   renderCompanyEventDetail(key);
   const mineView=state.view==='mine';
   const emp=state.employees.find(e=>Number(e.id)===Number(state.me?.employee_id));
-  const adminHolidayEligible=!!state.me?.is_admin && holidayWorkEmployeesOn(key).length>0;
-  const ownHolidayEligible=isHolidayWorkEmployee(emp) && employeeActiveOn(emp,key) && (!accountReadOnly() || !!holidayWorkForMe(key));
+  const adminHolidayEligible=!!state.me?.is_admin && holidayWorkTargetCandidates(key).length>0;
+  const ownHolidayRow=holidayWorkForMe(key);
+  const ownHolidayEligible=isHolidayWorkEmployee(emp) && employeeActiveOn(emp,key) && (holidayWorkRegistrationEnabled(emp)||!!ownHolidayRow) && (!accountReadOnly() || !!ownHolidayRow);
   const showHolidayWork=mineView && isHolidayWorkDayKey(key) && (adminHolidayEligible||ownHolidayEligible);
   $('holidayWorkDetailSection').classList.toggle('hidden',!showHolidayWork);
   $('holidayWorkAdminField').classList.toggle('hidden',!showHolidayWork||!state.me?.is_admin);
@@ -2469,17 +2512,22 @@ async function deleteSelectedCompanyEvent(){
 
 function renderHolidayWorkDetail(key){
   const target=holidayWorkTargetEmployee(key),row=target?holidayWorkFor(target.id,key):null,ro=accountReadOnly();
+  const enabled=holidayWorkRegistrationEnabled(target),locked=!!target&&!enabled;
+  const admin=!!state.me?.is_admin,canDelete=!!row&&!ro&&!!target&&(!locked||admin);
   const defaults=holidayWorkDefaultTimesForEmployee(target);
   $('holidayWorkChecked').checked=!!row;
   // 신규 휴근은 대상 직원의 근무구분별 기본시간을 자동 입력한다.
   // 이미 저장된 휴근은 실제 저장시간을 우선해 자동 기본값으로 덮어쓰지 않는다.
   setNumericTime(row?.start_time||defaults?.start||'09:00','holidayStartHour','holidayStartMinute');
   setNumericTime(row?.end_time||defaults?.end||'18:00','holidayEndHour','holidayEndMinute');
-  ['holidayStartHour','holidayStartMinute','holidayEndHour','holidayEndMinute'].forEach(id=>$(id).readOnly=ro||!target);
-  $('holidayWorkChecked').disabled=ro||!target;
-  $('deleteHolidayWorkBtn').disabled=!row||ro||!target;
-  $('deleteHolidayWorkBtn').classList.toggle('hidden',ro); $('saveHolidayWorkBtn').classList.toggle('hidden',ro); $('holidayWorkActions').classList.toggle('readonly',ro);
-  $('holidayWorkError').textContent=!target?'해당 날짜에 재직 중인 일근 직원이 없습니다.':(ro?'발령 후 조회 전용입니다. 기존 휴근은 확인만 가능합니다.':(state.holidayWorkBackendReady===false&&configured()?'휴근 정보를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.':''));
+  ['holidayStartHour','holidayStartMinute','holidayEndHour','holidayEndMinute'].forEach(id=>$(id).readOnly=ro||!target||locked);
+  $('holidayWorkChecked').disabled=ro||!target||locked;
+  $('deleteHolidayWorkBtn').disabled=!canDelete;
+  $('deleteHolidayWorkBtn').classList.toggle('hidden',ro||(locked&&!admin));
+  $('saveHolidayWorkBtn').classList.toggle('hidden',ro||locked);
+  $('holidayWorkActions').classList.toggle('readonly',ro||(locked&&!admin));
+  $('holidayWorkActions').classList.toggle('eligibility-locked',locked&&admin&&!ro);
+  $('holidayWorkError').textContent=!target?'해당 날짜에 휴일근무 등록 가능한 일근 직원이 없습니다.':(ro?'발령 후 조회 전용입니다. 기존 휴근은 확인만 가능합니다.':(locked?(row?(admin?'현재 휴일근무 등록이 비활성화되어 있습니다. 기존 기록은 조회·삭제할 수 있습니다.':'현재 휴일근무 등록이 비활성화되어 있습니다. 기존 기록은 확인만 가능합니다.'):'현재 휴일근무 등록이 비활성화되어 있습니다.'):(state.holidayWorkBackendReady===false&&configured()?'휴근 정보를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.':'')));
   updateHolidayWorkResult();
 }
 function updateHolidayWorkResult(){
@@ -2497,6 +2545,7 @@ async function saveSelectedHolidayWork(){
   if(accountReadOnly()){showToast('발령 후 조회 전용 계정에서는 휴근을 변경할 수 없습니다.','info');return;}
   const target=holidayWorkTargetEmployee(key); $('holidayWorkError').textContent='';
   if(!target){$('holidayWorkError').textContent='휴근을 등록할 일근 직원을 선택해 주세요.';return;}
+  if(!holidayWorkRegistrationEnabled(target)){$('holidayWorkError').textContent='현재 휴일근무 등록이 비활성화된 직원입니다. 관리자 직원관리에서 휴일근무 가능을 켜 주세요.';return;}
   if(!$('holidayWorkChecked').checked){$('holidayWorkError').textContent='휴일근무를 등록하려면 근무함에 체크해 주세요.';return;}
   const st=readNumericTime('holidayStartHour','holidayStartMinute'),et=readNumericTime('holidayEndHour','holidayEndMinute');
   if(st===null||et===null||!st||!et){$('holidayWorkError').textContent='시작시간과 종료시간을 숫자로 모두 입력해 주세요.';return;}
@@ -2520,7 +2569,8 @@ async function saveSelectedHolidayWork(){
     showToast(`✓ ${target.display_name} 휴근 ${formatHolidayHours(net)} 저장 완료`,'success');
   }catch(e){
     const msg=String(e.message||'');
-    if(msg.includes('NOT_HOLIDAY')) $('holidayWorkError').textContent='토·일요일 또는 공휴일에만 휴근을 등록할 수 있습니다.';
+    if(msg.includes('HOLIDAY_WORK_DISABLED')) $('holidayWorkError').textContent='현재 휴일근무 등록이 비활성화된 직원입니다. 관리자 직원관리에서 휴일근무 가능을 켜 주세요.';
+    else if(msg.includes('NOT_HOLIDAY')) $('holidayWorkError').textContent='토·일요일 또는 공휴일에만 휴근을 등록할 수 있습니다.';
     else if(msg.includes('NOT_DAY_EMPLOYEE')) $('holidayWorkError').textContent='일근(사무)/일근(현장) 직원만 사용할 수 있습니다.';
     else if(msg.includes('READ_ONLY')) $('holidayWorkError').textContent='조회 전용 계정에서는 휴근을 변경할 수 없습니다.';
     else $('holidayWorkError').textContent=userSafeServiceError(e,'휴근을 저장하지 못했습니다. 잠시 후 다시 시도해 주세요.');
@@ -2955,10 +3005,46 @@ function renderEmployeeManager(){
     }
     const pinState=!isHistory?pinStatusMarkup(e.id):'';
     const loginName=employeeLoginName(e),loginBadge=loginName && loginName!==e.display_name?`<span class="login-name-badge">로그인: ${escapeHtml(loginName)}</span>`:'';
-    return `<div class="employee-row"><div class="employee-info"><div class="employee-name">${e.category==='팀장'?'★ ':''}${escapeHtml(e.display_name)}</div><div class="employee-meta">${escapeHtml(e.category)} · ${escapeHtml(period)}</div>${loginBadge}${pinState}${accessState}</div>${actions}</div>`;
+    const eligibilityReady=!configured()||state.holidayWorkEligibilityReady===true;
+    const holidayToggle=!isHistory&&isHolidayWorkEmployee(e)?`<label class="holiday-eligibility-toggle${eligibilityReady?'':' unavailable'}" title="${eligibilityReady?'일근자의 휴일근무 신규 등록 가능 여부':'휴일근무 가능 설정을 불러오지 못했습니다. 새로고침 후 다시 시도해 주세요.'}"><input type="checkbox" data-holiday-work-enabled="${e.id}" ${holidayWorkRegistrationEnabled(e)?'checked':''} ${eligibilityReady?'':'disabled'}><span>휴일근무 가능</span></label>`:'';
+    return `<div class="employee-row"><div class="employee-info"><div class="employee-name">${e.category==='팀장'?'★ ':''}${escapeHtml(e.display_name)}</div><div class="employee-meta">${escapeHtml(e.category)} · ${escapeHtml(period)}</div>${loginBadge}${pinState}${accessState}${holidayToggle}</div>${actions}</div>`;
   };
   $('currentEmployeeList').innerHTML=current.length?current.map(e=>rowHtml(e,false)).join(''):'<div class="employee-empty">현재 직원이 없습니다.</div>';
   $('historyEmployeeList').innerHTML=history.length?history.map(e=>rowHtml(e,true)).join(''):'<div class="employee-empty">아직 발령·제외 이력이 없습니다.</div>';
+}
+async function changeHolidayWorkEligibility(input){
+  if(!state.me?.is_admin||!input)return;
+  const employeeId=Number(input.dataset.holidayWorkEnabled||0),target=state.employees.find(e=>Number(e.id)===employeeId);
+  if(!target||!isHolidayWorkEmployee(target)||!employeeActiveOn(target,todayKey())){ renderEmployeeManager(); return; }
+  if(configured()&&state.holidayWorkEligibilityReady!==true){ showToast('휴일근무 가능 설정을 불러온 뒤 다시 시도해 주세요.','error'); renderEmployeeManager(); return; }
+  const enabled=!!input.checked;
+  // 확인 전에는 화면 체크상태를 원래 값으로 되돌려 오조작으로 즉시 반영된 것처럼 보이지 않게 한다.
+  input.checked=!enabled;
+  const message=enabled
+    ? `${target.display_name}님의 휴일근무 등록을 활성화할까요?
+
+활성화하면 신규 휴일근무를 등록할 수 있습니다.`
+    : `${target.display_name}님의 휴일근무 등록을 비활성화할까요?
+
+신규 휴일근무 등록 대상에서 제외됩니다.
+기존 휴일근무 기록은 삭제되지 않습니다.`;
+  if(!confirm(message))return;
+  showLoading(true);
+  try{
+    if(!configured()){
+      const rows=localEmployees(),row=rows.find(e=>Number(e.id)===employeeId);
+      if(!row)throw new Error('직원 정보를 찾을 수 없습니다.');
+      row.holiday_work_enabled=enabled; saveLocalEmployees(rows);
+      pushLocalAudit('휴근 가능 변경',row.display_name,enabled?'휴일근무 가능':'휴일근무 불가',row.id);
+    }else{
+      await rpc('admin_set_holiday_work_enabled',{p_token:state.sessionToken,p_employee_id:employeeId,p_enabled:enabled});
+    }
+    await loadEmployees(); renderEmployeeManager();
+    showToast(enabled?`✓ ${target.display_name}님의 휴일근무 등록을 활성화했습니다.`:`✓ ${target.display_name}님의 휴일근무 등록을 비활성화했습니다.`,'success');
+  }catch(e){
+    renderEmployeeManager();
+    showToast(userSafeServiceError(e,'휴일근무 가능 설정을 변경하지 못했습니다. 잠시 후 다시 시도해 주세요.'),'error');
+  }finally{showLoading(false);}
 }
 function openResetCurrentPins(){
   if(!state.me?.is_admin)return;
@@ -3054,7 +3140,7 @@ async function saveEmployeeAction(){
       }else if(mode==='add'){
         const loginName=predictedLogin||name;
         const sort=rows.reduce((m,e)=>Math.max(m,Number(e.sort_order)||0),0)+1;
-        rows.push({id:newId,display_name:name,login_name:loginName,pin,group_code:CATEGORY_GROUP[category],category,sort_order:sort,is_admin:false,active_from:eff,active_to:null,history_login_allowed:false});
+        rows.push({id:newId,display_name:name,login_name:loginName,pin,group_code:CATEGORY_GROUP[category],category,sort_order:sort,is_admin:false,active_from:eff,active_to:null,history_login_allowed:false,holiday_work_enabled:true});
         pushLocalAudit('직원 추가',name,`${category} · ${eff}부터${loginName!==name?` · 로그인 ${loginName}`:''}`,newId);
       }else{
         if(!old) throw new Error('직원 정보를 찾을 수 없습니다.');
@@ -3066,7 +3152,7 @@ async function saveEmployeeAction(){
         if(mode==='replace'){
           const loginName=predictedLogin||name;
           // 교체 직원은 완전히 새로운 계정으로 시작한다. 자리/조/정렬만 승계하고 비밀번호는 0000으로 초기화한다.
-          rows.push({id:newId,display_name:name,login_name:loginName,pin:'0000',group_code:old.group_code,category:old.category,sort_order:old.sort_order,is_admin:false,active_from:eff,active_to:null,history_login_allowed:false});
+          rows.push({id:newId,display_name:name,login_name:loginName,pin:'0000',group_code:old.group_code,category:old.category,sort_order:old.sort_order,is_admin:false,active_from:eff,active_to:null,history_login_allowed:false,holiday_work_enabled:true});
           // 기존 직원의 적용일 이후 근태·휴근은 새 직원에게 넘어가지 않도록 정리한다.
           // 적용일을 걸치는 기간 근태는 적용일 전날까지만 보존하며, 시간지정이면 마지막 재직일을 18:00까지로 마감한다.
           const cutoff=addDaysKey(eff,-1);
@@ -3286,6 +3372,7 @@ function wire(){
   bindDetailActions();
   bindAttendanceListActions();
   $('employeeManageBackdrop').addEventListener('click',e=>{ const p=e.target.closest('[data-emp-pin]'); const r=e.target.closest('[data-emp-replace]'); const x=e.target.closest('[data-emp-exclude]'); if(p) openEmployeeAction('password',p.dataset.empPin); else if(r) openEmployeeAction('replace',r.dataset.empReplace); else if(x) openEmployeeAction('exclude',x.dataset.empExclude); });
+  $('currentEmployeeList').addEventListener('change',e=>{const input=e.target.closest('[data-holiday-work-enabled]');if(input)void changeHolidayWorkEligibility(input);});
   $('startDate').addEventListener('change',()=>{ if(state.me?.is_admin) populateTargetEmployees($('startDate').value,$('targetEmployee').value); });
   document.addEventListener('visibilitychange',()=>{if(!document.hidden){if(state.me){refresh(); if(!realtimeChannel) startRealtime();}else if(state.sessionToken){clearSessionRestoreRetry(false); restoreSession(true);}}});
   window.addEventListener('online',()=>{if(state.me){setRealtimeStatus('connecting');scheduleRealtimeReconnect(150)}else if(state.sessionToken){clearSessionRestoreRetry(false);restoreSession(true)}});

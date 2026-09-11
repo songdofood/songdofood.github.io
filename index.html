@@ -148,6 +148,17 @@
   .legend span{display:inline-flex;align-items:center;gap:4px}.dot{width:8px;height:8px;border-radius:50%;display:inline-block}.dot.day{background:var(--yellow)}.dot.night{background:var(--night)}.dot.day2{background:var(--teal)}.dot.off{background:var(--off)}
   .status-line{text-align:center;margin-top:9px;font-size:calc(11px * var(--text-scale,1));color:#6b7280;min-height:16px}
   .version{text-align:center;color:#b0b5bd;font-size:calc(10px * var(--text-scale,1));padding:3px 0}
+  .version-btn{display:block;width:max-content;max-width:100%;margin:0 auto;padding:7px 10px;border-radius:10px;background:transparent;color:#9ca3af;font-weight:800;line-height:1.25}
+  .version-btn:active{background:#eef2f7;color:#6b7280}
+  .update-history-intro{margin:0 0 10px;padding:9px 10px;border-radius:12px;background:#f8fafc;color:#64748b;font-size:calc(11px * var(--text-scale,1));font-weight:750;line-height:1.5}
+  .update-history-list{display:flex;flex-direction:column;gap:8px}
+  .update-history-item{padding:11px 12px;border:1px solid #e5e7eb;border-radius:13px;background:#fff}
+  .update-history-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px}
+  .update-history-version{font-size:calc(12px * var(--text-scale,1));font-weight:950;color:#1d4ed8;word-break:break-all}
+  .update-history-date{flex:0 0 auto;color:#9ca3af;font-size:calc(10px * var(--text-scale,1));font-weight:800}
+  .update-history-items{margin:0;padding-left:18px;color:#4b5563;font-size:calc(11.5px * var(--text-scale,1));line-height:1.6}
+  .update-history-items li+li{margin-top:2px}
+  .update-history-empty{padding:22px 8px;text-align:center;color:#9ca3af;font-size:calc(12px * var(--text-scale,1))}
   .backdrop{position:fixed;inset:0;z-index:1000;background:rgba(17,24,39,.46);display:none;align-items:flex-end;justify-content:center;padding:10px}
   .backdrop.open{display:flex}
   .modal{width:min(600px,100%);max-height:90dvh;overflow:auto;background:#fff;border-radius:22px 22px 16px 16px;padding:14px;box-shadow:0 20px 70px rgba(0,0,0,.28)}
@@ -333,7 +344,7 @@
     <div id="legend" class="legend hidden"><span><i class="dot day"></i>주간</span><span><i class="dot day2"></i>주2</span><span><i class="dot night"></i>야간</span><span><i class="dot off"></i>휴무</span></div>
     <div id="statusLine" class="status-line"></div>
   </section>
-  <div class="version">ver20260910-2359</div>
+  <button id="versionHistoryBtn" class="version version-btn" type="button" aria-haspopup="dialog" aria-controls="updateHistoryBackdrop">ver20260911-1806 · 업데이트 내역</button>
 </main>
 
 <div id="detailBackdrop" class="backdrop" aria-hidden="true">
@@ -651,6 +662,14 @@
   </div>
 </div>
 
+<div id="updateHistoryBackdrop" class="backdrop" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="updateHistoryTitle">
+    <div class="modal-head"><div id="updateHistoryTitle" class="modal-title">업데이트 내역</div><button class="close-btn" data-close="updateHistory">×</button></div>
+    <div class="update-history-intro">사이트에 반영된 주요 변경사항을 최신 순서로 보여줍니다.</div>
+    <div id="updateHistoryBody" class="update-history-list"></div>
+  </div>
+</div>
+
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
 <div id="loadingCover" class="loading-cover"><div class="spinner"></div></div>
@@ -666,7 +685,10 @@
 const SUPABASE_URL = 'https://fnzgjidzdazlodmjhmes.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_asmMoFJpUgX7rLcSkjx1PA_3n2Hk-gG';
 
-const APP_VERSION = 'ver20260910-2359';
+const APP_VERSION = 'ver20260911-1806';
+const UPDATE_HISTORY = [
+  {version:'ver20260911-1806',date:'2026.09.11',items:['업데이트 내역 확인 기능 추가']}
+];
 const VERSION_CHECK_INTERVAL_MS = 3000; // 새 배포가 활성화되면 열려 있는 화면도 약 3초 이내 감지
 const SESSION_CHECK_TIMEOUT_MS = 10000; // 새로고침 시 세션 확인이 너무 오래 멈추지 않도록 제한
 const SESSION_RETRY_DELAYS_MS = [3000,5000,8000,15000,30000]; // 일시적 서버 지연 시 로그인 상태를 보존한 채 재확인
@@ -1064,6 +1086,28 @@ function monthBounds(y,m){ return {from:dateKey(y,m,1),to:dateKey(y,m,daysInMont
 function formatDateKR(key){ const {y,m,d}=parseDateKey(key); const w=['일','월','화','수','목','금','토'][new Date(y,m,d).getDay()]; return `${y}년 ${m+1}월 ${d}일 (${w})`; }
 function escapeHtml(s=''){ return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c])); }
 function timeShort(v){ return v ? String(v).slice(0,5) : ''; }
+
+function renderUpdateHistory(){
+  const body=$('updateHistoryBody');
+  if(!body) return;
+  if(!UPDATE_HISTORY.length){
+    body.innerHTML='<div class="update-history-empty">등록된 업데이트 내역이 없습니다.</div>';
+    return;
+  }
+  body.innerHTML=UPDATE_HISTORY.map(entry=>{
+    const items=Array.isArray(entry.items)?entry.items:[];
+    const list=items.length?`<ul class="update-history-items">${items.map(item=>`<li>${escapeHtml(item)}</li>`).join('')}</ul>`:'<div class="update-history-empty">세부 내역이 없습니다.</div>';
+    return `<section class="update-history-item"><div class="update-history-head"><span class="update-history-version">${escapeHtml(entry.version||'')}</span><span class="update-history-date">${escapeHtml(entry.date||'')}</span></div>${list}</section>`;
+  }).join('');
+}
+function openUpdateHistory(){
+  renderUpdateHistory();
+  openBackdrop('updateHistoryBackdrop');
+}
+function syncVersionFooter(){
+  const btn=$('versionHistoryBtn');
+  if(btn) btn.textContent=`${APP_VERSION} · 업데이트 내역`;
+}
 
 async function rpc(name, payload={}, options={}){
   const timeoutMs=Number(options?.timeoutMs)||0;
@@ -3138,6 +3182,7 @@ function toggleAdminTools(){
 
 function wire(){
   populateTypeOptions();
+  $('versionHistoryBtn').addEventListener('click',openUpdateHistory);
   $('adminToolsToggle').addEventListener('click',toggleAdminTools);
   $('companyEventsBanner').addEventListener('click',openCompanyEvents);
   $('refreshCompanyEventsBtn').addEventListener('click',()=>loadCompanyEvents(true));
@@ -3211,7 +3256,7 @@ function wire(){
   setInterval(()=>{if(state.me&&!document.hidden)refresh()},60000);
 }
 
-restoreUpdateSessionHandoff(); cleanupVersionQuery(); restoreTextSizeLevel(); setupLoginPersistenceUI(); wire(); toggleAdminPinField(); startVersionWatcher(); restoreSession();
+restoreUpdateSessionHandoff(); cleanupVersionQuery(); restoreTextSizeLevel(); setupLoginPersistenceUI(); syncVersionFooter(); wire(); toggleAdminPinField(); startVersionWatcher(); restoreSession();
 </script>
 </body>
 </html>

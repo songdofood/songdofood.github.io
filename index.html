@@ -412,6 +412,58 @@
     .long-service-card{padding:14px}.long-service-summary{grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}.long-service-summary-item{padding:10px 5px}.long-service-dday-grid{grid-template-columns:1fr}.long-service-detail-row{grid-template-columns:minmax(0,1fr) auto;gap:4px 8px}.long-service-detail-kind{grid-column:1}.long-service-detail-minutes{grid-column:2;grid-row:1 / span 2}.long-service-excluded-row{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)}
   }
 
+
+
+  /* ===== 2026-09-13 UI polish: 연차/장기 대칭 + 장기 핵심 정보 강조 ===== */
+  .long-service-setting{padding:0;overflow:hidden;background:#fff;border-color:#e5e7eb}
+  .long-service-setting-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 13px;background:#f8fafc;color:#374151;font-size:calc(12.5px * var(--text-scale,1));font-weight:950;text-align:left}
+  .long-service-setting-body{padding:0 12px 12px}
+  .long-service-setting-body>.long-service-setting-help:first-child{margin-top:0;padding-top:1px}
+
+  /* 연차/장기 기준 박스는 같은 색상·같은 접기 UI */
+  .leave-rule-guide{padding:0!important;border:1px solid #bfdbfe!important;border-radius:14px!important;background:#eff6ff!important;color:#1e40af!important;overflow:hidden}
+  .leave-rule-guide-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 13px;background:#eff6ff!important;color:#1d4ed8!important;font-size:calc(11.5px * var(--text-scale,1))!important;font-weight:950!important;text-align:left}
+  .leave-rule-guide-toggle span:last-child{flex:0 0 auto;font-size:calc(14px * var(--text-scale,1));font-weight:950;color:#2563eb}
+  .leave-rule-guide-body{padding:0 13px 12px;color:#475569!important;font-size:calc(10.8px * var(--text-scale,1))!important;font-weight:750;line-height:1.6}
+  .leave-rule-guide-body b{font-weight:950;color:#1e3a8a}
+  .long-service-guide.leave-rule-guide{margin-bottom:10px}
+  .long-service-guide.leave-rule-guide .long-service-rule-table{background:#fff;border:1px solid #dbeafe;color:#475569}
+
+  /* 가장 중요한 장기재직 현황은 확실히 크게 */
+  .long-service-current{padding:18px 14px;margin-bottom:12px}
+  .long-service-current-label{font-size:calc(13px * var(--text-scale,1));font-weight:900;color:#475569}
+  .long-service-current-value{margin-top:6px;font-size:calc(31px * var(--text-scale,1));font-weight:950;letter-spacing:-1px;line-height:1.15}
+  .long-service-current-meta{margin-top:8px;font-size:calc(13px * var(--text-scale,1));font-weight:900;line-height:1.5;color:#334155}
+  .long-service-summary{gap:8px;margin-bottom:12px}
+  .long-service-summary-item{padding:13px 8px}
+  .long-service-summary-label{font-size:calc(11px * var(--text-scale,1));font-weight:900;line-height:1.35}
+  .long-service-summary-value{margin-top:6px;font-size:calc(16px * var(--text-scale,1));font-weight:950;line-height:1.3}
+  #longServicePreviousSummary{font-size:calc(11px * var(--text-scale,1))!important;font-weight:800!important;line-height:1.5!important}
+  .long-service-dday{padding:13px}
+  .long-service-dday-label{font-size:calc(11px * var(--text-scale,1));font-weight:900}
+  .long-service-dday-value{margin-top:5px;font-size:calc(18px * var(--text-scale,1));font-weight:950}
+  .long-service-dday-date{margin-top:4px;font-size:calc(10.5px * var(--text-scale,1));font-weight:800}
+
+  html[data-theme="dark"] .long-service-setting{background:#111827;border-color:#3b4656}
+  html[data-theme="dark"] .long-service-setting-toggle{background:#18212e;color:#e5e7eb}
+  html[data-theme="dark"] .leave-rule-guide{background:#172b4d!important;border-color:#31558a!important;color:#bfdbfe!important}
+  html[data-theme="dark"] .leave-rule-guide-toggle{background:#172b4d!important;color:#bfdbfe!important}
+  html[data-theme="dark"] .leave-rule-guide-toggle span:last-child{color:#93c5fd}
+  html[data-theme="dark"] .leave-rule-guide-body{color:#cbd5e1!important}
+  html[data-theme="dark"] .leave-rule-guide-body b{color:#bfdbfe}
+  html[data-theme="dark"] .long-service-guide.leave-rule-guide .long-service-rule-table{background:#111827;border-color:#31558a;color:#cbd5e1}
+  html[data-theme="dark"] .long-service-current-label{color:#cbd5e1}
+  html[data-theme="dark"] .long-service-current-meta{color:#dbe4ef}
+
+  @media(max-width:430px){
+    .long-service-current{padding:17px 12px}
+    .long-service-current-label{font-size:calc(12.5px * var(--text-scale,1))}
+    .long-service-current-value{font-size:calc(29px * var(--text-scale,1))}
+    .long-service-current-meta{font-size:calc(12.5px * var(--text-scale,1))}
+    .long-service-summary-label{font-size:calc(10.5px * var(--text-scale,1))}
+    .long-service-summary-value{font-size:calc(15.5px * var(--text-scale,1))}
+  }
+
 </style>
 </head>
 <body>
@@ -528,7 +580,10 @@
       <div class="annual-leave-detail-head"><div id="annualLeaveDetailTitle" class="annual-leave-detail-title">사용·예정 상세</div><div id="annualLeaveDetailCount" class="annual-leave-detail-count">0건</div></div>
       <div id="annualLeaveDetailList" class="annual-leave-detail-list"><div class="annual-leave-detail-empty">반영된 사용·예정 근태가 없습니다.</div></div>
     </div>
-    <div class="annual-leave-rule"><b>연차 차감 기준</b><br>일근 주간 · 교대 주간 휴게 <b>12:00~13:00</b> / 교대 야간 휴게 <b>21:00~22:00</b><br>휴게시간은 연차 사용시간에서 제외합니다. 연가·지참·조퇴·외출은 자동 차감하고, 병가는 근태 등록 시 <b>연차에서 차감</b>을 선택한 경우에만 반영합니다.</div>
+    <div class="annual-leave-rule leave-rule-guide">
+      <button id="annualLeaveRuleToggle" class="leave-rule-guide-toggle" type="button" aria-expanded="false"><span>연차 차감 기준</span><span id="annualLeaveRuleChevron">⌄</span></button>
+      <div id="annualLeaveRuleBody" class="leave-rule-guide-body hidden">일근 주간 · 교대 주간 휴게 <b>12:00~13:00</b> / 교대 야간 휴게 <b>21:00~22:00</b><br>휴게시간은 연차 사용시간에서 제외합니다. 연가·지참·조퇴·외출은 자동 차감하고, 병가는 근태 등록 시 <b>연차에서 차감</b>을 선택한 경우에만 반영합니다.</div>
+    </div>
     <div id="annualLeaveStatus" class="annual-leave-status"></div>
   </section>
 
@@ -538,7 +593,8 @@
     </div>
 
     <div class="long-service-setting">
-      <div class="long-service-setting-title">장기 재직 기준 설정</div>
+      <button id="longServiceSettingToggle" class="long-service-setting-toggle" type="button" aria-expanded="false"><span>장기 재직 기준 설정</span><span id="longServiceSettingChevron">⌄</span></button>
+      <div id="longServiceSettingBody" class="long-service-setting-body hidden">
       <div class="long-service-setting-help">입사일만 입력하면 기본 계산이 시작됩니다. 재직기간에서 빠지는 기간이 있거나 현재 구간에서 사이트 사용 전 이미 쓴 휴가가 있을 때만 추가 입력하세요.</div>
       <div class="long-service-setting-grid">
         <div>
@@ -564,6 +620,7 @@
       <button id="longServiceSaveBtn" class="primary long-service-save" type="button">저장</button>
       <div id="longServiceError" class="long-service-error"></div>
       <div id="longServiceReadOnly" class="long-service-readonly hidden">조회 전용 계정에서는 입사일·이전 사용분·재직 제외기간을 수정할 수 없습니다.</div>
+      </div>
     </div>
 
     <div class="long-service-current">
@@ -591,9 +648,9 @@
       <div id="longServiceDetailList" class="long-service-detail-list"><div class="long-service-detail-empty">반영된 ‘장기’ 근태가 없습니다.</div></div>
     </div>
 
-    <div class="long-service-guide">
-      <button id="longServiceGuideToggle" class="long-service-guide-toggle" type="button" aria-expanded="false"><span>재직기간 산정·장기재직휴가 기준</span><span id="longServiceGuideChevron">⌄</span></button>
-      <div id="longServiceGuideBody" class="long-service-guide-body hidden">
+    <div class="long-service-guide leave-rule-guide">
+      <button id="longServiceGuideToggle" class="long-service-guide-toggle leave-rule-guide-toggle" type="button" aria-expanded="false"><span>재직기간 산정·장기재직휴가 기준</span><span id="longServiceGuideChevron">⌄</span></button>
+      <div id="longServiceGuideBody" class="long-service-guide-body leave-rule-guide-body hidden">
         <b>재직기간에 포함</b>
         <ul><li>육아휴직</li><li>육아기 근로시간 단축</li><li>업무상 부상으로 인한 휴직</li><li>군복무 휴직기간</li></ul>
         <b>재직기간에서 제외</b>
@@ -617,7 +674,7 @@
     <div id="legend" class="legend hidden"><span><i class="dot day"></i>주간</span><span><i class="dot day2"></i>주2</span><span><i class="dot night"></i>야간</span><span><i class="dot off"></i>휴무</span></div>
     <div id="statusLine" class="status-line"></div>
   </section>
-  <button id="versionHistoryBtn" class="version version-btn" type="button" aria-haspopup="dialog" aria-controls="updateHistoryBackdrop">ver20260912-2326 · 업데이트 내역</button>
+  <button id="versionHistoryBtn" class="version version-btn" type="button" aria-haspopup="dialog" aria-controls="updateHistoryBackdrop">ver20260913-0039 · 업데이트 내역</button>
 </main>
 
 <div id="detailBackdrop" class="backdrop" aria-hidden="true">
@@ -973,9 +1030,9 @@
 const SUPABASE_URL = 'https://fnzgjidzdazlodmjhmes.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_asmMoFJpUgX7rLcSkjx1PA_3n2Hk-gG';
 
-const APP_VERSION = 'ver20260912-2326';
+const APP_VERSION = 'ver20260913-0039';
 const UPDATE_HISTORY = [
-  {version:'ver20260912-2326',date:'2026.09.12',items:['장기재직휴가 자동계산 및 근태 연동 기능 추가']},
+  {version:'ver20260913-0039',date:'2026.09.13',items:['장기재직휴가 자동계산 및 근태 연동 기능 추가']},
   {version:'ver20260912-2149',date:'2026.09.12',items:['다크모드 기능 추가']},
   {version:'ver20260912-2057',date:'2026.09.12',items:['잔여연차 자동계산 및 근태 연동 기능 추가']},
   {version:'ver20260911-2138',date:'2026.09.11',items:['휴일근무 기본시간 자동입력 기능 추가']},
@@ -1986,7 +2043,10 @@ async function saveLongServiceSetting(){
   finally{showLoading(false);}
 }
 function addLongServiceExclusion(){ state.longServiceExclusions.push({id:null,start_date:'',end_date:'',reason:''}); state.longServiceFormDirty=true; lsRenderExcludedRows(); const rows=$('longServiceExcludedList').querySelectorAll('[data-ls-exclusion]'); rows[rows.length-1]?.querySelector('[data-ls-field="start_date"]')?.focus(); }
-function toggleLongServiceGuide(){ const body=$('longServiceGuideBody'),btn=$('longServiceGuideToggle'),open=body.classList.contains('hidden'); body.classList.toggle('hidden',!open);btn.setAttribute('aria-expanded',open?'true':'false');$('longServiceGuideChevron').textContent=open?'⌃':'⌄'; }
+function toggleSimpleSection(bodyId,buttonId,chevronId){ const body=$(bodyId),btn=$(buttonId),chevron=$(chevronId); if(!body||!btn)return; const open=body.classList.contains('hidden'); body.classList.toggle('hidden',!open); btn.setAttribute('aria-expanded',open?'true':'false'); if(chevron)chevron.textContent=open?'⌃':'⌄'; }
+function toggleLongServiceGuide(){ toggleSimpleSection('longServiceGuideBody','longServiceGuideToggle','longServiceGuideChevron'); }
+function toggleLongServiceSetting(){ toggleSimpleSection('longServiceSettingBody','longServiceSettingToggle','longServiceSettingChevron'); }
+function toggleAnnualLeaveRule(){ toggleSimpleSection('annualLeaveRuleBody','annualLeaveRuleToggle','annualLeaveRuleChevron'); }
 
 function isHolidayWorkEmployee(emp){ return !!emp && (emp.category==='일근(사무)' || emp.category==='일근(현장)'); }
 function holidayWorkDefaultTimesForEmployee(emp){
@@ -4189,6 +4249,8 @@ function wire(){
   $('longServiceSaveBtn').addEventListener('click',saveLongServiceSetting);
   $('longServiceAddExcludedBtn').addEventListener('click',addLongServiceExclusion);
   $('longServiceGuideToggle').addEventListener('click',toggleLongServiceGuide);
+  $('longServiceSettingToggle').addEventListener('click',toggleLongServiceSetting);
+  $('annualLeaveRuleToggle').addEventListener('click',toggleAnnualLeaveRule);
   $('longServiceHireDate').addEventListener('input',()=>{state.longServiceFormDirty=true;$('longServiceError').textContent='';lsUpdateExcludedSummary();renderLongService(false);});
   ['longServicePrevDays','longServicePrevHours','longServicePrevMinutes'].forEach((id,i)=>{bindAnnualLeaveNumberInput(id,i===0?999:(i===1?7:59),i===0?3:(i===1?1:2));$(id).addEventListener('input',()=>{state.longServiceFormDirty=true;$('longServiceError').textContent='';renderLongService(false);});});
   $('attendanceTypeBtn').addEventListener('click',openTypePicker);

@@ -107,7 +107,7 @@
   .who{margin-top:4px;font-size:calc(13px * var(--text-scale,1));color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .top-actions{display:flex;gap:7px;flex:0 0 auto}
   .icon-btn{height:38px;min-width:38px;padding:0 10px;border-radius:11px;background:#eef2f7;color:#374151;font-weight:800}
-  .tabbar{display:grid;grid-template-columns:1fr 1fr;gap:7px;padding:5px;background:#e9edf2;border-radius:14px;margin-bottom:12px}
+  .tabbar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;padding:5px;background:#e9edf2;border-radius:14px;margin-bottom:12px}
   .tab{padding:11px 8px;border-radius:10px;background:transparent;color:#6b7280;font-weight:850}
   .tab.active{background:#fff;color:#111827;box-shadow:0 2px 8px rgba(0,0,0,.07)}
   .calendar-card{padding:12px 10px 13px}
@@ -273,6 +273,13 @@
   .text-size-level.active{border-color:#8b5cf6;background:#f5f3ff;color:#6d28d9;box-shadow:inset 0 0 0 1px #8b5cf6}
   .text-size-guide{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;margin-top:9px;color:#9ca3af;font-size:calc(10px * var(--text-scale,1));font-weight:700}
   .text-size-guide span:nth-child(2){text-align:center;color:#6b7280}.text-size-guide span:last-child{text-align:right}
+  .annual-leave-card{padding:16px}
+  .annual-leave-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:12px}.annual-leave-title{font-size:calc(18px * var(--text-scale,1));font-weight:950;color:#111827}.annual-leave-sub{margin-top:3px;font-size:calc(11px * var(--text-scale,1));color:#6b7280;line-height:1.45}.annual-leave-year{width:auto;min-width:92px;padding:9px 28px 9px 10px;border-radius:10px;font-size:calc(13px * var(--text-scale,1));font-weight:900}
+  .annual-leave-balance{padding:16px 14px;border:1px solid #bfdbfe;border-radius:16px;background:#eff6ff;text-align:center;margin-bottom:11px}.annual-leave-balance-label{font-size:calc(11px * var(--text-scale,1));font-weight:850;color:#1d4ed8}.annual-leave-balance-value{margin-top:5px;font-size:calc(29px * var(--text-scale,1));font-weight:950;letter-spacing:-1px;color:#1e3a8a;font-variant-numeric:tabular-nums}.annual-leave-balance-value.negative{color:#b91c1c}.annual-leave-balance-note{margin-top:4px;font-size:calc(10px * var(--text-scale,1));color:#64748b;font-weight:750;line-height:1.4}
+  .annual-leave-summary{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:11px}.annual-leave-summary-item{padding:10px 11px;border:1px solid #e5e7eb;border-radius:12px;background:#fff}.annual-leave-summary-label{font-size:calc(10px * var(--text-scale,1));color:#6b7280;font-weight:800;line-height:1.35}.annual-leave-summary-value{margin-top:4px;font-size:calc(14px * var(--text-scale,1));font-weight:950;color:#111827;font-variant-numeric:tabular-nums}
+  .annual-leave-setting{padding:12px;border:1px solid #e5e7eb;border-radius:14px;background:#f8fafc;margin-bottom:10px}.annual-leave-setting-title{font-size:calc(13px * var(--text-scale,1));font-weight:950;color:#374151;margin-bottom:4px}.annual-leave-setting-help{font-size:calc(10.5px * var(--text-scale,1));line-height:1.5;color:#6b7280;margin-bottom:9px}.annual-leave-setting-block+.annual-leave-setting-block{margin-top:10px}.annual-leave-setting-label{display:block;margin:0 0 5px 2px;font-size:calc(11px * var(--text-scale,1));font-weight:900;color:#4b5563}.annual-leave-input-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}.annual-leave-input-part{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:4px}.annual-leave-input-part input{min-width:0;padding:10px 7px;text-align:center;font-variant-numeric:tabular-nums}.annual-leave-unit{font-size:calc(11px * var(--text-scale,1));font-weight:850;color:#6b7280}.annual-leave-save{margin-top:10px}.annual-leave-error{min-height:17px;margin-top:7px;color:#dc2626;font-size:calc(11px * var(--text-scale,1));font-weight:750;line-height:1.4}.annual-leave-readonly{padding:9px 10px;border-radius:11px;background:#faf7ff;color:#6d28d9;font-size:calc(10.5px * var(--text-scale,1));font-weight:800;line-height:1.45;margin-top:8px}
+  .annual-leave-rule{padding:11px 12px;border-radius:13px;background:#fff7ed;color:#9a3412;font-size:calc(10.5px * var(--text-scale,1));line-height:1.55;font-weight:750}.annual-leave-rule b{font-weight:950}.annual-leave-status{min-height:16px;margin:8px 2px 0;color:#9ca3af;font-size:calc(10px * var(--text-scale,1));font-weight:750}
+  .sick-leave-deduct-field{margin:0 0 11px;padding:10px 11px;border:1px solid #fed7aa;border-radius:12px;background:#fff7ed}.sick-leave-deduct-label{display:flex;align-items:center;gap:8px;color:#9a3412;font-size:calc(13px * var(--text-scale,1));font-weight:900;cursor:pointer}.sick-leave-deduct-label input{width:18px;height:18px;margin:0;padding:0;accent-color:#f97316;flex:0 0 auto}.sick-leave-deduct-help{margin:5px 0 0 26px;color:#9a3412;font-size:calc(10px * var(--text-scale,1));line-height:1.4}.attendance-break-help{margin:-1px 2px 11px;padding:8px 10px;border-radius:10px;background:#eff6ff;color:#1d4ed8;font-size:calc(10.5px * var(--text-scale,1));font-weight:800;line-height:1.45}
   .loading-cover{position:fixed;inset:0;z-index:2000;background:rgba(255,255,255,.68);display:none;align-items:center;justify-content:center}.loading-cover.show{display:flex}.spinner{width:34px;height:34px;border:4px solid #dbeafe;border-top-color:#2563eb;border-radius:50%;animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
   @media(max-width:520px){
     #detailBackdrop{padding-top:calc(8dvh - 5px)}
@@ -325,11 +332,12 @@
   <div class="tabbar">
     <button class="tab active" data-view="mine">내 근무표</button>
     <button class="tab" data-view="all">전체 근무표</button>
+    <button class="tab" data-view="leave">연차 현황</button>
   </div>
 
-  <div id="readOnlyAccountNotice" class="readonly-account-notice hidden">발령 후 조회 전용 계정입니다. 기존 근태·휴근·개인 메모와 사내일정은 확인할 수 있으며, 새 근태/휴근 등록·수정·삭제와 메모 저장·수정·삭제, 사내일정 변경은 할 수 없습니다.</div>
+  <div id="readOnlyAccountNotice" class="readonly-account-notice hidden">발령 후 조회 전용 계정입니다. 기존 근태·휴근·개인 메모·사내일정과 연차 현황은 확인할 수 있으며, 새 근태/휴근 등록·수정·삭제와 메모 저장·수정·삭제, 사내일정 변경, 연차 기준값 수정은 할 수 없습니다.</div>
 
-  <div class="view-tools"><div class="view-tool-actions"><button id="memoListBtn" class="memo-list-btn">메모 목록</button><button id="holidayWorkListBtn" class="holiday-work-list-btn hidden">휴근 목록</button><button id="attendanceListBtn" class="attendance-list-btn">근태 목록</button><button id="usageGuideOpenBtn" class="usage-guide-open-btn">이용안내</button><button id="selfPinBtn" class="self-pin-btn">내 비밀번호 변경</button><button id="textSizeOpenBtn" class="text-size-open-btn">큰글자로 보기 <span id="textSizeLevelLabel" class="level-label">11단계</span></button></div></div>
+  <div id="viewTools" class="view-tools"><div class="view-tool-actions"><button id="memoListBtn" class="memo-list-btn">메모 목록</button><button id="holidayWorkListBtn" class="holiday-work-list-btn hidden">휴근 목록</button><button id="attendanceListBtn" class="attendance-list-btn">근태 목록</button><button id="usageGuideOpenBtn" class="usage-guide-open-btn">이용안내</button><button id="selfPinBtn" class="self-pin-btn">내 비밀번호 변경</button><button id="textSizeOpenBtn" class="text-size-open-btn">큰글자로 보기 <span id="textSizeLevelLabel" class="level-label">11단계</span></button></div></div>
 
   <div id="adminTools" class="admin-tools hidden">
     <button id="adminToolsToggle" class="admin-tools-toggle" type="button" aria-expanded="false" aria-controls="adminActionGroup"><span class="admin-toggle-label">관리자<br>기능</span><span class="admin-chevron">⌄</span></button>
@@ -342,7 +350,58 @@
     <span id="companyEventsBannerCount" class="company-events-banner-count">확인 중</span>
   </button>
 
-  <section class="card calendar-card">
+  <section id="annualLeaveCard" class="card annual-leave-card hidden">
+    <div class="annual-leave-head">
+      <div><div class="annual-leave-title">연차 현황</div><div id="annualLeaveSubtitle" class="annual-leave-sub">내 근태와 자동으로 연동해 계산합니다.</div></div>
+      <select id="annualLeaveYear" class="annual-leave-year" aria-label="연차 연도"></select>
+    </div>
+    <div class="annual-leave-balance">
+      <div class="annual-leave-balance-label">현재 잔여연차</div>
+      <div id="annualLeaveBalance" class="annual-leave-balance-value">-</div>
+      <div id="annualLeaveBalanceNote" class="annual-leave-balance-note">연차 기준값을 입력하면 자동 계산합니다.</div>
+    </div>
+    <div class="annual-leave-summary">
+      <div class="annual-leave-summary-item"><div id="annualLeaveStartLabel" class="annual-leave-summary-label">기준 잔여연차</div><div id="annualLeaveStartValue" class="annual-leave-summary-value">-</div></div>
+      <div class="annual-leave-summary-item"><div id="annualLeaveUsedLabel" class="annual-leave-summary-label">자동 사용·예정</div><div id="annualLeaveUsedValue" class="annual-leave-summary-value">-</div></div>
+    </div>
+    <div id="annualLeaveSetting" class="annual-leave-setting">
+      <div id="annualLeaveSettingTitle" class="annual-leave-setting-title">2026년 기준 잔여연차 설정</div>
+      <div id="annualLeaveSettingHelp" class="annual-leave-setting-help"></div>
+      <div id="annualLeaveBaselineBlock" class="annual-leave-setting-block">
+        <label class="annual-leave-setting-label">2026.09.11 기준 잔여연차</label>
+        <div class="annual-leave-input-grid">
+          <div class="annual-leave-input-part"><input id="annualBaselineDays" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="3"><span class="annual-leave-unit">일</span></div>
+          <div class="annual-leave-input-part"><input id="annualBaselineHours" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2"><span class="annual-leave-unit">시간</span></div>
+          <div class="annual-leave-input-part"><input id="annualBaselineMinutes" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2"><span class="annual-leave-unit">분</span></div>
+        </div>
+      </div>
+      <div id="annualLeaveNormalBlocks" class="hidden">
+        <div class="annual-leave-setting-block">
+          <label class="annual-leave-setting-label">올해 부여연차</label>
+          <div class="annual-leave-input-grid">
+            <div class="annual-leave-input-part"><input id="annualGrantDays" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="3"><span class="annual-leave-unit">일</span></div>
+            <div class="annual-leave-input-part"><input id="annualGrantHours" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2"><span class="annual-leave-unit">시간</span></div>
+            <div class="annual-leave-input-part"><input id="annualGrantMinutes" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2"><span class="annual-leave-unit">분</span></div>
+          </div>
+        </div>
+        <div class="annual-leave-setting-block">
+          <label class="annual-leave-setting-label">이월연차</label>
+          <div class="annual-leave-input-grid">
+            <div class="annual-leave-input-part"><input id="annualCarryDays" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="3"><span class="annual-leave-unit">일</span></div>
+            <div class="annual-leave-input-part"><input id="annualCarryHours" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2"><span class="annual-leave-unit">시간</span></div>
+            <div class="annual-leave-input-part"><input id="annualCarryMinutes" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2"><span class="annual-leave-unit">분</span></div>
+          </div>
+        </div>
+      </div>
+      <button id="annualLeaveSaveBtn" class="primary annual-leave-save" type="button">저장</button>
+      <div id="annualLeaveError" class="annual-leave-error"></div>
+      <div id="annualLeaveReadOnly" class="annual-leave-readonly hidden">조회 전용 계정에서는 연차 기준값을 수정할 수 없습니다.</div>
+    </div>
+    <div class="annual-leave-rule"><b>연차 차감 기준</b><br>일근 주간 · 교대 주간 휴게 <b>12:00~13:00</b> / 교대 야간 휴게 <b>21:00~22:00</b><br>휴게시간은 연차 사용시간에서 제외합니다. 연가·지참·조퇴·외출은 자동 차감하고, 병가는 근태 등록 시 <b>연차에서 차감</b>을 선택한 경우에만 반영합니다.</div>
+    <div id="annualLeaveStatus" class="annual-leave-status"></div>
+  </section>
+
+  <section id="calendarCard" class="card calendar-card">
     <div class="calendar-toolbar">
       <button id="prevMonth" class="nav-btn">이전달</button>
       <button id="monthTitle" class="month-title"></button>
@@ -415,6 +474,11 @@
         <span class="attendance-time-wave">~</span>
         <label class="attendance-time-block"><span>종료시간</span><div class="attendance-time-parts"><input id="endHour" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2" aria-label="종료 시"><b class="attendance-time-colon">:</b><input id="endMinute" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2" aria-label="종료 분"></div></label>
       </div>
+    </div>
+    <div id="attendanceBreakHelp" class="attendance-break-help hidden"></div>
+    <div id="sickLeaveDeductField" class="sick-leave-deduct-field hidden">
+      <label class="sick-leave-deduct-label"><input id="annualLeaveDeduct" type="checkbox"><span>연차에서 차감</span></label>
+      <div class="sick-leave-deduct-help">실제 연가 공제 대상 병가인 경우에만 체크하세요.</div>
     </div>
     <div id="formError" class="form-error"></div>
     <button id="saveAttendanceBtn" class="primary">저장</button>
@@ -498,7 +562,7 @@
 <div id="employeeManageBackdrop" class="backdrop" aria-hidden="true">
   <div class="modal">
     <div class="modal-head"><div class="modal-title">직원 관리</div><button class="close-btn" data-close="employeeManage">×</button></div>
-    <div class="employee-help">정기발령은 <b>직원 교체</b>를 사용합니다. 기존 직원은 적용일부터 현재 명단에서 빠지고 <b>조회 전용 계정</b>으로 남아 본인의 과거 근태·휴근·개인 메모를 확인할 수 있습니다. 새 직원은 같은 자리·근무조를 이어받되 별도 계정과 초기비밀번호 0000으로 시작합니다. 과거에 같은 성명의 직원이 있으면 화면 이름은 그대로 두고 로그인 이름만 <b>김주현2, 김주현3…</b>처럼 자동 구분합니다. <b>직원 제외</b>는 적용일부터 로그인까지 차단합니다. 일근자는 <b>휴일근무 가능</b>이 기본값이며 필요할 때만 체크를 해제합니다. 해제해도 기존 휴근 기록은 삭제되지 않습니다.</div>
+    <div class="employee-help">정기발령은 <b>직원 교체</b>를 사용합니다. 기존 직원은 적용일부터 현재 명단에서 빠지고 <b>조회 전용 계정</b>으로 남아 본인의 과거 근태·휴근·개인 메모와 연차 현황을 확인할 수 있습니다. 새 직원은 같은 자리·근무조를 이어받되 별도 계정과 초기비밀번호 0000으로 시작합니다. 과거에 같은 성명의 직원이 있으면 화면 이름은 그대로 두고 로그인 이름만 <b>김주현2, 김주현3…</b>처럼 자동 구분합니다. <b>직원 제외</b>는 적용일부터 로그인까지 차단합니다. 일근자는 <b>휴일근무 가능</b>이 기본값이며 필요할 때만 체크를 해제합니다. 해제해도 기존 휴근 기록은 삭제되지 않습니다.</div>
     <div class="employee-manage-actions"><button id="addEmployeeBtn" class="primary">＋ 직원 추가</button><button id="resetCurrentPinsBtn" class="reset-pins-btn">전체 비밀번호 0000 초기화</button></div>
     <div class="employee-section-title">현재 직원</div>
     <div id="currentEmployeeList" class="employee-list"></div>
@@ -635,8 +699,8 @@
     <div class="usage-guide-highlight">평소에는 아무것도 입력하지 않으셔도 됩니다.</div>
     <div class="usage-guide-body"><strong>연가·지참·조퇴·장기·교육 등 근태가 생겼을 때만 등록해 주세요.</strong><br>입력된 내용은 <strong>전체 근무표의 가용인원에 자동 반영</strong>됩니다.</div>
     <div class="usage-guide-body">근태가 누락되면 실제 근무 가능 인원과 다르게 표시될 수 있으니 협조 부탁드립니다.</div>
-    <div class="usage-guide-features">주요 기능은 <strong>내 근무표 확인 / 근태 등록 / 전체 근무표 가용인원 확인 / 사내일정 / 개인 메모 / 휴근 관리(일근자)</strong>입니다.</div>
-    <div id="usageGuideReadOnly" class="usage-guide-readonly hidden">발령 후 조회 전용 계정은 기존 근태·휴근·개인 메모와 사내일정을 확인할 수 있으며 새 기록 등록·수정·삭제 및 사내일정 변경은 할 수 없습니다.</div>
+    <div class="usage-guide-features">주요 기능은 <strong>내 근무표 확인 / 근태 등록 / 전체 근무표 가용인원 확인 / 연차 현황 / 사내일정 / 개인 메모 / 휴근 관리(일근자)</strong>입니다.</div>
+    <div id="usageGuideReadOnly" class="usage-guide-readonly hidden">발령 후 조회 전용 계정은 기존 근태·휴근·개인 메모·사내일정과 연차 현황을 확인할 수 있으며 새 기록 등록·수정·삭제, 사내일정 변경 및 연차 기준값 수정은 할 수 없습니다.</div>
     <label class="usage-guide-option"><input id="usageGuideDontShow" type="checkbox"> 다시 보지 않기</label>
     <button id="usageGuideConfirmBtn" class="usage-guide-confirm" type="button">확인</button>
   </div>
@@ -695,8 +759,9 @@
 const SUPABASE_URL = 'https://fnzgjidzdazlodmjhmes.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_asmMoFJpUgX7rLcSkjx1PA_3n2Hk-gG';
 
-const APP_VERSION = 'ver20260911-2234';
+const APP_VERSION = 'ver20260912-2057';
 const UPDATE_HISTORY = [
+  {version:'ver20260912-2057',date:'2026.09.12',items:['잔여연차 자동계산 및 근태 연동 기능 추가']},
   {version:'ver20260911-2138',date:'2026.09.11',items:['휴일근무 기본시간 자동입력 기능 추가']},
   {version:'ver20260911-1806',date:'2026.09.11',items:['업데이트 내역 확인 기능 추가']}
 ];
@@ -720,6 +785,7 @@ const LOCAL_AUDIT_KEY = 'staffAttendance_localAudit_v1';
 const LOCAL_MEMO_KEY_PREFIX = 'staffAttendance_localMemos_v1_';
 const LOCAL_HOLIDAY_WORK_KEY = 'staffAttendance_localHolidayWork_v1';
 const LOCAL_COMPANY_EVENT_KEY = 'staffAttendance_localCompanyEvents_v1';
+const LOCAL_ANNUAL_LEAVE_KEY_PREFIX = 'staffAttendance_localAnnualLeave_v1_';
 const AUDIT_RETENTION_LIMIT = 1000;
 const AUDIT_PAGE_SIZE = 50;
 const TEXT_SIZE_SCALES = {1:0.750,2:0.780,3:0.810,4:0.840,5:0.870,6:0.900,7:0.930,8:0.950,9:0.970,10:0.985,11:1.000,12:1.050,13:1.100,14:1.150,15:1.200,16:1.260,17:1.320,18:1.380,19:1.450,20:1.530,21:1.620};
@@ -764,12 +830,17 @@ const SOLAR_TERMS = {
 };
 
 const ATTENDANCE_TYPES = [
-  '연가','지참','조퇴','외출','결근',
-  '교육','병가','공가','장기','대휴',
-  '임금피크','가족돌봄','자녀돌봄','유급난임','무급난임',
+  '연가','지참','조퇴','외출','병가',
+  '결근','교육','공가','장기','대휴',
+  '가족돌봄','자녀돌봄','유급난임','무급난임','보건휴가',
   '경조사','특별휴가','청원휴가','보상휴가','포상휴가',
-  '보건휴가','파견','육아휴직','노동조합','노조활동'
+  '임금피크','파견','육아휴직','노동조합','노조활동'
 ];
+const ANNUAL_LEAVE_AUTO_TYPES = new Set(['연가','지참','조퇴','외출']);
+const ANNUAL_LEAVE_CONDITIONAL_TYPE = '병가';
+const ANNUAL_LEAVE_MINUTES_PER_DAY = 8*60;
+const ANNUAL_LEAVE_2026_BASELINE_DATE = '2026-09-11';
+const ANNUAL_LEAVE_2026_AUTO_START = '2026-09-12';
 const ATTENDANCE_TYPE_ALIASES = {
   '가족돌봄휴가':'가족돌봄',
   '자녀돌봄휴가':'자녀돌봄',
@@ -896,7 +967,7 @@ migrateLegacySessionForDevice();
 
 const state = {
   sessionToken: storedSessionToken(),
-  me:null, employees:[], attendance:[], holidayWorks:[], holidayWorkBackendReady:null, holidayWorkEligibilityReady:null, memos:[], memoBackendReady:null, companyEvents:[], companyEventBackendReady:null, view:'mine', selectedDate:null,
+  me:null, employees:[], attendance:[], holidayWorks:[], holidayWorkBackendReady:null, holidayWorkEligibilityReady:null, memos:[], memoBackendReady:null, companyEvents:[], companyEventBackendReady:null, annualLeaveSettings:null, annualLeaveEntries:[], annualLeaveBackendReady:null, annualLeaveYear:null, annualLeaveFormDirty:false, view:'mine', selectedDate:null,
   year:Math.min(Math.max(parseDateKey(todayKey()).y,MIN_YEAR),MAX_YEAR), month:parseDateKey(todayKey()).m,
   pickerYear:Math.min(Math.max(parseDateKey(todayKey()).y,MIN_YEAR),MAX_YEAR), mode:'all_day', dateMode:'single', refreshing:false, employeeAction:null, pinStatus:{}
 };
@@ -1341,6 +1412,105 @@ function shiftForEmployee(emp, y,m,d){
   return SHIFT_PATTERNS[group][((diff%8)+8)%8];
 }
 function isWorkingShift(shift){ return ['주','주2','야','일근'].includes(shift); }
+function annualLeaveSettingKey(employeeId=state.me?.employee_id){ return `${LOCAL_ANNUAL_LEAVE_KEY_PREFIX}${Number(employeeId)||0}`; }
+function localAnnualLeaveSettings(employeeId=state.me?.employee_id){
+  try{ const data=JSON.parse(localStorage.getItem(annualLeaveSettingKey(employeeId))||'{}'); return data&&typeof data==='object'&&!Array.isArray(data)?data:{}; }catch(e){ return {}; }
+}
+function saveLocalAnnualLeaveSettings(data,employeeId=state.me?.employee_id){ localStorage.setItem(annualLeaveSettingKey(employeeId),JSON.stringify(data||{})); }
+function annualLeaveAutoStartForYear(year){ return Number(year)===2026?ANNUAL_LEAVE_2026_AUTO_START:`${year}-01-01`; }
+function annualLeavePeriodEnd(year){ return `${year}-12-31`; }
+function annualLeaveCountsRecord(record){
+  const type=normalizeAttendanceType(record?.attendance_type||'');
+  return ANNUAL_LEAVE_AUTO_TYPES.has(type) || (type===ANNUAL_LEAVE_CONDITIONAL_TYPE && record?.annual_leave_deduct===true);
+}
+function timeToMinutes(value){
+  const t=timeShort(value); if(!/^\d{2}:\d{2}$/.test(t))return null;
+  const [h,m]=t.split(':').map(Number); if(h<0||h>23||m<0||m>59)return null; return h*60+m;
+}
+function dateTimeMinuteKey(key,time){
+  const p=parseDateKey(key),mins=timeToMinutes(time); if(!p||mins===null)return null;
+  return Math.floor(Date.UTC(p.y,p.m,p.d)/60000)+mins;
+}
+function annualLeaveWorkSegments(emp,key){
+  if(!emp||!key||!employeeActiveOn(emp,key))return [];
+  const {y,m,d}=parseDateKey(key),shift=shiftForEmployee(emp,y,m,d);
+  const make=(start,end,endKey=key)=>({start:dateTimeMinuteKey(key,start),end:dateTimeMinuteKey(endKey,end)});
+  if(shift==='일근'||shift==='주2') return [make('09:00','12:00'),make('13:00','18:00')];
+  if(shift==='주') return [make('08:00','12:00'),make('13:00','20:00')];
+  if(shift==='야') return [make('20:00','21:00'),make('22:00','08:00',addDaysKey(key,1))];
+  return [];
+}
+function annualLeaveFullDayMinutes(emp,key){ return annualLeaveWorkSegments(emp,key).reduce((sum,s)=>sum+Math.max(0,s.end-s.start),0); }
+function annualLeaveOverlapMinutes(aStart,aEnd,bStart,bEnd){ return Math.max(0,Math.min(aEnd,bEnd)-Math.max(aStart,bStart)); }
+function annualLeaveMinutesForRecord(record,emp,periodStart,periodEnd){
+  if(!record||!emp||!annualLeaveCountsRecord(record))return 0;
+  const start=String(record.start_date||''),end=String(record.end_date||'');
+  if(!start||!end||end<periodStart||start>periodEnd)return 0;
+  if(record.absence_mode!=='time'){
+    let key=start<periodStart?periodStart:start, last=end>periodEnd?periodEnd:end, total=0,guard=0;
+    while(key<=last && guard++<400){ total+=annualLeaveFullDayMinutes(emp,key); key=addDaysKey(key,1); }
+    return total;
+  }
+  const window=attendanceTimeWindowForRecord(record,emp);
+  if(!window)return 0;
+  const absenceStart=window.start,absenceEnd=window.end;
+  let anchor=start;
+  const prev=addDaysKey(start,-1); if(prev>=periodStart)anchor=prev;
+  if(anchor<periodStart)anchor=periodStart;
+  const last=end>periodEnd?periodEnd:end;
+  let total=0,guard=0;
+  while(anchor<=last && guard++<400){
+    for(const seg of annualLeaveWorkSegments(emp,anchor)) total+=annualLeaveOverlapMinutes(absenceStart,absenceEnd,seg.start,seg.end);
+    anchor=addDaysKey(anchor,1);
+  }
+  return total;
+}
+function annualLeaveTotalUsedMinutes(entries,year){
+  const emp=state.employees.find(e=>Number(e.id)===Number(state.me?.employee_id)); if(!emp)return 0;
+  const from=annualLeaveAutoStartForYear(year),to=annualLeavePeriodEnd(year);
+  return (entries||[]).reduce((sum,r)=>sum+annualLeaveMinutesForRecord(r,emp,from,to),0);
+}
+function annualLeaveFormatMinutes(value){
+  let n=Math.round(Number(value)||0); const neg=n<0; n=Math.abs(n);
+  const days=Math.floor(n/ANNUAL_LEAVE_MINUTES_PER_DAY); n%=ANNUAL_LEAVE_MINUTES_PER_DAY;
+  const hours=Math.floor(n/60),minutes=n%60,parts=[];
+  if(days)parts.push(`${days}일`); if(hours)parts.push(`${hours}시간`); if(minutes)parts.push(`${minutes}분`);
+  if(!parts.length)parts.push('0시간'); return `${neg?'-':''}${parts.join(' ')}`;
+}
+function annualLeavePartsFromMinutes(value){
+  let n=Math.max(0,Math.round(Number(value)||0)); const days=Math.floor(n/ANNUAL_LEAVE_MINUTES_PER_DAY); n%=ANNUAL_LEAVE_MINUTES_PER_DAY;
+  return {days,hours:Math.floor(n/60),minutes:n%60};
+}
+function annualLeaveReadParts(dayId,hourId,minuteId){
+  const raw=[dayId,hourId,minuteId].map(id=>String($(id)?.value||'').trim());
+  if(raw.some(v=>v&&!/^\d+$/.test(v)))return null;
+  const days=Number(raw[0]||0),hours=Number(raw[1]||0),minutes=Number(raw[2]||0);
+  if(!Number.isInteger(days)||!Number.isInteger(hours)||!Number.isInteger(minutes)||days<0||hours<0||hours>7||minutes<0||minutes>59)return null;
+  return days*ANNUAL_LEAVE_MINUTES_PER_DAY+hours*60+minutes;
+}
+function annualLeaveSetParts(prefix,value){
+  const p=annualLeavePartsFromMinutes(value); $(prefix+'Days').value=String(p.days); $(prefix+'Hours').value=String(p.hours); $(prefix+'Minutes').value=String(p.minutes);
+}
+function attendanceBreakTextForForm(){
+  if(state.mode!=='time')return '';
+  const type=normalizeAttendanceType($('attendanceType')?.value||'');
+  if(!ANNUAL_LEAVE_AUTO_TYPES.has(type)&&type!==ANNUAL_LEAVE_CONDITIONAL_TYPE)return '';
+  if(state.dateMode==='range') return '기간 근태는 각 날짜의 실제 근무형태로 계산합니다. 일근 주간·교대 주간은 12:00~13:00, 교대 야간은 21:00~22:00 휴게시간을 연차 차감에서 제외합니다.';
+  const key=$('startDate')?.value||state.selectedDate||''; if(!key)return '';
+  const employeeId=state.me?.is_admin?Number($('targetEmployee')?.value):Number(state.me?.employee_id);
+  const emp=state.employees.find(e=>Number(e.id)===employeeId); if(!emp||!employeeActiveOn(emp,key))return '';
+  const {y,m,d}=parseDateKey(key),shift=shiftForEmployee(emp,y,m,d);
+  if(shift==='야')return '교대 야간 휴게시간 21:00~22:00은 연차 차감시간에서 제외됩니다.';
+  if(shift==='주'||shift==='주2'||shift==='일근')return '일근 주간·교대 주간 휴게시간 12:00~13:00은 연차 차감시간에서 제외됩니다.';
+  return '이 날짜는 근무일이 아니므로 연차 차감시간이 발생하지 않을 수 있습니다.';
+}
+function updateAttendanceLeaveUI(){
+  const type=normalizeAttendanceType($('attendanceType')?.value||'');
+  const sick=type===ANNUAL_LEAVE_CONDITIONAL_TYPE;
+  $('sickLeaveDeductField')?.classList.toggle('hidden',!sick);
+  if(!sick && $('annualLeaveDeduct')) $('annualLeaveDeduct').checked=false;
+  const help=attendanceBreakTextForForm(); if($('attendanceBreakHelp')){ $('attendanceBreakHelp').textContent=help; $('attendanceBreakHelp').classList.toggle('hidden',!help); }
+}
 function isHolidayWorkEmployee(emp){ return !!emp && (emp.category==='일근(사무)' || emp.category==='일근(현장)'); }
 function holidayWorkDefaultTimesForEmployee(emp){
   if(emp?.category==='일근(사무)') return {start:'06:00',end:'15:00'};
@@ -1418,35 +1588,67 @@ function normalizeHolidayWorkRows(rows){
   return (rows||[]).map(r=>({...r,id:Number(r.id),employee_id:Number(r.employee_id),work_date:String(r.work_date||'').slice(0,10),start_time:timeShort(r.start_time),end_time:timeShort(r.end_time),net_minutes:Number(r.net_minutes)||0})).filter(r=>r.employee_id&&r.work_date);
 }
 function recordsForDate(key){ return state.attendance.filter(r=>r.start_date<=key && r.end_date>=key); }
-const ATTENDANCE_DAY_START = '09:00';
-const ATTENDANCE_DAY_END = '18:00';
+function attendanceTimeWindowForRecord(record,emp){
+  if(!record||record.absence_mode!=='time')return null;
+  const start=String(record.start_date||''),end=String(record.end_date||'');
+  const st=timeShort(record.start_time),et=timeShort(record.end_time);
+  if(!start||!end||!st||!et)return null;
+  let absenceStart,absenceEnd;
+  if(start===end){
+    const p=parseDateKey(start),shift=p&&emp?shiftForEmployee(emp,p.y,p.m,p.d):'';
+    const sm=timeToMinutes(st),em=timeToMinutes(et);
+    if(shift==='야'&&sm!==null&&em!==null){
+      const next=addDaysKey(start,1);
+      const startIsNext=sm<8*60;
+      const startKey=startIsNext?next:start;
+      const endKey=startIsNext?next:((em<sm||em<=8*60)?next:start);
+      absenceStart=dateTimeMinuteKey(startKey,st);
+      absenceEnd=dateTimeMinuteKey(endKey,et);
+    }else{
+      absenceStart=dateTimeMinuteKey(start,st);
+      absenceEnd=dateTimeMinuteKey(end,et);
+    }
+  }else{
+    absenceStart=dateTimeMinuteKey(start,st);
+    absenceEnd=dateTimeMinuteKey(end,et);
+  }
+  if(absenceStart===null||absenceEnd===null||absenceEnd<=absenceStart)return null;
+  return {start:absenceStart,end:absenceEnd};
+}
+function attendanceMinuteKeyTime(value){
+  const mins=((Math.round(Number(value)||0)%1440)+1440)%1440;
+  return `${String(Math.floor(mins/60)).padStart(2,'0')}:${String(mins%60).padStart(2,'0')}`;
+}
 function effectiveAbsenceForDate(record,key){
   if(!record || key<record.start_date || key>record.end_date) return null;
-  if(record.absence_mode==='all_day') return {kind:'full',timeText:''};
+  const emp=state.employees.find(e=>Number(e.id)===Number(record.employee_id));
+  if(record.absence_mode==='all_day'){
+    // 휴무·비번 등 애초에 소정근로시간이 없는 날은 종일부재로 세지 않는다.
+    if(emp&&!annualLeaveWorkSegments(emp,key).length)return null;
+    return {kind:'full',timeText:''};
+  }
   if(record.absence_mode!=='time') return null;
 
-  const st=timeShort(record.start_time), et=timeShort(record.end_time);
-  if(!st || !et) return null;
+  const st=timeShort(record.start_time),et=timeShort(record.end_time);
+  if(!st||!et)return null;
+  if(!emp)return {kind:'partial',timeText:`${st}~${et}`};
 
-  // 하루 시간지정: 09:00~18:00 전체를 포함하면 종일부재, 아니면 입력시간 그대로 부분부재.
-  if(record.start_date===record.end_date){
-    if(st<=ATTENDANCE_DAY_START && et>=ATTENDANCE_DAY_END) return {kind:'full',timeText:''};
-    return {kind:'partial',timeText:`${st}~${et}`};
-  }
-
-  // 기간 시간지정은 하나의 연속된 부재기간으로 해석한다.
-  // 첫날: 입력 시작시간 ~ 18:00
-  // 중간 날짜: 09:00 ~ 18:00 전체(종일부재)
-  // 마지막 날: 09:00 ~ 입력 종료시간
-  if(key===record.start_date){
-    if(st<=ATTENDANCE_DAY_START) return {kind:'full',timeText:''};
-    return {kind:'partial',timeText:`${st}~${ATTENDANCE_DAY_END}`};
-  }
-  if(key===record.end_date){
-    if(et>=ATTENDANCE_DAY_END) return {kind:'full',timeText:''};
-    return {kind:'partial',timeText:`${ATTENDANCE_DAY_START}~${et}`};
-  }
-  return {kind:'full',timeText:''};
+  // 종일/부분부재는 시계상의 09:00~18:00이 아니라 해당 직원·날짜의 실제 소정근로시간으로 판정한다.
+  // 실제 근로시간을 모두 부재한 경우에만 종일부재이며, 1분이라도 근무하면 부분부재다.
+  const segments=annualLeaveWorkSegments(emp,key);
+  if(!segments.length)return null;
+  const window=attendanceTimeWindowForRecord(record,emp);
+  if(!window)return null;
+  const totalWork=segments.reduce((sum,seg)=>sum+Math.max(0,seg.end-seg.start),0);
+  const overlaps=segments.map(seg=>({
+    start:Math.max(window.start,seg.start),
+    end:Math.min(window.end,seg.end)
+  })).filter(seg=>seg.end>seg.start);
+  const absentWork=overlaps.reduce((sum,seg)=>sum+(seg.end-seg.start),0);
+  if(totalWork>0&&absentWork>=totalWork)return {kind:'full',timeText:''};
+  if(absentWork<=0)return null;
+  const timeText=overlaps.map(seg=>`${attendanceMinuteKeyTime(seg.start)}~${attendanceMinuteKeyTime(seg.end)}`).join(' / ');
+  return {kind:'partial',timeText};
 }
 function fullAbsentIds(key){ return new Set(recordsForDate(key).filter(r=>effectiveAbsenceForDate(r,key)?.kind==='full').map(r=>Number(r.employee_id))); }
 function employeeDisplayRank(emp){
@@ -1553,6 +1755,18 @@ function formatAuditTime(value){
   const d=new Date(value); if(Number.isNaN(d.getTime())) return '';
   return d.toLocaleString('ko-KR',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).replace(/\. /g,'.').replace(/\.$/,'');
 }
+async function listAttendanceWithAnnualLeave(from,to){
+  if(!configured()) return localRecords().filter(r=>r.start_date<=to&&r.end_date>=from);
+  try{
+    const rows=await rpc('list_attendance_with_annual_leave',{p_token:state.sessionToken,p_from:from,p_to:to});
+    state.annualLeaveBackendReady=true; return rows||[];
+  }catch(e){
+    // 연차 기능 SQL 적용 전이나 연차 조회만 일시 실패해도 기존 근태 화면은 살려 둡니다.
+    const rows=await rpc('list_attendance',{p_token:state.sessionToken,p_from:from,p_to:to});
+    state.annualLeaveBackendReady=false; return (rows||[]).map(r=>({...r,annual_leave_deduct:null}));
+  }
+}
+
 async function fetchOverlapRecords(employeeId,start,end,excludeId=null){
   let rows;
   if(!configured()) rows=localRecords();
@@ -1743,7 +1957,7 @@ async function restoreBackupAttendance(){
 
 const CAPACITY_TABLE_LABELS = {
   employees:'직원/발령', attendance_entries:'근태', audit_logs:'변경이력', app_sessions:'로그인 세션',
-  realtime_signals:'실시간 동기화', personal_memos:'개인 메모', memos:'개인 메모', holiday_work_entries:'휴근', company_events:'사내일정', holiday_work_eligibility:'휴근 가능 설정'
+  realtime_signals:'실시간 동기화', personal_memos:'개인 메모', memos:'개인 메모', holiday_work_entries:'휴근', company_events:'사내일정', holiday_work_eligibility:'휴근 가능 설정', annual_leave_settings:'연차 설정'
 };
 function formatBytes(bytes){
   const n=Math.max(0,Number(bytes)||0);
@@ -1786,9 +2000,10 @@ async function loadCapacity(){
       const auditBytes=new Blob([localStorage.getItem(LOCAL_AUDIT_KEY)||'']).size;
       const memoBytes=new Blob([localStorage.getItem(localMemoKey(state.me?.employee_id))||'']).size;
       const companyEventBytes=new Blob([localStorage.getItem(LOCAL_COMPANY_EVENT_KEY)||'']).size;
-      const used=recordsBytes+employeeBytes+auditBytes+memoBytes+companyEventBytes;
+      const annualLeaveBytes=new Blob([localStorage.getItem(annualLeaveSettingKey(state.me?.employee_id))||'']).size;
+      const used=recordsBytes+employeeBytes+auditBytes+memoBytes+companyEventBytes+annualLeaveBytes;
       renderCapacityMeter('db',used,500*1024*1024); renderCapacityMeter('storage',0,1024*1024*1024);
-      renderCapacityBreakdown([{table_name:'attendance_entries',bytes:recordsBytes},{table_name:'employees',bytes:employeeBytes},{table_name:'audit_logs',bytes:auditBytes},{table_name:'personal_memos',bytes:memoBytes},{table_name:'company_events',bytes:companyEventBytes}]);
+      renderCapacityBreakdown([{table_name:'attendance_entries',bytes:recordsBytes},{table_name:'employees',bytes:employeeBytes},{table_name:'audit_logs',bytes:auditBytes},{table_name:'personal_memos',bytes:memoBytes},{table_name:'company_events',bytes:companyEventBytes},{table_name:'annual_leave_settings',bytes:annualLeaveBytes}]);
     }else{
       const raw=await rpc('get_capacity_usage',{p_token:state.sessionToken});
       const data=Array.isArray(raw)?raw[0]:raw;
@@ -1808,6 +2023,12 @@ async function loadCapacity(){
           const eligibilityBytes=Number(await rpc('get_holiday_work_eligibility_capacity',{p_token:state.sessionToken},{timeoutMs:3000}));
           if(Number.isFinite(eligibilityBytes)&&eligibilityBytes>=0) tables.push({table_name:'holiday_work_eligibility',bytes:eligibilityBytes});
         }catch(e){ /* 휴근 가능 설정 용량 보완 실패가 기존 용량 화면을 막지 않도록 무시 */ }
+      }
+      if(!tables.some(r=>r?.table_name==='annual_leave_settings')){
+        try{
+          const annualBytes=Number(await rpc('get_annual_leave_capacity',{p_token:state.sessionToken},{timeoutMs:3000}));
+          if(Number.isFinite(annualBytes)&&annualBytes>=0) tables.push({table_name:'annual_leave_settings',bytes:annualBytes});
+        }catch(e){ /* 연차 설정 용량 보완 실패가 기존 용량 화면을 막지 않도록 무시 */ }
       }
       renderCapacityBreakdown(tables);
     }
@@ -2048,6 +2269,7 @@ function applyAccountModeUI(){
   if($('detailBackdrop')?.classList.contains('open') && state.selectedDate) renderDetail(state.selectedDate);
   if($('attendanceListBackdrop')?.classList.contains('open')) renderAttendanceList();
   if($('memoListBackdrop')?.classList.contains('open')) renderMemoList();
+  if(state.view==='leave') renderAnnualLeave();
 }
 async function enterApp(me){
   state.me={...me,employee_id:Number(me.employee_id),is_admin:!!me.is_admin,is_read_only:false};
@@ -2129,9 +2351,9 @@ async function loadMonthData(silent=false){
     if(!configured()){
       data=localRecords().filter(r=>r.start_date<=to && r.end_date>=from);
     }else{
-      data=await rpc('list_attendance',{p_token:state.sessionToken,p_from:from,p_to:to});
+      data=await listAttendanceWithAnnualLeave(from,to);
     }
-    state.attendance=(data||[]).map(r=>({...r,id:Number(r.id),employee_id:Number(r.employee_id),attendance_type:normalizeAttendanceType(r.attendance_type)}));
+    state.attendance=(data||[]).map(r=>({...r,id:Number(r.id),employee_id:Number(r.employee_id),attendance_type:normalizeAttendanceType(r.attendance_type),annual_leave_deduct:r.annual_leave_deduct===true?true:(r.annual_leave_deduct===false?false:null)}));
     await loadHolidayWorks();
     await loadMonthMemos(from,to);
     $('statusLine').textContent=configured()?'':'테스트 모드 · 이 기기에만 저장';
@@ -2151,6 +2373,7 @@ async function refresh(){
     if($('attendanceListBackdrop')?.classList.contains('open')) await loadAttendanceList(false);
     if($('memoListBackdrop')?.classList.contains('open')) await loadMemoList(false);
     if($('holidayWorkListBackdrop')?.classList.contains('open')) await loadHolidayWorkList(false);
+    if(state.view==='leave') await loadAnnualLeaveData(false);
     void loadCompanyEvents(true);
   }catch(e){
     const msg=String(e?.message||'');
@@ -2163,16 +2386,116 @@ async function logout(callServer=true){
   const guideShownKey=usageGuideSessionKey(); if(guideShownKey) sessionStorage.removeItem(guideShownKey);
   await stopRealtime();
   if(callServer && state.sessionToken && configured()){ try{ await rpc('logout_employee',{p_token:state.sessionToken}); }catch{} }
-  clearStoredLoginSession(); state.sessionToken=''; state.me=null; state.employees=[]; state.attendance=[]; state.holidayWorks=[]; state.holidayWorkBackendReady=null; state.memos=[]; state.memoBackendReady=null; state.companyEvents=[]; state.companyEventBackendReady=null;
+  clearStoredLoginSession(); state.sessionToken=''; state.me=null; state.employees=[]; state.attendance=[]; state.holidayWorks=[]; state.holidayWorkBackendReady=null; state.memos=[]; state.memoBackendReady=null; state.companyEvents=[]; state.companyEventBackendReady=null; state.annualLeaveSettings=null; state.annualLeaveEntries=[]; state.annualLeaveBackendReady=null; state.annualLeaveYear=null; state.annualLeaveFormDirty=false; state.view='mine';
   closeAll(); $('appView').classList.add('hidden'); $('reconnectView').classList.add('hidden'); $('loginView').classList.remove('hidden'); $('adminTools').classList.add('hidden'); setAdminToolsExpanded(false); $('loginPin').value=''; $('loginAdminPin').value=''; if($('pcRememberLogin')) $('pcRememberLogin').checked=false;
 }
 
+function populateAnnualLeaveYears(){
+  const select=$('annualLeaveYear'); if(!select)return;
+  const selected=state.annualLeaveYear||Math.min(Math.max(parseDateKey(todayKey()).y,MIN_YEAR),MAX_YEAR);
+  select.innerHTML=Array.from({length:MAX_YEAR-MIN_YEAR+1},(_,i)=>MIN_YEAR+i).map(y=>`<option value="${y}">${y}년</option>`).join('');
+  state.annualLeaveYear=Math.min(Math.max(Number(selected)||MIN_YEAR,MIN_YEAR),MAX_YEAR); select.value=String(state.annualLeaveYear);
+}
+function annualLeaveNormalizeSetting(row,year){
+  if(!row)return null;
+  return {leave_year:Number(row.leave_year||year),baseline_remaining_minutes:row.baseline_remaining_minutes==null?null:Number(row.baseline_remaining_minutes),granted_minutes:row.granted_minutes==null?null:Number(row.granted_minutes),carryover_minutes:row.carryover_minutes==null?null:Number(row.carryover_minutes),updated_at:row.updated_at||null};
+}
+async function loadAnnualLeaveData(showSpinner=true){
+  if(!state.me)return;
+  const year=Number(state.annualLeaveYear||Math.min(Math.max(parseDateKey(todayKey()).y,MIN_YEAR),MAX_YEAR));
+  state.annualLeaveYear=year;
+  if(showSpinner){ $('annualLeaveStatus').textContent='연차 현황 불러오는 중…'; $('annualLeaveBalance').textContent='-'; }
+  try{
+    if(!configured()){
+      const all=localAnnualLeaveSettings(); state.annualLeaveSettings=annualLeaveNormalizeSetting(all[String(year)]||null,year);
+      state.annualLeaveEntries=localRecords().filter(r=>Number(r.employee_id)===Number(state.me.employee_id)&&r.start_date<=annualLeavePeriodEnd(year)&&r.end_date>=annualLeaveAutoStartForYear(year)).map(r=>({...r,attendance_type:normalizeAttendanceType(r.attendance_type),annual_leave_deduct:r.annual_leave_deduct===true}));
+      state.annualLeaveBackendReady=true;
+    }else{
+      const [settingRows,entryRows]=await Promise.all([
+        rpc('get_my_annual_leave_setting',{p_token:state.sessionToken,p_year:year}),
+        rpc('list_my_annual_leave_attendance',{p_token:state.sessionToken,p_from:annualLeaveAutoStartForYear(year),p_to:annualLeavePeriodEnd(year)})
+      ]);
+      const row=Array.isArray(settingRows)?settingRows[0]:settingRows;
+      state.annualLeaveSettings=annualLeaveNormalizeSetting(row,year);
+      state.annualLeaveEntries=(entryRows||[]).map(r=>({...r,id:Number(r.id),employee_id:Number(r.employee_id),attendance_type:normalizeAttendanceType(r.attendance_type),annual_leave_deduct:r.annual_leave_deduct===true}));
+      state.annualLeaveBackendReady=true;
+    }
+    renderAnnualLeave();
+  }catch(e){
+    state.annualLeaveBackendReady=false; state.annualLeaveSettings=null; state.annualLeaveEntries=[];
+    renderAnnualLeave(); $('annualLeaveStatus').textContent=userSafeServiceError(e,'연차 현황을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.');
+  }
+}
+function annualLeaveStartMinutes(setting,year){
+  if(!setting)return null;
+  if(Number(year)===2026)return Number(setting.baseline_remaining_minutes);
+  return Math.max(0,Number(setting.granted_minutes)||0)+Math.max(0,Number(setting.carryover_minutes)||0);
+}
+function renderAnnualLeaveSettingInputs(setting,year){
+  const is2026=Number(year)===2026;
+  $('annualLeaveBaselineBlock').classList.toggle('hidden',!is2026); $('annualLeaveNormalBlocks').classList.toggle('hidden',is2026);
+  $('annualLeaveSettingTitle').textContent=is2026?'2026년 기준 잔여연차 설정':`${year}년 연차 설정`;
+  $('annualLeaveSettingHelp').textContent=is2026
+    ? '2026.09.11까지 실제로 사용 완료한 연차만 제외한 잔여연차를 입력하세요. 9/12 이후 날짜의 예정 연차는 여기서 빼지 않아도 자동으로 반영됩니다.'
+    : `${year}년 부여연차와 전년도에서 실제로 이월된 연차를 입력하세요. ${year}.01.01 이후 날짜의 사용·예정 차감 근태는 등록 시점과 관계없이 자동으로 반영됩니다.`;
+  if(!state.annualLeaveFormDirty){
+    if(is2026){ annualLeaveSetParts('annualBaseline',setting?.baseline_remaining_minutes||0); }
+    else{ annualLeaveSetParts('annualGrant',setting?.granted_minutes||0); annualLeaveSetParts('annualCarry',setting?.carryover_minutes||0); }
+  }
+  const ro=accountReadOnly();
+  ['annualBaselineDays','annualBaselineHours','annualBaselineMinutes','annualGrantDays','annualGrantHours','annualGrantMinutes','annualCarryDays','annualCarryHours','annualCarryMinutes','annualLeaveSaveBtn'].forEach(id=>{if($(id))$(id).disabled=ro||state.annualLeaveBackendReady===false;});
+  $('annualLeaveReadOnly').classList.toggle('hidden',!ro);
+}
+function renderAnnualLeave(){
+  const year=Number(state.annualLeaveYear||MIN_YEAR),setting=state.annualLeaveSettings;
+  renderAnnualLeaveSettingInputs(setting,year);
+  const start=annualLeaveStartMinutes(setting,year),used=annualLeaveTotalUsedMinutes(state.annualLeaveEntries,year),balance=start==null?null:start-used;
+  $('annualLeaveStartLabel').textContent=year===2026?'9/11 기준 잔여연차':'부여 + 이월';
+  $('annualLeaveUsedLabel').textContent=year===2026?'9/12 이후 사용·예정':'1/1 이후 사용·예정';
+  $('annualLeaveStartValue').textContent=start==null?'-':annualLeaveFormatMinutes(start);
+  $('annualLeaveUsedValue').textContent=setting?annualLeaveFormatMinutes(used):'-';
+  $('annualLeaveBalance').textContent=balance==null?'-':annualLeaveFormatMinutes(balance);
+  $('annualLeaveBalance').classList.toggle('negative',balance!=null&&balance<0);
+  $('annualLeaveBalanceNote').textContent=setting
+    ? `${year===2026?'2026.09.12':`${year}.01.01`} 이후 날짜의 사용·예정 근태를 모두 반영했습니다.`
+    : (year===2026?'2026.09.11 기준 잔여연차를 먼저 입력해 주세요.':`${year}년 부여연차와 이월연차를 먼저 입력해 주세요.`);
+  $('annualLeaveSubtitle').textContent=`${state.me?.display_name||''}님의 ${year}년 연차 · 본인만 조회`;
+  if(state.annualLeaveBackendReady===false) $('annualLeaveStatus').textContent='연차 연동 서버 설정을 확인해 주세요. 기존 근태 화면은 계속 사용할 수 있습니다.';
+  else $('annualLeaveStatus').textContent=setting?`자동연동 기준: ${annualLeaveAutoStartForYear(year)}`:'아직 연차 기준값이 저장되지 않았습니다.';
+}
+async function saveAnnualLeaveSetting(){
+  if(!state.me||accountReadOnly())return;
+  const year=Number(state.annualLeaveYear||MIN_YEAR); $('annualLeaveError').textContent='';
+  let baseline=null,grant=null,carry=null;
+  if(year===2026){ baseline=annualLeaveReadParts('annualBaselineDays','annualBaselineHours','annualBaselineMinutes'); if(baseline===null){$('annualLeaveError').textContent='잔여연차는 일·시간·분을 올바르게 입력해 주세요. 시간은 0~7, 분은 0~59입니다.';return;} }
+  else{
+    grant=annualLeaveReadParts('annualGrantDays','annualGrantHours','annualGrantMinutes'); carry=annualLeaveReadParts('annualCarryDays','annualCarryHours','annualCarryMinutes');
+    if(grant===null||carry===null){$('annualLeaveError').textContent='부여·이월연차는 일·시간·분을 올바르게 입력해 주세요. 시간은 0~7, 분은 0~59입니다.';return;}
+  }
+  if(!confirm(year===2026?`2026.09.11 기준 잔여연차를 ${annualLeaveFormatMinutes(baseline)}로 저장할까요?`:`${year}년 부여연차 ${annualLeaveFormatMinutes(grant)}, 이월연차 ${annualLeaveFormatMinutes(carry)}로 저장할까요?`))return;
+  showLoading(true);
+  try{
+    if(!configured()){
+      const all=localAnnualLeaveSettings(); all[String(year)]={leave_year:year,baseline_remaining_minutes:baseline,granted_minutes:grant,carryover_minutes:carry,updated_at:new Date().toISOString()}; saveLocalAnnualLeaveSettings(all); state.annualLeaveSettings=annualLeaveNormalizeSetting(all[String(year)],year);
+    }else{
+      await rpc('save_my_annual_leave_setting',{p_token:state.sessionToken,p_year:year,p_baseline_remaining_minutes:baseline,p_granted_minutes:grant,p_carryover_minutes:carry});
+    }
+    state.annualLeaveFormDirty=false; await loadAnnualLeaveData(false); showToast('✓ 연차 기준값을 저장했습니다.','success');
+  }catch(e){ $('annualLeaveError').textContent=userSafeServiceError(e,'연차 기준값을 저장하지 못했습니다. 잠시 후 다시 시도해 주세요.'); }
+  finally{ showLoading(false); }
+}
 function render(){ renderTabs(); renderCalendar(); renderCompanyEventsBanner(); }
 function renderTabs(){
   document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.view===state.view));
+  const leaveView=state.view==='leave';
+  $('calendarCard').classList.toggle('hidden',leaveView);
+  $('annualLeaveCard').classList.toggle('hidden',!leaveView);
+  $('viewTools').classList.toggle('hidden',leaveView);
+  $('companyEventsBanner').classList.toggle('hidden',leaveView);
   $('legend').classList.add('hidden');
   if($('memoListBtn')) $('memoListBtn').classList.toggle('hidden',state.view!=='mine');
   if($('holidayWorkListBtn')) $('holidayWorkListBtn').classList.toggle('hidden',state.view!=='mine' || !(isHolidayWorkEmployee(state.me)||state.me?.is_admin));
+  if(leaveView){ populateAnnualLeaveYears(); renderAnnualLeave(); }
 }
 function renderCalendar(){
   $('monthTitle').textContent=`${state.year}년 ${state.month+1}월`;
@@ -2681,6 +3004,7 @@ function renderTypeSelection(){
   const selected=$('attendanceType').value || '연가';
   $('attendanceTypeBtn').textContent=selected;
   $('typeGrid').querySelectorAll('[data-type]').forEach(b=>b.classList.toggle('active',b.dataset.type===selected));
+  updateAttendanceLeaveUI();
 }
 function openTypePicker(){ renderTypeSelection(); openBackdrop('typeBackdrop'); }
 function chooseAttendanceType(type){ $('attendanceType').value=type; renderTypeSelection(); closeBackdrop('typeBackdrop'); }
@@ -2692,6 +3016,7 @@ function setDateMode(mode){
   $('startDateLabel').textContent=state.dateMode==='range'?'시작일':'날짜';
   const allDayModeBtn=document.querySelector('.mode-btn[data-mode="all_day"]');
   if(allDayModeBtn) allDayModeBtn.textContent=state.dateMode==='range'?'기간 전체':'하루 전체';
+  updateAttendanceLeaveUI();
 }
 function parseDateKeyParts(value){
   const m=String(value||'').match(/^(\d{4})-(\d{2})-(\d{2})$/);
@@ -2778,6 +3103,7 @@ function setMode(mode){
   state.mode=mode;
   document.querySelectorAll('.mode-btn').forEach(b=>b.classList.toggle('active',b.dataset.mode===mode));
   $('timeFields').classList.toggle('hidden',mode!=='time');
+  updateAttendanceLeaveUI();
 }
 function setNumericTime(value,hourId,minuteId){
   const t=timeShort(value);
@@ -2799,17 +3125,28 @@ function bindNumericTimeInput(id,max){
     if(Number.isFinite(n)&&n>=0&&n<=max) el.value=String(n).padStart(2,'0');
   });
 }
+function bindAnnualLeaveNumberInput(id,max,digits=2){
+  const el=$(id); if(!el)return;
+  el.addEventListener('input',()=>{el.value=el.value.replace(/\D/g,'').slice(0,digits)});
+  el.addEventListener('blur',()=>{if(!el.value)return;const n=Number(el.value);if(Number.isFinite(n)&&n>=0&&n<=max)el.value=String(Math.trunc(n));});
+}
 function openForm(date,record=null){
   if(accountReadOnly()){ showToast('발령 후 조회 전용 계정에서는 근태를 등록하거나 수정할 수 없습니다.','info'); return; }
+  if(record && normalizeAttendanceType(record.attendance_type)===ANNUAL_LEAVE_CONDITIONAL_TYPE && configured() && record.annual_leave_deduct==null){
+    showToast('병가의 연차 차감 상태를 불러오지 못해 지금은 수정할 수 없습니다. 새로고침 후 다시 시도해 주세요.','info');
+    return;
+  }
   $('formError').textContent=''; $('editId').value=record?record.id:''; $('formTitle').textContent=record?'근태 수정':'근태 등록';
   $('targetField').classList.toggle('hidden',!state.me.is_admin);
   if(state.me.is_admin) populateTargetEmployees(record?record.start_date:date,record?record.employee_id:state.me.employee_id);
   $('attendanceType').value=record?record.attendance_type:'연가';
+  $('annualLeaveDeduct').checked=!!record?.annual_leave_deduct;
   renderTypeSelection();
   $('startDate').value=record?record.start_date:date; $('endDate').value=record?record.end_date:'';
   setNumericTime(record?.start_time,'startHour','startMinute'); setNumericTime(record?.end_time,'endHour','endMinute');
   setMode(record?record.absence_mode:'all_day');
   setDateMode(record&&record.end_date!==record.start_date?'range':'single');
+  updateAttendanceLeaveUI();
   openBackdrop('formBackdrop');
 }
 async function saveAttendance(){
@@ -2818,6 +3155,7 @@ async function saveAttendance(){
   const id=$('editId').value?Number($('editId').value):null;
   const employeeId=state.me.is_admin?Number($('targetEmployee').value):state.me.employee_id;
   const type=$('attendanceType').value; const start=$('startDate').value; const end=state.dateMode==='range'?$('endDate').value:start;
+  const annualLeaveDeduct=type===ANNUAL_LEAVE_CONDITIONAL_TYPE && !!$('annualLeaveDeduct').checked;
   const st=state.mode==='time'?readNumericTime('startHour','startMinute'):null, et=state.mode==='time'?readNumericTime('endHour','endMinute'):null;
   if(!start || (state.dateMode==='range'&&!end)){ $('formError').textContent=state.dateMode==='range'?'시작일과 종료일을 입력해 주세요.':'날짜를 입력해 주세요.'; return; }
   if(end<start){ $('formError').textContent='종료일은 시작일보다 빠를 수 없습니다.'; return; }
@@ -2855,18 +3193,23 @@ async function saveAttendance(){
         const idx=rows.findIndex(r=>Number(r.id)===id);
         if(idx<0) throw new Error('수정할 근태를 찾을 수 없습니다.');
         if(!state.me.is_admin && Number(rows[idx].employee_id)!==state.me.employee_id) throw new Error('수정 권한이 없습니다.');
-        rows[idx]={...rows[idx],employee_id:employeeId,display_name:emp.display_name,attendance_type:type,start_date:start,end_date:end,absence_mode:state.mode,start_time:st,end_time:et};
+        rows[idx]={...rows[idx],employee_id:employeeId,display_name:emp.display_name,attendance_type:type,start_date:start,end_date:end,absence_mode:state.mode,start_time:st,end_time:et,annual_leave_deduct:annualLeaveDeduct};
       }else{
         const nextId=rows.reduce((m,r)=>Math.max(m,Number(r.id)||0),0)+1;
-        rows.push({id:nextId,employee_id:employeeId,display_name:emp.display_name,attendance_type:type,start_date:start,end_date:end,absence_mode:state.mode,start_time:st,end_time:et});
+        rows.push({id:nextId,employee_id:employeeId,display_name:emp.display_name,attendance_type:type,start_date:start,end_date:end,absence_mode:state.mode,start_time:st,end_time:et,annual_leave_deduct:annualLeaveDeduct});
       }
       saveLocalRecords(rows);
       pushLocalAudit(id?'근태 수정':'근태 등록',targetName,attendanceSummary(type,start,end,state.mode,st,et),employeeId);
     }else{
       const emp=state.employees.find(e=>Number(e.id)===employeeId); targetName=emp?.display_name||'';
-      await rpc('save_attendance',{p_token:state.sessionToken,p_id:id,p_employee_id:employeeId,p_attendance_type:type,p_start_date:start,p_end_date:end,p_absence_mode:state.mode,p_start_time:st,p_end_time:et});
+      if(type===ANNUAL_LEAVE_CONDITIONAL_TYPE){
+        await rpc('save_attendance_with_annual_leave',{p_token:state.sessionToken,p_id:id,p_employee_id:employeeId,p_attendance_type:type,p_start_date:start,p_end_date:end,p_absence_mode:state.mode,p_start_time:st,p_end_time:et,p_annual_leave_deduct:annualLeaveDeduct});
+      }else{
+        // 병가 이외 24개 근태는 기존 저장 RPC를 그대로 사용해 기존 기능 경로를 최대한 유지합니다.
+        await rpc('save_attendance',{p_token:state.sessionToken,p_id:id,p_employee_id:employeeId,p_attendance_type:type,p_start_date:start,p_end_date:end,p_absence_mode:state.mode,p_start_time:st,p_end_time:et});
+      }
     }
-    closeBackdrop('formBackdrop'); await loadMonthData(true); renderCalendar(); if(state.selectedDate) renderDetail(state.selectedDate); if($('attendanceListBackdrop')?.classList.contains('open')) await loadAttendanceList(false);
+    state.annualLeaveEntries=[]; closeBackdrop('formBackdrop'); await loadMonthData(true); renderCalendar(); if(state.selectedDate) renderDetail(state.selectedDate); if($('attendanceListBackdrop')?.classList.contains('open')) await loadAttendanceList(false);
     showToast(configured()?'✓ 저장 및 서버 동기화 완료':'✓ 이 기기에 저장되었습니다.','success');
   }catch(e){ $('formError').textContent=userSafeServiceError(e,'근태를 저장하지 못했습니다. 잠시 후 다시 시도해 주세요.'); }
   finally{ showLoading(false); }
@@ -2886,7 +3229,7 @@ async function deleteRecord(id){
     }else{
       await rpc('delete_attendance',{p_token:state.sessionToken,p_id:id});
     }
-    await loadMonthData(true); renderCalendar(); if(state.selectedDate) renderDetail(state.selectedDate); if($('attendanceListBackdrop')?.classList.contains('open')) await loadAttendanceList(false);
+    state.annualLeaveEntries=[]; await loadMonthData(true); renderCalendar(); if(state.selectedDate) renderDetail(state.selectedDate); if($('attendanceListBackdrop')?.classList.contains('open')) await loadAttendanceList(false);
     showToast(configured()?'✓ 삭제 및 서버 동기화 완료':'✓ 이 기기에서 삭제되었습니다.','success');
   }
   catch(e){ showToast(userSafeServiceError(e,'근태를 삭제하지 못했습니다. 잠시 후 다시 시도해 주세요.'),'error'); }
@@ -2933,8 +3276,8 @@ async function loadAttendanceList(showSpinner=true){
   try{
     let rows;
     if(!configured()) rows=localRecords();
-    else rows=await rpc('list_attendance',{p_token:state.sessionToken,p_from:`${MIN_YEAR}-01-01`,p_to:`${MAX_YEAR}-12-31`});
-    attendanceListRows=(rows||[]).map(r=>({...r,id:Number(r.id),employee_id:Number(r.employee_id),attendance_type:normalizeAttendanceType(r.attendance_type)}));
+    else rows=await listAttendanceWithAnnualLeave(`${MIN_YEAR}-01-01`,`${MAX_YEAR}-12-31`);
+    attendanceListRows=(rows||[]).map(r=>({...r,id:Number(r.id),employee_id:Number(r.employee_id),attendance_type:normalizeAttendanceType(r.attendance_type),annual_leave_deduct:r.annual_leave_deduct===true?true:(r.annual_leave_deduct===false?false:null)}));
     renderAttendanceList();
   }catch(e){
     $('attendanceListCount').textContent='';
@@ -3094,7 +3437,7 @@ function openEmployeeAction(mode,id=null){
   $('employeeNewName').value=''; $('employeeCategory').value='일근(사무)'; $('employeePin').value=isAdd?'0000':''; $('employeeAdminPin').value='';
   $('employeeEffectiveDate').value=todayKey();
   $('employeeActionNote').classList.toggle('hidden',isAdd);
-  if(isReplace) $('employeeActionNote').innerHTML='<b>기존 직원은 적용일부터 조회 전용으로 전환됩니다.</b><br>본인의 과거 근태·휴근·개인 메모는 계속 확인할 수 있지만 새 근태/휴근/메모 등록·수정·삭제는 할 수 없습니다. 새 직원은 자리·근무조·정렬순서만 이어받고 별도 계정(ID)과 초기비밀번호 0000으로 시작합니다. 같은 성명의 과거 직원이 있으면 로그인 이름은 자동으로 이름2, 이름3처럼 구분되며 달력에는 실제 성명만 표시됩니다. 적용일 이후로 미리 입력된 기존 직원 근태·휴근은 자동 정리됩니다.';
+  if(isReplace) $('employeeActionNote').innerHTML='<b>기존 직원은 적용일부터 조회 전용으로 전환됩니다.</b><br>본인의 과거 근태·휴근·개인 메모와 연차 현황은 계속 확인할 수 있지만 새 근태/휴근/메모 등록·수정·삭제 및 연차 기준값 수정은 할 수 없습니다. 새 직원은 자리·근무조·정렬순서만 이어받고 별도 계정(ID)과 초기비밀번호 0000으로 시작합니다. 같은 성명의 과거 직원이 있으면 로그인 이름은 자동으로 이름2, 이름3처럼 구분되며 달력에는 실제 성명만 표시됩니다. 적용일 이후로 미리 입력된 기존 직원 근태·휴근은 자동 정리됩니다.';
   if(isExclude) $('employeeActionNote').innerHTML='<b>적용일부터 근무명단에서 제외되고 로그인도 차단됩니다.</b><br>과거 달력과 기존 근태·개인 메모 데이터는 삭제하지 않지만, 본인은 더 이상 계정에 접속할 수 없습니다.';
   if(isPassword) $('employeeActionNote').innerHTML='<b>근태 기록과 근무조에는 영향을 주지 않습니다.</b><br>변경 즉시 기존 비밀번호로는 로그인할 수 없습니다.';
   $('saveEmployeeActionBtn').textContent=isExclude?'직원 제외':isPassword?'비밀번호 변경':'저장';
@@ -3351,12 +3694,18 @@ function wire(){
   $('selfPinConfirm').addEventListener('keydown',e=>{if(e.key==='Enter')changeOwnPin()});
   $('textSizeOpenBtn').addEventListener('click',openTextSizePicker);
   document.querySelectorAll('.text-size-level').forEach(btn=>btn.addEventListener('click',()=>applyTextSizeLevel(btn.dataset.level)));
+  $('annualLeaveYear').addEventListener('change',async()=>{state.annualLeaveFormDirty=false;state.annualLeaveYear=Number($('annualLeaveYear').value);await loadAnnualLeaveData(true);});
+  $('annualLeaveSaveBtn').addEventListener('click',saveAnnualLeaveSetting);
+  ['annualBaselineDays','annualGrantDays','annualCarryDays'].forEach(id=>bindAnnualLeaveNumberInput(id,999,3));
+  ['annualBaselineHours','annualGrantHours','annualCarryHours'].forEach(id=>bindAnnualLeaveNumberInput(id,7,1));
+  ['annualBaselineMinutes','annualGrantMinutes','annualCarryMinutes'].forEach(id=>bindAnnualLeaveNumberInput(id,59,2));
+  ['annualBaselineDays','annualBaselineHours','annualBaselineMinutes','annualGrantDays','annualGrantHours','annualGrantMinutes','annualCarryDays','annualCarryHours','annualCarryMinutes'].forEach(id=>$(id).addEventListener('input',()=>{state.annualLeaveFormDirty=true;$('annualLeaveError').textContent='';}));
   $('attendanceTypeBtn').addEventListener('click',openTypePicker);
   $('typeGrid').addEventListener('click',e=>{const b=e.target.closest('[data-type]');if(b)chooseAttendanceType(b.dataset.type)});
   $('reconnectNowBtn').addEventListener('click',()=>{clearSessionRestoreRetry(false);restoreSession(true)});
   $('loginBtn').addEventListener('click',login); $('loginPin').addEventListener('keydown',e=>{if(e.key==='Enter'){if($('loginName').value.trim()===ADMIN_NAME)$('loginAdminPin').focus();else login()}}); $('loginAdminPin').addEventListener('keydown',e=>{if(e.key==='Enter')login()}); $('loginName').addEventListener('input',toggleAdminPinField); $('loginName').addEventListener('keydown',e=>{if(e.key==='Enter')$('loginPin').focus()});
   $('logoutBtn').addEventListener('click',()=>logout(true)); $('refreshBtn').addEventListener('click',refresh); $('employeeManageBtn').addEventListener('click',openEmployeeManager); $('auditBtn').addEventListener('click',openAudit); $('refreshAuditBtn').addEventListener('click',()=>loadAuditPage(true)); $('auditMoreBtn').addEventListener('click',()=>loadAuditPage(false)); $('capacityBtn').addEventListener('click',openCapacity); $('refreshCapacityBtn').addEventListener('click',loadCapacity); $('backupBtn').addEventListener('click',manualBackup); $('backupSuccessOkBtn').addEventListener('click',()=>closeBackdrop('backupSuccessBackdrop')); $('restoreBackupBtn').addEventListener('click',openRestoreBackup); $('restoreFile').addEventListener('change',e=>prepareRestoreFile(e.target.files?.[0])); $('confirmRestoreBtn').addEventListener('click',restoreBackupAttendance); $('restoreSuccessOkBtn').addEventListener('click',()=>closeBackdrop('restoreSuccessBackdrop')); $('addEmployeeBtn').addEventListener('click',()=>openEmployeeAction('add')); $('resetCurrentPinsBtn').addEventListener('click',openResetCurrentPins); $('confirmResetPinsBtn').addEventListener('click',resetCurrentPins); $('resetPinsSuccessOkBtn').addEventListener('click',()=>closeBackdrop('resetPinsSuccessBackdrop')); $('saveEmployeeActionBtn').addEventListener('click',saveEmployeeAction); $('employeeSuccessOkBtn').addEventListener('click',()=>closeBackdrop('employeeSuccessBackdrop')); $('resetAllBtn').addEventListener('click',openResetAll); $('confirmResetBtn').addEventListener('click',resetAllAttendance); $('resetSuccessOkBtn').addEventListener('click',()=>closeBackdrop('resetSuccessBackdrop'));
-  document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{state.view=b.dataset.view;renderTabs();renderCalendar()}));
+  document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',async()=>{state.view=b.dataset.view;renderTabs();if(state.view==='leave')await loadAnnualLeaveData(true);else renderCalendar();}));
   $('prevMonth').addEventListener('click',()=>moveMonth(-1)); $('todayBtn').addEventListener('click',goToday); $('nextMonth').addEventListener('click',()=>moveMonth(1)); $('monthTitle').addEventListener('click',openMonthPicker);
   $('addAttendanceBtn').addEventListener('click',()=>{if(state.view==='mine')openForm(state.selectedDate)}); $('saveAttendanceBtn').addEventListener('click',saveAttendance);
   document.querySelectorAll('.mode-btn').forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.mode)));
@@ -3373,7 +3722,8 @@ function wire(){
   bindAttendanceListActions();
   $('employeeManageBackdrop').addEventListener('click',e=>{ const p=e.target.closest('[data-emp-pin]'); const r=e.target.closest('[data-emp-replace]'); const x=e.target.closest('[data-emp-exclude]'); if(p) openEmployeeAction('password',p.dataset.empPin); else if(r) openEmployeeAction('replace',r.dataset.empReplace); else if(x) openEmployeeAction('exclude',x.dataset.empExclude); });
   $('currentEmployeeList').addEventListener('change',e=>{const input=e.target.closest('[data-holiday-work-enabled]');if(input)void changeHolidayWorkEligibility(input);});
-  $('startDate').addEventListener('change',()=>{ if(state.me?.is_admin) populateTargetEmployees($('startDate').value,$('targetEmployee').value); });
+  $('startDate').addEventListener('change',()=>{ if(state.me?.is_admin) populateTargetEmployees($('startDate').value,$('targetEmployee').value); updateAttendanceLeaveUI(); });
+  $('targetEmployee').addEventListener('change',updateAttendanceLeaveUI);
   document.addEventListener('visibilitychange',()=>{if(!document.hidden){if(state.me){refresh(); if(!realtimeChannel) startRealtime();}else if(state.sessionToken){clearSessionRestoreRetry(false); restoreSession(true);}}});
   window.addEventListener('online',()=>{if(state.me){setRealtimeStatus('connecting');scheduleRealtimeReconnect(150)}else if(state.sessionToken){clearSessionRestoreRetry(false);restoreSession(true)}});
   window.addEventListener('offline',()=>{if(state.me)setRealtimeStatus('offline')});

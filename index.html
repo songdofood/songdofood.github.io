@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#f4f6f8">
+<meta id="themeColorMeta" name="theme-color" content="#f4f6f8">
+<script>try{if(localStorage.getItem('staffAttendance_theme_v1')==='dark')document.documentElement.dataset.theme='dark';}catch(e){}</script>
 <meta name="robots" content="noindex,nofollow,noarchive">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png">
@@ -102,7 +103,9 @@
   .warning-box{margin-bottom:12px;padding:12px;border-radius:13px;background:#fff1f2;color:#9f1239;font-size:calc(13px * var(--text-scale,1));line-height:1.55}
   .success-box{margin-bottom:12px;padding:16px 12px;border-radius:13px;background:#ecfdf5;color:#065f46;font-size:calc(15px * var(--text-scale,1));line-height:1.55;text-align:center;font-weight:800}
   .topbar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
-  .userbox{min-width:0}
+  .view-menu-btn{flex:0 0 auto;width:44px;height:44px;padding:0;border:1px solid #e5e7eb;border-radius:13px;background:#eef2f7;color:#4b5563;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 2px 7px rgba(0,0,0,.04)}
+  .view-menu-icon{width:21px;display:flex;flex-direction:column;gap:4px}.view-menu-icon i{display:block;width:100%;height:3px;border-radius:999px;background:currentColor}
+  .userbox{min-width:0;flex:1}
   .title{font-size:calc(23px * var(--text-scale,1));font-weight:900;letter-spacing:-.7px;line-height:1.15}
   .who{margin-top:4px;font-size:calc(13px * var(--text-scale,1));color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .top-actions{display:flex;gap:7px;flex:0 0 auto}
@@ -255,8 +258,6 @@
   .company-events-banner:active{background:#eff6ff}.company-events-banner-icon{font-size:calc(18px * var(--text-scale,1));line-height:1}.company-events-banner-main{min-width:0}.company-events-banner-title{display:block;font-size:calc(12px * var(--text-scale,1));font-weight:950;color:#1d4ed8;line-height:1.25}.company-events-banner-preview{display:block;margin-top:3px;font-size:calc(11px * var(--text-scale,1));font-weight:800;color:#475569;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.company-events-banner-count{flex:0 0 auto;padding:4px 7px;border-radius:999px;background:#dbeafe;color:#1d4ed8;font-size:calc(9px * var(--text-scale,1));font-weight:950;white-space:nowrap}
   .company-event-detail{padding:11px;border-radius:15px;background:#f8fbff;border:1px solid #bfdbfe;margin-bottom:10px}.company-event-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:7px}.company-event-title{font-size:calc(13px * var(--text-scale,1));font-weight:950;color:#1d4ed8}.company-event-badge{font-size:calc(9px * var(--text-scale,1));font-weight:900;color:#1d4ed8;background:#dbeafe;border-radius:999px;padding:3px 7px;white-space:nowrap}.company-event-period{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:end;gap:7px;margin:0 0 7px}.company-event-date-field{display:flex;flex-direction:column;gap:4px;min-width:0}.company-event-date-field span{font-size:calc(9px * var(--text-scale,1));font-weight:900;color:#64748b}.company-event-date-input{width:100%;min-width:0;height:39px;border:1px solid #bfdbfe;border-radius:10px;background:#fff;color:#374151;padding:0 8px;font:inherit;font-size:calc(12px * var(--text-scale,1));font-weight:800;outline:none}.company-event-date-input:focus{border-color:#60a5fa;box-shadow:0 0 0 3px rgba(96,165,250,.12)}.company-event-date-input[readonly]{background:#f8fafc;color:#64748b}.company-event-period-wave{padding-bottom:10px;font-weight:950;color:#94a3b8}.company-event-period-help{margin:-1px 1px 7px;font-size:calc(9px * var(--text-scale,1));font-weight:750;color:#64748b;line-height:1.4}.company-event-textarea{width:100%;min-height:76px;resize:vertical;border:1px solid #bfdbfe;border-radius:11px;background:#fff;color:#111827;padding:10px 11px;font:inherit;font-size:calc(14px * var(--text-scale,1));line-height:1.45;outline:none}.company-event-textarea:focus{border-color:#60a5fa;box-shadow:0 0 0 3px rgba(96,165,250,.12)}.company-event-textarea[readonly]{background:#fff;color:#374151}.company-event-meta{display:flex;justify-content:space-between;gap:8px;margin-top:5px;min-height:16px;font-size:calc(10px * var(--text-scale,1));color:#9ca3af}#companyEventDetailError{color:#dc2626;font-weight:750}.company-event-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px}.company-event-actions.readonly{display:none}.company-event-delete,.company-event-close,.company-event-save{padding:11px 8px;border-radius:11px;font-weight:900;font-size:calc(13px * var(--text-scale,1))}.company-event-delete{background:#fff1f2;color:#be123c}.company-event-delete:disabled,.company-event-save:disabled{opacity:.4}.company-event-close{background:#eef2f7;color:#4b5563}.company-event-save{background:#2563eb;color:#fff}
   .company-events-help{padding:9px 10px;border-radius:12px;background:#eff6ff;color:#1e40af;font-size:calc(11px * var(--text-scale,1));font-weight:750;line-height:1.5;margin-bottom:9px}.company-events-count{font-size:calc(11px * var(--text-scale,1));font-weight:800;color:#6b7280;margin:4px 2px 8px}.company-events-list{display:flex;flex-direction:column;gap:7px;max-height:56dvh;overflow:auto;padding-right:1px}.company-event-list-row{padding:10px 11px;border:1px solid #e5e7eb;border-radius:12px;background:#fff}.company-event-list-date{font-size:calc(12px * var(--text-scale,1));font-weight:950;color:#1d4ed8;margin-bottom:4px}.company-event-list-date.today{color:#dc2626}.company-event-list-text{font-size:calc(12px * var(--text-scale,1));line-height:1.5;color:#374151;white-space:pre-wrap;overflow-wrap:anywhere}.company-events-empty{padding:22px 8px;text-align:center;color:#9ca3af;font-size:calc(12px * var(--text-scale,1))}.company-events-status{min-height:15px;margin:6px 2px 0;color:#9ca3af;font-size:calc(10px * var(--text-scale,1));font-weight:750}
-  .text-size-open-btn{min-height:36px;padding:0 12px;border-radius:11px;background:#fff;color:#4b5563;border:1px solid #e5e7eb;font-size:calc(12px * var(--text-scale,1));font-weight:900;box-shadow:0 2px 7px rgba(0,0,0,.04)}
-  .text-size-open-btn .level-label{margin-left:5px;color:#6d28d9}
   .usage-guide-open-btn{min-height:36px;padding:0 12px;border-radius:11px;background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;font-size:calc(12px * var(--text-scale,1));font-weight:900;box-shadow:0 2px 7px rgba(0,0,0,.04)}
   .usage-guide-intro{font-size:calc(13px * var(--text-scale,1));line-height:1.65;color:#374151;margin:2px 0 10px}
   .usage-guide-intro strong{color:#111827}
@@ -268,6 +269,10 @@
   .usage-guide-option{display:flex;align-items:center;gap:8px;margin:12px 2px 10px;color:#4b5563;font-size:calc(12px * var(--text-scale,1));font-weight:800;cursor:pointer}
   .usage-guide-option input{width:19px;height:19px;margin:0;padding:0;accent-color:#2563eb;flex:0 0 auto}
   .usage-guide-confirm{width:100%;border-radius:13px;padding:13px 12px;background:#2563eb;color:#fff;font-weight:900;font-size:calc(15px * var(--text-scale,1))}
+  .view-settings-modal{padding:16px 14px 18px}.view-settings-modal .modal-head{margin-bottom:14px}
+  .view-setting-card{padding:14px 13px;border:1px solid #d1d5db;border-radius:16px;background:#fff;margin-top:11px}.view-setting-card:first-of-type{margin-top:0}
+  .view-setting-title{font-size:calc(15px * var(--text-scale,1));font-weight:950;color:#111827}.view-setting-desc{margin-top:4px;color:#6b7280;font-size:calc(11px * var(--text-scale,1));font-weight:750;line-height:1.45}
+  .theme-mode-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.theme-mode-btn{min-height:50px;border:1px solid #d1d5db;border-radius:13px;background:#f8fafc;color:#4b5563;font-size:calc(13px * var(--text-scale,1));font-weight:950}.theme-mode-btn.active{border-color:#8b5cf6;background:#f5f3ff;color:#6d28d9;box-shadow:inset 0 0 0 1px #8b5cf6}
   .text-size-levels{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px;margin-top:6px}
   .text-size-level{min-width:0;min-height:44px;padding:0;border:1px solid #e5e7eb;border-radius:9px;background:#f9fafb;color:#4b5563;font-size:calc(13px * var(--text-scale,1));font-weight:900}
   .text-size-level.active{border-color:#8b5cf6;background:#f5f3ff;color:#6d28d9;box-shadow:inset 0 0 0 1px #8b5cf6}
@@ -281,10 +286,57 @@
   .annual-leave-detail{margin-bottom:11px;border:1px solid #e5e7eb;border-radius:13px;background:#fff;overflow:hidden}.annual-leave-detail-head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px 11px;border-bottom:1px solid #eef0f2;background:#f8fafc}.annual-leave-detail-title{font-size:calc(11px * var(--text-scale,1));font-weight:950;color:#374151}.annual-leave-detail-count{font-size:calc(9.5px * var(--text-scale,1));font-weight:850;color:#6b7280}.annual-leave-detail-list{display:flex;flex-direction:column}.annual-leave-detail-row{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1.5fr) auto;align-items:center;gap:7px;padding:9px 11px;border-top:1px solid #f1f5f9}.annual-leave-detail-row:first-child{border-top:0}.annual-leave-detail-date{font-size:calc(10px * var(--text-scale,1));font-weight:850;color:#475569;line-height:1.35}.annual-leave-detail-kind{font-size:calc(10px * var(--text-scale,1));font-weight:800;color:#334155;line-height:1.35;min-width:0}.annual-leave-detail-minutes{font-size:calc(10.5px * var(--text-scale,1));font-weight:950;color:#1e3a8a;white-space:nowrap;font-variant-numeric:tabular-nums}.annual-leave-detail-empty{padding:13px 11px;text-align:center;color:#94a3b8;font-size:calc(10px * var(--text-scale,1));font-weight:750;line-height:1.4}
   .annual-leave-rule{padding:11px 12px;border-radius:13px;background:#fff7ed;color:#9a3412;font-size:calc(10.5px * var(--text-scale,1));line-height:1.55;font-weight:750}.annual-leave-rule b{font-weight:950}.annual-leave-status{min-height:16px;margin:8px 2px 0;color:#9ca3af;font-size:calc(10px * var(--text-scale,1));font-weight:750}
   .sick-leave-deduct-field{margin:0 0 11px;padding:10px 11px;border:1px solid #fed7aa;border-radius:12px;background:#fff7ed}.sick-leave-deduct-label{display:flex;align-items:center;gap:8px;color:#9a3412;font-size:calc(13px * var(--text-scale,1));font-weight:900;cursor:pointer}.sick-leave-deduct-label input{width:18px;height:18px;margin:0;padding:0;accent-color:#f97316;flex:0 0 auto}.sick-leave-deduct-help{margin:5px 0 0 26px;color:#9a3412;font-size:calc(10px * var(--text-scale,1));line-height:1.4}.attendance-break-help{margin:-1px 2px 11px;padding:8px 10px;border-radius:10px;background:#eff6ff;color:#1d4ed8;font-size:calc(10.5px * var(--text-scale,1));font-weight:800;line-height:1.45}
+  /* 보기 > 다크 모드: 기능 로직과 분리된 화면 전용 스타일 */
+  html[data-theme="dark"]{color-scheme:dark;--bg:#0f172a;--card:#1e293b;--text:#f8fafc;--muted:#a8b3c3;--line:#334155;--blue-soft:#172554;--red-soft:#3b1824;--shadow:0 8px 26px rgba(0,0,0,.28)}
+  html[data-theme="dark"] body{background:var(--bg);color:var(--text)}
+  html[data-theme="dark"] .login-card,html[data-theme="dark"] .card,html[data-theme="dark"] .modal{background:#1e293b;color:#f8fafc;box-shadow:0 16px 50px rgba(0,0,0,.35)}
+  html[data-theme="dark"] input,html[data-theme="dark"] select,html[data-theme="dark"] textarea,html[data-theme="dark"] .type-select-btn,html[data-theme="dark"] .attendance-date-input,html[data-theme="dark"] .company-event-date-input,html[data-theme="dark"] .company-event-textarea,html[data-theme="dark"] .memo-textarea{background:#111827!important;color:#f8fafc!important;border-color:#475569!important}
+  html[data-theme="dark"] input::placeholder,html[data-theme="dark"] textarea::placeholder{color:#718096}
+  html[data-theme="dark"] input[readonly],html[data-theme="dark"] .company-event-date-input[readonly],html[data-theme="dark"] .company-event-textarea[readonly]{background:#182235!important;color:#cbd5e1!important}
+  html[data-theme="dark"] .view-menu-btn,html[data-theme="dark"] .icon-btn,html[data-theme="dark"] .nav-btn,html[data-theme="dark"] .close-btn,html[data-theme="dark"] .secondary,html[data-theme="dark"] .mini-actions button,html[data-theme="dark"] .employee-actions button,html[data-theme="dark"] .memo-search-clear,html[data-theme="dark"] .memo-list-close,html[data-theme="dark"] .company-event-close,html[data-theme="dark"] .initial-pin-later,html[data-theme="dark"] .year-btn{background:#263449;color:#e2e8f0;border-color:#475569}
+  html[data-theme="dark"] .tabbar,html[data-theme="dark"] .mode-toggle,html[data-theme="dark"] .date-mode-toggle{background:#131d2d}
+  html[data-theme="dark"] .tab{color:#9eabba}html[data-theme="dark"] .tab.active,html[data-theme="dark"] .mode-btn.active,html[data-theme="dark"] .date-mode-btn.active{background:#334155;color:#f8fafc;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+  html[data-theme="dark"] .month-title,html[data-theme="dark"] .date-picker-month-title,html[data-theme="dark"] .day-cell,html[data-theme="dark"] .date-picker-cell,html[data-theme="dark"] .detail-row,html[data-theme="dark"] .update-history-item,html[data-theme="dark"] .capacity-card,html[data-theme="dark"] .audit-row,html[data-theme="dark"] .employee-row,html[data-theme="dark"] .attendance-list-row,html[data-theme="dark"] .memo-list-row,html[data-theme="dark"] .company-event-list-row,html[data-theme="dark"] .annual-leave-summary-item,html[data-theme="dark"] .annual-leave-detail,html[data-theme="dark"] .view-setting-card{background:#1b2638;color:#f8fafc;border-color:#334155}
+  html[data-theme="dark"] .day-cell.blank,html[data-theme="dark"] .date-picker-cell.blank,html[data-theme="dark"] .date-picker-cell.disabled{background:#111827}
+  html[data-theme="dark"] .day-cell.today,html[data-theme="dark"] .date-picker-cell.selected{background:#1a3153;box-shadow:inset 0 0 0 2px #60a5fa}
+  html[data-theme="dark"] .weekdays,html[data-theme="dark"] .calendar-grid,html[data-theme="dark"] .date-picker-weekdays,html[data-theme="dark"] .date-picker-grid{border-color:#334155}
+  html[data-theme="dark"] .weekdays div,html[data-theme="dark"] .day-cell,html[data-theme="dark"] .date-picker-weekdays span,html[data-theme="dark"] .date-picker-cell{border-color:#334155}
+  html[data-theme="dark"] .day-num,html[data-theme="dark"] .date-picker-daynum,html[data-theme="dark"] .weekdays div,html[data-theme="dark"] .availability,html[data-theme="dark"] .detail-main,html[data-theme="dark"] .detail-title,html[data-theme="dark"] .update-history-items,html[data-theme="dark"] .readonly-box,html[data-theme="dark"] .company-event-list-text,html[data-theme="dark"] .memo-list-text,html[data-theme="dark"] .attendance-list-date,html[data-theme="dark"] .annual-leave-setting-title,html[data-theme="dark"] .annual-leave-setting-label,html[data-theme="dark"] .annual-leave-detail-title,html[data-theme="dark"] .annual-leave-detail-date,html[data-theme="dark"] .annual-leave-detail-kind,html[data-theme="dark"] .view-setting-title,html[data-theme="dark"] .usage-guide-intro,html[data-theme="dark"] .usage-guide-body,html[data-theme="dark"] .usage-guide-option{color:#e2e8f0}
+  html[data-theme="dark"] .who,html[data-theme="dark"] .detail-sub,html[data-theme="dark"] .empty-msg,html[data-theme="dark"] .legend,html[data-theme="dark"] .status-line,html[data-theme="dark"] .version,html[data-theme="dark"] .version-btn,html[data-theme="dark"] .update-history-date,html[data-theme="dark"] .employee-meta,html[data-theme="dark"] .employee-section-title,html[data-theme="dark"] .employee-empty,html[data-theme="dark"] .company-event-meta,html[data-theme="dark"] .company-events-count,html[data-theme="dark"] .company-events-empty,html[data-theme="dark"] .memo-list-count,html[data-theme="dark"] .memo-list-empty,html[data-theme="dark"] .annual-leave-sub,html[data-theme="dark"] .annual-leave-summary-label,html[data-theme="dark"] .annual-leave-setting-help,html[data-theme="dark"] .annual-leave-unit,html[data-theme="dark"] .annual-leave-detail-count,html[data-theme="dark"] .annual-leave-detail-empty,html[data-theme="dark"] .annual-leave-status,html[data-theme="dark"] .view-setting-desc,html[data-theme="dark"] .text-size-guide{color:#94a3b8}
+  html[data-theme="dark"] .annual-leave-title,html[data-theme="dark"] .annual-leave-summary-value,html[data-theme="dark"] .title,html[data-theme="dark"] .modal-title,html[data-theme="dark"] .brand,html[data-theme="dark"] .attendance-list-type{color:#f8fafc}
+  html[data-theme="dark"] .detail-section,html[data-theme="dark"] .update-history-intro,html[data-theme="dark"] .capacity-row,html[data-theme="dark"] .readonly-box,html[data-theme="dark"] .annual-leave-setting,html[data-theme="dark"] .annual-leave-detail-head,html[data-theme="dark"] .usage-guide-features,html[data-theme="dark"] .login-persist-wrap{background:#162033;color:#cbd5e1;border-color:#334155}
+  html[data-theme="dark"] .type-grid button,html[data-theme="dark"] .month-grid button,html[data-theme="dark"] .text-size-level,html[data-theme="dark"] .theme-mode-btn{background:#263449;color:#dbe4ef;border-color:#475569}
+  html[data-theme="dark"] .text-size-level.active,html[data-theme="dark"] .theme-mode-btn.active{border-color:#8b5cf6;background:#4c2f68;color:#f3e8ff;box-shadow:inset 0 0 0 1px #8b5cf6}
+  html[data-theme="dark"] .today-btn,html[data-theme="dark"] .login-name-badge,html[data-theme="dark"] .company-events-help,html[data-theme="dark"] .attendance-break-help,html[data-theme="dark"] .usage-guide-highlight,html[data-theme="dark"] .annual-leave-balance{background:#172b4d;color:#93c5fd;border-color:#31558a}
+  html[data-theme="dark"] .annual-leave-balance-label,html[data-theme="dark"] .annual-leave-detail-minutes,html[data-theme="dark"] .company-event-title,html[data-theme="dark"] .company-event-list-date{color:#93c5fd}
+  html[data-theme="dark"] .annual-leave-balance-value{color:#bfdbfe}
+  html[data-theme="dark"] .company-events-banner,html[data-theme="dark"] .company-event-detail{background:#142941;border-color:#31558a;color:#dbeafe}
+  html[data-theme="dark"] .company-events-banner-preview{color:#cbd5e1}html[data-theme="dark"] .company-events-banner-count,html[data-theme="dark"] .company-event-badge{background:#1e3a5f;color:#93c5fd}
+  html[data-theme="dark"] .holiday-work-detail,html[data-theme="dark"] .holiday-work-list-btn,html[data-theme="dark"] .sick-leave-deduct-field,html[data-theme="dark"] .annual-leave-rule,html[data-theme="dark"] .setup-note,html[data-theme="dark"] .reset-pins-btn,html[data-theme="dark"] .holiday-eligibility-toggle,html[data-theme="dark"] .scheduled-badge{background:#3a2615;color:#fdba74;border-color:#7c4a1d}
+  html[data-theme="dark"] .memo-detail-section,html[data-theme="dark"] .memo-list-btn,html[data-theme="dark"] .usage-guide-readonly,html[data-theme="dark"] .annual-leave-readonly{background:#2b2140;color:#c4b5fd;border-color:#5b477a}
+  html[data-theme="dark"] .warning-box,html[data-theme="dark"] .memo-selected-delete,html[data-theme="dark"] .company-event-delete,html[data-theme="dark"] .mini-actions .danger{background:#3b1d29;color:#fda4af}
+  html[data-theme="dark"] .success-box{background:#15382f;color:#6ee7b7}
+  html[data-theme="dark"] .readOnly-account-notice,html[data-theme="dark"] .readonly-account-notice{background:#2b2140;color:#c4b5fd;border-color:#5b477a}
+  html[data-theme="dark"] .admin-tools-toggle,html[data-theme="dark"] .admin-action-group{background:#351f26;color:#fca5a5;border-color:#7f3648}
+  html[data-theme="dark"] .attendance-list-sub,html[data-theme="dark"] .company-event-period-help,html[data-theme="dark"] .company-event-date-field span,html[data-theme="dark"] .memo-meta{color:#94a3b8}
+  html[data-theme="dark"] .capacity-track{background:#111827}
+  html[data-theme="dark"] .history-access-badge.blocked,html[data-theme="dark"] .holiday-eligibility-toggle.unavailable{background:#263449;color:#94a3b8;border-color:#475569}
+  html[data-theme="dark"] .detail-section-toggle,html[data-theme="dark"] .holiday-work-check-label,html[data-theme="dark"] .holiday-work-result,html[data-theme="dark"] .holiday-work-list-row{background:#1b2638;color:#e2e8f0;border-color:#475569}
+  html[data-theme="dark"] .detail-section-toggle:active{background:#263449}
+  html[data-theme="dark"] .holiday-work-list-help{background:#3a2615;color:#fdba74}
+  html[data-theme="dark"] .holiday-work-search-clear,html[data-theme="dark"] .holiday-work-list-close,html[data-theme="dark"] .holiday-work-close,html[data-theme="dark"] .memo-close-btn{background:#263449;color:#e2e8f0}
+  html[data-theme="dark"] .holiday-work-selected-delete,html[data-theme="dark"] .holiday-work-delete,html[data-theme="dark"] .memo-delete-btn{background:#3b1d29;color:#fda4af}
+  html[data-theme="dark"] .holiday-work-list-text{color:#e2e8f0}
+  html[data-theme="dark"] .realtime-status{background:#263449;color:#94a3b8}html[data-theme="dark"] .realtime-status.connected{background:#15382f;color:#6ee7b7}html[data-theme="dark"] .realtime-status.connecting{background:#3b3015;color:#fcd34d}html[data-theme="dark"] .realtime-status.fallback{background:#263449;color:#cbd5e1}html[data-theme="dark"] .realtime-status.offline{background:#3b1d29;color:#fda4af}
+  html[data-theme="dark"] .self-pin-btn,html[data-theme="dark"] .memo-list-btn{background:#2b2140;color:#c4b5fd;border-color:#5b477a}
+  html[data-theme="dark"] .attendance-list-btn{background:#12343b;color:#67e8f9;border-color:#285d66}
+  html[data-theme="dark"] .holiday-work-list-btn{background:#3a2615;color:#fdba74;border-color:#7c4a1d}
+  html[data-theme="dark"] .loading-cover{background:rgba(15,23,42,.72)}
   .loading-cover{position:fixed;inset:0;z-index:2000;background:rgba(255,255,255,.68);display:none;align-items:center;justify-content:center}.loading-cover.show{display:flex}.spinner{width:34px;height:34px;border:4px solid #dbeafe;border-top-color:#2563eb;border-radius:50%;animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
   @media(max-width:520px){
     #detailBackdrop{padding-top:calc(8dvh - 5px)}
-    .admin-tools{margin:-2px 0 10px}.admin-tools-toggle{min-width:61px;min-height:43px;padding:5px 8px}.admin-action-group{gap:5px}.view-tools{gap:5px;margin:-3px 0 9px}.view-tool-actions{gap:5px}.attendance-list-btn,.memo-list-btn,.holiday-work-list-btn,.self-pin-btn,.text-size-open-btn,.usage-guide-open-btn{min-height:35px;padding:0 9px;font-size:calc(11px * var(--text-scale,1))}.company-events-banner{margin:-1px 0 9px;padding:10px 10px;gap:7px}.company-events-banner-icon{font-size:calc(17px * var(--text-scale,1))}.text-size-levels{gap:3px}.text-size-level{min-height:42px;font-size:calc(12px * var(--text-scale,1))}
+    .view-menu-btn{width:42px;height:42px;border-radius:12px}.view-menu-icon{width:20px}
+        .admin-tools{margin:-2px 0 10px}.admin-tools-toggle{min-width:61px;min-height:43px;padding:5px 8px}.admin-action-group{gap:5px}.view-tools{gap:5px;margin:-3px 0 9px}.view-tool-actions{gap:5px}.attendance-list-btn,.memo-list-btn,.holiday-work-list-btn,.self-pin-btn,.usage-guide-open-btn{min-height:35px;padding:0 9px;font-size:calc(11px * var(--text-scale,1))}.company-events-banner{margin:-1px 0 9px;padding:10px 10px;gap:7px}.company-events-banner-icon{font-size:calc(17px * var(--text-scale,1))}.text-size-levels{gap:3px}.text-size-level{min-height:42px;font-size:calc(12px * var(--text-scale,1))}
     .employee-manage-actions{grid-template-columns:1fr;gap:7px}.reset-pins-btn{font-size:calc(12px * var(--text-scale,1));padding:11px 9px}
     .wrap{padding:10px 7px 28px}.card{border-radius:17px}.calendar-card{padding:10px 6px 11px}.title{font-size:calc(21px * var(--text-scale,1))}.calendar-toolbar{grid-template-columns:50px 1fr 44px 50px;gap:5px}.nav-btn{font-size:calc(12px * var(--text-scale,1));padding:0 2px}.today-btn{font-size:calc(11px * var(--text-scale,1));padding:0 2px}.month-title{font-size:calc(18px * var(--text-scale,1))}.day-cell{min-height:72px;padding:4px 2px}.shift-circle{width:33px;height:33px;font-size:calc(14px * var(--text-scale,1))}.shift-day2{font-size:calc(12px * var(--text-scale,1))}.availability{font-size:calc(7.5px * var(--text-scale,1));line-height:1.24}.holiday-mini{font-size:calc(6.5px * var(--text-scale,1));max-width:38px}.day-num{font-size:calc(10px * var(--text-scale,1))}.backdrop{padding:5px}.modal{padding:12px 10px 13px;max-height:92dvh}.form-grid{grid-template-columns:1fr 1fr;gap:7px}.type-grid{gap:5px}.type-grid button{min-height:54px;font-size:calc(10px * var(--text-scale,1));padding:4px 1px}.date-picker-modal{padding:11px 7px 12px}.date-picker-toolbar{grid-template-columns:50px minmax(0,1fr) 44px 50px;gap:5px}.date-picker-nav,.date-picker-today,.date-picker-month-title{height:42px}.date-picker-nav{font-size:calc(12px * var(--text-scale,1));padding:0 2px}.date-picker-today{font-size:calc(11px * var(--text-scale,1));padding:0 2px}.date-picker-month-title{font-size:calc(18px * var(--text-scale,1))}.date-picker-cell{min-height:72px;padding:4px 2px}.date-picker-cell .shift-circle{width:33px;height:33px;font-size:calc(14px * var(--text-scale,1))}.date-picker-cell .shift-day2{font-size:calc(12px * var(--text-scale,1))}.date-picker-cell .holiday-work-badge{min-width:43px;height:30px;font-size:calc(8.5px * var(--text-scale,1))}.date-picker-holiday{font-size:calc(6.5px * var(--text-scale,1));max-width:38px}.date-picker-daynum{font-size:calc(10px * var(--text-scale,1))}.date-picker-term{font-size:calc(6.5px * var(--text-scale,1));padding:2px 3px}.calendar-term-mini{font-size:calc(6.5px * var(--text-scale,1));padding:2px 3px;max-width:34px}}
   @media(max-width:370px){.availability{font-size:calc(7px * var(--text-scale,1))}.day-cell{min-height:70px}.calendar-toolbar{grid-template-columns:45px 1fr 40px 45px;gap:4px}.nav-btn,.today-btn{padding:0 1px;font-size:calc(10px * var(--text-scale,1))}}
@@ -319,6 +371,7 @@
 
 <main id="appView" class="wrap hidden">
   <div class="topbar">
+    <button id="viewMenuBtn" class="view-menu-btn" type="button" aria-label="보기 설정 열기" title="보기"><span class="view-menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></button>
     <div class="userbox">
       <div class="title">직원 근태 현황</div>
       <div id="whoText" class="who"></div>
@@ -338,7 +391,7 @@
 
   <div id="readOnlyAccountNotice" class="readonly-account-notice hidden">발령 후 조회 전용 계정입니다. 기존 근태·휴근·개인 메모·사내일정과 연차 현황은 확인할 수 있으며, 새 근태/휴근 등록·수정·삭제와 메모 저장·수정·삭제, 사내일정 변경, 연차 기준값 수정은 할 수 없습니다.</div>
 
-  <div id="viewTools" class="view-tools"><div class="view-tool-actions"><button id="memoListBtn" class="memo-list-btn">메모 목록</button><button id="holidayWorkListBtn" class="holiday-work-list-btn hidden">휴근 목록</button><button id="attendanceListBtn" class="attendance-list-btn">근태 목록</button><button id="usageGuideOpenBtn" class="usage-guide-open-btn">이용안내</button><button id="selfPinBtn" class="self-pin-btn">내 비밀번호 변경</button><button id="textSizeOpenBtn" class="text-size-open-btn">큰글자로 보기 <span id="textSizeLevelLabel" class="level-label">11단계</span></button></div></div>
+  <div id="viewTools" class="view-tools"><div class="view-tool-actions"><button id="memoListBtn" class="memo-list-btn">메모 목록</button><button id="holidayWorkListBtn" class="holiday-work-list-btn hidden">휴근 목록</button><button id="attendanceListBtn" class="attendance-list-btn">근태 목록</button><button id="usageGuideOpenBtn" class="usage-guide-open-btn">이용안내</button><button id="selfPinBtn" class="self-pin-btn">내 비밀번호 변경</button></div></div>
 
   <div id="adminTools" class="admin-tools hidden">
     <button id="adminToolsToggle" class="admin-tools-toggle" type="button" aria-expanded="false" aria-controls="adminActionGroup"><span class="admin-toggle-label">관리자<br>기능</span><span class="admin-chevron">⌄</span></button>
@@ -418,7 +471,7 @@
     <div id="legend" class="legend hidden"><span><i class="dot day"></i>주간</span><span><i class="dot day2"></i>주2</span><span><i class="dot night"></i>야간</span><span><i class="dot off"></i>휴무</span></div>
     <div id="statusLine" class="status-line"></div>
   </section>
-  <button id="versionHistoryBtn" class="version version-btn" type="button" aria-haspopup="dialog" aria-controls="updateHistoryBackdrop">ver20260911-2234 · 업데이트 내역</button>
+  <button id="versionHistoryBtn" class="version version-btn" type="button" aria-haspopup="dialog" aria-controls="updateHistoryBackdrop">ver20260912-2149 · 업데이트 내역</button>
 </main>
 
 <div id="detailBackdrop" class="backdrop" aria-hidden="true">
@@ -731,13 +784,23 @@
   </div>
 </div>
 
-<div id="textSizeBackdrop" class="backdrop" aria-hidden="true">
-  <div class="modal">
-    <div class="modal-head"><div class="modal-title">큰글자로 보기</div><button class="close-btn" data-close="textSize">×</button></div>
-    <div class="text-size-levels" aria-label="글자 크기 21단계">
-      <button class="text-size-level" data-level="1">1</button><button class="text-size-level" data-level="2">2</button><button class="text-size-level" data-level="3">3</button><button class="text-size-level" data-level="4">4</button><button class="text-size-level" data-level="5">5</button><button class="text-size-level" data-level="6">6</button><button class="text-size-level" data-level="7">7</button><button class="text-size-level" data-level="8">8</button><button class="text-size-level" data-level="9">9</button><button class="text-size-level" data-level="10">10</button><button class="text-size-level" data-level="11">11</button><button class="text-size-level" data-level="12">12</button><button class="text-size-level" data-level="13">13</button><button class="text-size-level" data-level="14">14</button><button class="text-size-level" data-level="15">15</button><button class="text-size-level" data-level="16">16</button><button class="text-size-level" data-level="17">17</button><button class="text-size-level" data-level="18">18</button><button class="text-size-level" data-level="19">19</button><button class="text-size-level" data-level="20">20</button><button class="text-size-level" data-level="21">21</button>
+<div id="viewSettingsBackdrop" class="backdrop" aria-hidden="true">
+  <div class="modal view-settings-modal" role="dialog" aria-modal="true" aria-labelledby="viewSettingsTitle">
+    <div class="modal-head"><div id="viewSettingsTitle" class="modal-title">보기</div><button class="close-btn" data-close="viewSettings">×</button></div>
+    <div class="view-setting-card">
+      <div class="view-setting-title">글씨 크기</div>
+      <div class="view-setting-desc">글씨 크기를 21단계로 세밀하게 조절할 수 있습니다.</div>
+      <div class="text-size-levels" aria-label="글자 크기 21단계"><button class="text-size-level" data-level="1">1</button><button class="text-size-level" data-level="2">2</button><button class="text-size-level" data-level="3">3</button><button class="text-size-level" data-level="4">4</button><button class="text-size-level" data-level="5">5</button><button class="text-size-level" data-level="6">6</button><button class="text-size-level" data-level="7">7</button><button class="text-size-level" data-level="8">8</button><button class="text-size-level" data-level="9">9</button><button class="text-size-level" data-level="10">10</button><button class="text-size-level" data-level="11">11</button><button class="text-size-level" data-level="12">12</button><button class="text-size-level" data-level="13">13</button><button class="text-size-level" data-level="14">14</button><button class="text-size-level" data-level="15">15</button><button class="text-size-level" data-level="16">16</button><button class="text-size-level" data-level="17">17</button><button class="text-size-level" data-level="18">18</button><button class="text-size-level" data-level="19">19</button><button class="text-size-level" data-level="20">20</button><button class="text-size-level" data-level="21">21</button></div>
+      <div class="text-size-guide"><span>작게</span><span id="textSizeCurrentGuide">11단계 · 현재 기본 크기</span><span>크게</span></div>
     </div>
-    <div class="text-size-guide"><span>작게</span><span>11단계 · 기본</span><span>크게</span></div>
+    <div class="view-setting-card">
+      <div class="view-setting-title">화면 모드</div>
+      <div class="view-setting-desc">밝은 화면과 어두운 화면 중 선택할 수 있습니다.</div>
+      <div class="theme-mode-actions" role="group" aria-label="화면 모드">
+        <button class="theme-mode-btn" type="button" data-theme-mode="light" aria-pressed="true">라이트 모드</button>
+        <button class="theme-mode-btn" type="button" data-theme-mode="dark" aria-pressed="false">다크 모드</button>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -764,8 +827,9 @@
 const SUPABASE_URL = 'https://fnzgjidzdazlodmjhmes.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_asmMoFJpUgX7rLcSkjx1PA_3n2Hk-gG';
 
-const APP_VERSION = 'ver20260912-2129';
+const APP_VERSION = 'ver20260912-2149';
 const UPDATE_HISTORY = [
+  {version:'ver20260912-2149',date:'2026.09.12',items:['다크모드 기능 추가']},
   {version:'ver20260912-2057',date:'2026.09.12',items:['잔여연차 자동계산 및 근태 연동 기능 추가']},
   {version:'ver20260911-2138',date:'2026.09.11',items:['휴일근무 기본시간 자동입력 기능 추가']},
   {version:'ver20260911-1806',date:'2026.09.11',items:['업데이트 내역 확인 기능 추가']}
@@ -786,6 +850,7 @@ const ADMIN_SECOND_PIN = ''; // 운영용 템플릿에서는 브라우저에 관
 const LOCAL_DATA_KEY = 'staffAttendance_localData_v1';
 const LOCAL_EMPLOYEE_KEY = 'staffAttendance_localEmployees_v1';
 const TEXT_SIZE_KEY = 'staffAttendance_textSizeLevel_v2';
+const THEME_KEY = 'staffAttendance_theme_v1';
 const LOCAL_AUDIT_KEY = 'staffAttendance_localAudit_v1';
 const LOCAL_MEMO_KEY_PREFIX = 'staffAttendance_localMemos_v1_';
 const LOCAL_HOLIDAY_WORK_KEY = 'staffAttendance_localHolidayWork_v1';
@@ -795,6 +860,7 @@ const AUDIT_RETENTION_LIMIT = 1000;
 const AUDIT_PAGE_SIZE = 50;
 const TEXT_SIZE_SCALES = {1:0.750,2:0.780,3:0.810,4:0.840,5:0.870,6:0.900,7:0.930,8:0.950,9:0.970,10:0.985,11:1.000,12:1.050,13:1.100,14:1.150,15:1.200,16:1.260,17:1.320,18:1.380,19:1.450,20:1.530,21:1.620};
 let currentTextSizeLevel = 11;
+let currentTheme = 'light';
 const SHIFT_ANCHOR_UTC = Date.UTC(2026, 8, 1);
 const SHIFT_PATTERNS = {
   A:['야','야','비','비','주','주','휴','휴'],
@@ -999,7 +1065,7 @@ function normalizeTextSizeLevel(value){
 }
 function renderTextSizeSetting(){
   document.documentElement.style.setProperty('--text-scale',String(TEXT_SIZE_SCALES[currentTextSizeLevel]));
-  if($('textSizeLevelLabel')) $('textSizeLevelLabel').textContent=`${currentTextSizeLevel}단계`;
+  if($('textSizeCurrentGuide')) $('textSizeCurrentGuide').textContent=currentTextSizeLevel===11?'11단계 · 현재 기본 크기':`${currentTextSizeLevel}단계 · 현재 크기`;
   document.querySelectorAll('.text-size-level').forEach(btn=>{
     const active=Number(btn.dataset.level)===currentTextSizeLevel;
     btn.classList.toggle('active',active);
@@ -1014,7 +1080,28 @@ function applyTextSizeLevel(level,save=true){
 function restoreTextSizeLevel(){
   try{ applyTextSizeLevel(localStorage.getItem(TEXT_SIZE_KEY) ?? 11,false); }catch(e){ applyTextSizeLevel(11,false); }
 }
-function openTextSizePicker(){ renderTextSizeSetting(); openBackdrop('textSizeBackdrop'); }
+function normalizeTheme(value){ return value==='dark'?'dark':'light'; }
+function renderThemeSetting(){
+  const dark=currentTheme==='dark';
+  document.documentElement.dataset.theme=currentTheme;
+  document.documentElement.style.colorScheme=dark?'dark':'light';
+  const meta=$('themeColorMeta'); if(meta) meta.setAttribute('content',dark?'#0f172a':'#f4f6f8');
+  document.querySelectorAll('[data-theme-mode]').forEach(btn=>{
+    const active=btn.dataset.themeMode===currentTheme;
+    btn.classList.toggle('active',active);
+    btn.setAttribute('aria-pressed',active?'true':'false');
+  });
+}
+function applyTheme(theme,save=true){
+  currentTheme=normalizeTheme(theme);
+  renderThemeSetting();
+  if(save){ try{ localStorage.setItem(THEME_KEY,currentTheme); }catch(e){} }
+}
+function restoreTheme(){
+  try{ applyTheme(localStorage.getItem(THEME_KEY) ?? 'light',false); }catch(e){ applyTheme('light',false); }
+}
+function openViewSettings(){ renderTextSizeSetting(); renderThemeSetting(); openBackdrop('viewSettingsBackdrop'); }
+function openTextSizePicker(){ openViewSettings(); } // 이전 글씨크기 기능과의 호환용 별칭
 
 function configured(){
   return /^https:\/\/.+\.supabase\.co$/.test(SUPABASE_URL) && SUPABASE_ANON_KEY && !SUPABASE_ANON_KEY.includes('YOUR-');
@@ -3725,8 +3812,9 @@ function wire(){
   $('initialPinChangeBtn').addEventListener('click',()=>{closeBackdrop('initialPinBackdrop');openSelfPin('0000')});
   $('saveSelfPinBtn').addEventListener('click',changeOwnPin);
   $('selfPinConfirm').addEventListener('keydown',e=>{if(e.key==='Enter')changeOwnPin()});
-  $('textSizeOpenBtn').addEventListener('click',openTextSizePicker);
+  $('viewMenuBtn').addEventListener('click',openViewSettings);
   document.querySelectorAll('.text-size-level').forEach(btn=>btn.addEventListener('click',()=>applyTextSizeLevel(btn.dataset.level)));
+  document.querySelectorAll('[data-theme-mode]').forEach(btn=>btn.addEventListener('click',()=>applyTheme(btn.dataset.themeMode)));
   $('annualLeaveYear').addEventListener('change',async()=>{state.annualLeaveFormDirty=false;state.annualLeaveYear=Number($('annualLeaveYear').value);await loadAnnualLeaveData(true);});
   $('annualLeaveSaveBtn').addEventListener('click',saveAnnualLeaveSetting);
   ['annualBaselineDays','annualGrantDays','annualCarryDays'].forEach(id=>bindAnnualLeaveNumberInput(id,999,3));
@@ -3763,7 +3851,7 @@ function wire(){
   setInterval(()=>{if(state.me&&!document.hidden)refresh()},60000);
 }
 
-restoreUpdateSessionHandoff(); cleanupVersionQuery(); restoreTextSizeLevel(); setupLoginPersistenceUI(); syncVersionFooter(); wire(); toggleAdminPinField(); startVersionWatcher(); restoreSession();
+restoreUpdateSessionHandoff(); cleanupVersionQuery(); restoreTheme(); restoreTextSizeLevel(); setupLoginPersistenceUI(); syncVersionFooter(); wire(); toggleAdminPinField(); startVersionWatcher(); restoreSession();
 </script>
 </body>
 </html>

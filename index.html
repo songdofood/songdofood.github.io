@@ -110,7 +110,7 @@
   .who{margin-top:4px;font-size:calc(13px * var(--text-scale,1));color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .top-actions{display:flex;gap:7px;flex:0 0 auto}
   .icon-btn{height:38px;min-width:38px;padding:0 10px;border-radius:11px;background:#eef2f7;color:#374151;font-weight:800}
-  .tabbar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;padding:5px;background:#e9edf2;border-radius:14px;margin-bottom:12px}
+  .tabbar{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;padding:5px;background:#e9edf2;border-radius:14px;margin-bottom:12px}
   .tab{padding:11px 8px;border-radius:10px;background:transparent;color:#6b7280;font-weight:850}
   .tab.active{background:#fff;color:#111827;box-shadow:0 2px 8px rgba(0,0,0,.07)}
   .calendar-card{padding:12px 10px 13px}
@@ -340,6 +340,78 @@
     .employee-manage-actions{grid-template-columns:1fr;gap:7px}.reset-pins-btn{font-size:calc(12px * var(--text-scale,1));padding:11px 9px}
     .wrap{padding:10px 7px 28px}.card{border-radius:17px}.calendar-card{padding:10px 6px 11px}.title{font-size:calc(21px * var(--text-scale,1))}.calendar-toolbar{grid-template-columns:50px 1fr 44px 50px;gap:5px}.nav-btn{font-size:calc(12px * var(--text-scale,1));padding:0 2px}.today-btn{font-size:calc(11px * var(--text-scale,1));padding:0 2px}.month-title{font-size:calc(18px * var(--text-scale,1))}.day-cell{min-height:72px;padding:4px 2px}.shift-circle{width:33px;height:33px;font-size:calc(14px * var(--text-scale,1))}.shift-day2{font-size:calc(12px * var(--text-scale,1))}.availability{font-size:calc(7.5px * var(--text-scale,1));line-height:1.24}.holiday-mini{font-size:calc(6.5px * var(--text-scale,1));max-width:38px}.day-num{font-size:calc(10px * var(--text-scale,1))}.backdrop{padding:5px}.modal{padding:12px 10px 13px;max-height:92dvh}.form-grid{grid-template-columns:1fr 1fr;gap:7px}.type-grid{gap:5px}.type-grid button{min-height:54px;font-size:calc(10px * var(--text-scale,1));padding:4px 1px}.date-picker-modal{padding:11px 7px 12px}.date-picker-toolbar{grid-template-columns:50px minmax(0,1fr) 44px 50px;gap:5px}.date-picker-nav,.date-picker-today,.date-picker-month-title{height:42px}.date-picker-nav{font-size:calc(12px * var(--text-scale,1));padding:0 2px}.date-picker-today{font-size:calc(11px * var(--text-scale,1));padding:0 2px}.date-picker-month-title{font-size:calc(18px * var(--text-scale,1))}.date-picker-cell{min-height:72px;padding:4px 2px}.date-picker-cell .shift-circle{width:33px;height:33px;font-size:calc(14px * var(--text-scale,1))}.date-picker-cell .shift-day2{font-size:calc(12px * var(--text-scale,1))}.date-picker-cell .holiday-work-badge{min-width:43px;height:30px;font-size:calc(8.5px * var(--text-scale,1))}.date-picker-holiday{font-size:calc(6.5px * var(--text-scale,1));max-width:38px}.date-picker-daynum{font-size:calc(10px * var(--text-scale,1))}.date-picker-term{font-size:calc(6.5px * var(--text-scale,1));padding:2px 3px}.calendar-term-mini{font-size:calc(6.5px * var(--text-scale,1));padding:2px 3px;max-width:34px}}
   @media(max-width:370px){.availability{font-size:calc(7px * var(--text-scale,1))}.day-cell{min-height:70px}.calendar-toolbar{grid-template-columns:45px 1fr 40px 45px;gap:4px}.nav-btn,.today-btn{padding:0 1px;font-size:calc(10px * var(--text-scale,1))}}
+
+
+  /* ===== 장기 재직 ===== */
+  .long-service-card{padding:16px}
+  .long-service-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:12px}
+  .long-service-title{font-size:calc(19px * var(--text-scale,1));font-weight:950;letter-spacing:-.4px;color:#111827}
+  .long-service-sub{margin-top:4px;color:#6b7280;font-size:calc(10.5px * var(--text-scale,1));font-weight:750;line-height:1.45}
+  .long-service-setting{padding:12px;border:1px solid #e5e7eb;border-radius:15px;background:#f9fafb;margin-bottom:12px}
+  .long-service-setting-title{font-size:calc(13px * var(--text-scale,1));font-weight:950;color:#374151;margin-bottom:4px}
+  .long-service-setting-help{font-size:calc(10px * var(--text-scale,1));line-height:1.5;color:#6b7280;margin-bottom:10px}
+  .long-service-setting-grid{display:grid;grid-template-columns:1fr;gap:10px}
+  .long-service-field-label{display:block;margin-bottom:5px;font-size:calc(10px * var(--text-scale,1));font-weight:900;color:#4b5563}
+  .long-service-date-input,.long-service-reason-input{width:100%;min-width:0;border:1px solid #d1d5db;border-radius:11px;background:#fff;color:#111827;padding:9px 10px;font-size:calc(12px * var(--text-scale,1));font-weight:750}
+  .long-service-prev-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+  .long-service-input-part{display:flex;align-items:center;gap:5px;min-width:0}
+  .long-service-input-part input{width:100%;min-width:0;border:1px solid #d1d5db;border-radius:11px;background:#fff;color:#111827;padding:9px 7px;text-align:center;font-size:calc(13px * var(--text-scale,1));font-weight:850}
+  .long-service-unit{flex:0 0 auto;color:#6b7280;font-size:calc(10px * var(--text-scale,1));font-weight:850}
+  .long-service-excluded-box{margin-top:11px;padding-top:11px;border-top:1px solid #e5e7eb}
+  .long-service-excluded-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:7px}
+  .long-service-excluded-title{font-size:calc(11px * var(--text-scale,1));font-weight:950;color:#374151}
+  .long-service-excluded-summary{font-size:calc(9.5px * var(--text-scale,1));font-weight:850;color:#7c3aed}
+  .long-service-excluded-list{display:flex;flex-direction:column;gap:7px}
+  .long-service-excluded-row{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:5px;align-items:center;padding:8px;border:1px solid #e5e7eb;border-radius:12px;background:#fff}
+  .long-service-excluded-row .long-service-reason-input{grid-column:1 / span 2}
+  .long-service-excluded-delete{grid-column:3;width:34px;height:34px;justify-self:end;padding:0;border-radius:9px;background:#fff1f2;color:#be123c;font-size:calc(18px * var(--text-scale,1));font-weight:900}
+  .long-service-date-wave{color:#9ca3af;font-weight:900}
+  .long-service-excluded-empty{padding:10px;border:1px dashed #d1d5db;border-radius:11px;text-align:center;color:#9ca3af;font-size:calc(10px * var(--text-scale,1));font-weight:750}
+  .long-service-add-excluded{margin-top:7px;width:100%;padding:9px 10px;border-radius:10px;background:#eef2f7;color:#475569;font-size:calc(10.5px * var(--text-scale,1));font-weight:900}
+  .long-service-save{width:100%;margin-top:11px}
+  .long-service-error{min-height:15px;margin:6px 2px 0;color:#be123c;font-size:calc(10px * var(--text-scale,1));font-weight:800;line-height:1.4}
+  .long-service-readonly{margin-top:7px;padding:8px 10px;border-radius:10px;background:#f3f4f6;color:#6b7280;font-size:calc(10px * var(--text-scale,1));font-weight:800;line-height:1.45}
+  .long-service-current{padding:15px 13px;border:1px solid #dbeafe;border-radius:16px;background:#eff6ff;text-align:center;margin-bottom:10px}
+  .long-service-current-label{color:#64748b;font-size:calc(10.5px * var(--text-scale,1));font-weight:850}
+  .long-service-current-value{margin-top:4px;color:#1d4ed8;font-size:calc(27px * var(--text-scale,1));font-weight:950;letter-spacing:-.8px;line-height:1.2}
+  .long-service-current-meta{margin-top:5px;color:#475569;font-size:calc(10px * var(--text-scale,1));font-weight:800;line-height:1.5}
+  .long-service-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin-bottom:10px}
+  .long-service-summary-item{padding:11px 7px;border:1px solid #e5e7eb;border-radius:13px;background:#fff;text-align:center;min-width:0}
+  .long-service-summary-label{color:#6b7280;font-size:calc(9px * var(--text-scale,1));font-weight:850;line-height:1.3}
+  .long-service-summary-value{margin-top:5px;color:#111827;font-size:calc(13px * var(--text-scale,1));font-weight:950;line-height:1.25;overflow-wrap:anywhere}
+  .long-service-dday-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+  .long-service-dday{padding:11px;border:1px solid #e5e7eb;border-radius:13px;background:#fff}
+  .long-service-dday-label{color:#6b7280;font-size:calc(9.5px * var(--text-scale,1));font-weight:850}
+  .long-service-dday-value{margin-top:4px;color:#111827;font-size:calc(15px * var(--text-scale,1));font-weight:950;line-height:1.25}
+  .long-service-dday-date{margin-top:3px;color:#9ca3af;font-size:calc(9px * var(--text-scale,1));font-weight:750;line-height:1.35}
+  .long-service-dday.notice{border-color:#fcd34d;background:#fffbeb}.long-service-dday.notice .long-service-dday-value{color:#92400e}
+  .long-service-dday.urgent{border-color:#fb7185;background:#fff1f2}.long-service-dday.urgent .long-service-dday-value{color:#be123c}
+  .long-service-expire-warning{margin-bottom:10px;padding:10px 11px;border-radius:12px;background:#fff1f2;border:1px solid #fecdd3;color:#be123c;font-size:calc(10.5px * var(--text-scale,1));font-weight:900;line-height:1.45}
+  .long-service-detail{border:1px solid #e5e7eb;border-radius:14px;background:#fff;overflow:hidden;margin-bottom:10px}
+  .long-service-detail-head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 11px;border-bottom:1px solid #eef0f2}
+  .long-service-detail-title{font-size:calc(11px * var(--text-scale,1));font-weight:950;color:#374151}.long-service-detail-count{font-size:calc(9.5px * var(--text-scale,1));font-weight:850;color:#8b5cf6}
+  .long-service-detail-list{max-height:280px;overflow:auto}
+  .long-service-detail-row{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) auto;gap:8px;align-items:center;padding:9px 11px;border-bottom:1px solid #f1f5f9}
+  .long-service-detail-row:last-child{border-bottom:0}.long-service-detail-date{font-size:calc(10px * var(--text-scale,1));font-weight:900;color:#374151}.long-service-detail-kind{font-size:calc(9.5px * var(--text-scale,1));font-weight:800;color:#6b7280;line-height:1.35}.long-service-detail-minutes{font-size:calc(10px * var(--text-scale,1));font-weight:950;color:#7c3aed;text-align:right;white-space:nowrap}.long-service-detail-empty{padding:14px;text-align:center;color:#9ca3af;font-size:calc(10px * var(--text-scale,1));font-weight:750}
+  .long-service-guide{border:1px solid #e5e7eb;border-radius:14px;background:#fff;overflow:hidden;margin-bottom:10px}
+  .long-service-guide-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:11px 12px;border-radius:0;background:#fff;color:#374151;font-size:calc(11px * var(--text-scale,1));font-weight:950;text-align:left}
+  .long-service-guide-body{padding:0 12px 12px;color:#4b5563;font-size:calc(10px * var(--text-scale,1));font-weight:750;line-height:1.65}
+  .long-service-guide-body ul{margin:6px 0 0;padding-left:18px}.long-service-guide-body b{font-weight:950;color:#111827}
+  .long-service-rule-table{margin-top:8px;padding:9px 10px;border-radius:11px;background:#f8fafc;color:#475569}
+  .long-service-status{min-height:16px;margin:8px 2px 0;color:#9ca3af;font-size:calc(10px * var(--text-scale,1));font-weight:750;line-height:1.4}
+  html[data-theme="dark"] .long-service-title,html[data-theme="dark"] .long-service-summary-value,html[data-theme="dark"] .long-service-dday-value,html[data-theme="dark"] .long-service-guide-body b{color:#f3f4f6}
+  html[data-theme="dark"] .long-service-setting,html[data-theme="dark"] .long-service-rule-table{background:#18212e;border-color:#3b4656}
+  html[data-theme="dark"] .long-service-setting-title,html[data-theme="dark"] .long-service-field-label,html[data-theme="dark"] .long-service-excluded-title,html[data-theme="dark"] .long-service-detail-title,html[data-theme="dark"] .long-service-detail-date,html[data-theme="dark"] .long-service-guide-toggle{color:#e5e7eb}
+  html[data-theme="dark"] .long-service-date-input,html[data-theme="dark"] .long-service-reason-input,html[data-theme="dark"] .long-service-input-part input,html[data-theme="dark"] .long-service-excluded-row,html[data-theme="dark"] .long-service-summary-item,html[data-theme="dark"] .long-service-dday,html[data-theme="dark"] .long-service-detail,html[data-theme="dark"] .long-service-guide,html[data-theme="dark"] .long-service-guide-toggle{background:#111827;color:#e5e7eb;border-color:#3b4656}
+  html[data-theme="dark"] .long-service-current{background:#17263d;border-color:#314767}.long-service-current-value{color:#1d4ed8}html[data-theme="dark"] .long-service-current-value{color:#93c5fd}html[data-theme="dark"] .long-service-current-meta{color:#cbd5e1}
+  html[data-theme="dark"] .long-service-detail-head,html[data-theme="dark"] .long-service-detail-row{border-color:#273244}
+  html[data-theme="dark"] .long-service-add-excluded,html[data-theme="dark"] .long-service-readonly{background:#263449;color:#cbd5e1}
+  html[data-theme="dark"] .long-service-dday.notice{background:#3b3015;border-color:#7c5b1d}.long-service-dday.notice .long-service-dday-value{color:#92400e}html[data-theme="dark"] .long-service-dday.notice .long-service-dday-value{color:#fcd34d}
+  html[data-theme="dark"] .long-service-dday.urgent,html[data-theme="dark"] .long-service-expire-warning{background:#3b1d29;border-color:#7f1d3b;color:#fda4af}html[data-theme="dark"] .long-service-dday.urgent .long-service-dday-value{color:#fda4af}
+  @media(max-width:430px){
+    .long-service-card{padding:14px}.long-service-summary{grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}.long-service-summary-item{padding:10px 5px}.long-service-dday-grid{grid-template-columns:1fr}.long-service-detail-row{grid-template-columns:minmax(0,1fr) auto;gap:4px 8px}.long-service-detail-kind{grid-column:1}.long-service-detail-minutes{grid-column:2;grid-row:1 / span 2}.long-service-excluded-row{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)}
+  }
+
 </style>
 </head>
 <body>
@@ -387,9 +459,10 @@
     <button class="tab active" data-view="mine">내 근무표</button>
     <button class="tab" data-view="all">전체 근무표</button>
     <button class="tab" data-view="leave">연차 현황</button>
+    <button class="tab" data-view="longservice">장기 재직</button>
   </div>
 
-  <div id="readOnlyAccountNotice" class="readonly-account-notice hidden">발령 후 조회 전용 계정입니다. 기존 근태·휴근·개인 메모·사내일정과 연차 현황은 확인할 수 있으며, 새 근태/휴근 등록·수정·삭제와 메모 저장·수정·삭제, 사내일정 변경, 연차 기준값 수정은 할 수 없습니다.</div>
+  <div id="readOnlyAccountNotice" class="readonly-account-notice hidden">발령 후 조회 전용 계정입니다. 기존 근태·휴근·개인 메모·사내일정과 연차 현황·장기 재직 현황은 확인할 수 있으며, 새 근태/휴근 등록·수정·삭제와 메모 저장·수정·삭제, 사내일정 변경, 연차·장기 재직 설정 수정은 할 수 없습니다.</div>
 
   <div id="viewTools" class="view-tools"><div class="view-tool-actions"><button id="memoListBtn" class="memo-list-btn">메모 목록</button><button id="holidayWorkListBtn" class="holiday-work-list-btn hidden">휴근 목록</button><button id="attendanceListBtn" class="attendance-list-btn">근태 목록</button><button id="usageGuideOpenBtn" class="usage-guide-open-btn">이용안내</button><button id="selfPinBtn" class="self-pin-btn">내 비밀번호 변경</button></div></div>
 
@@ -459,6 +532,79 @@
     <div id="annualLeaveStatus" class="annual-leave-status"></div>
   </section>
 
+  <section id="longServiceCard" class="card long-service-card hidden">
+    <div class="long-service-head">
+      <div><div class="long-service-title">장기 재직</div><div id="longServiceSubtitle" class="long-service-sub">입사일과 실제 등록된 ‘장기’ 근태를 기준으로 자동 계산합니다.</div></div>
+    </div>
+
+    <div class="long-service-setting">
+      <div class="long-service-setting-title">장기 재직 기준 설정</div>
+      <div class="long-service-setting-help">입사일만 입력하면 기본 계산이 시작됩니다. 재직기간에서 빠지는 기간이 있거나 현재 구간에서 사이트 사용 전 이미 쓴 휴가가 있을 때만 추가 입력하세요.</div>
+      <div class="long-service-setting-grid">
+        <div>
+          <label class="long-service-field-label" for="longServiceHireDate">입사일</label>
+          <input id="longServiceHireDate" class="long-service-date-input" type="date">
+        </div>
+        <div>
+          <label class="long-service-field-label">이전 사용분</label>
+          <div class="long-service-prev-grid">
+            <div class="long-service-input-part"><input id="longServicePrevDays" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="3"><span class="long-service-unit">일</span></div>
+            <div class="long-service-input-part"><input id="longServicePrevHours" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2"><span class="long-service-unit">시간</span></div>
+            <div class="long-service-input-part"><input id="longServicePrevMinutes" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2"><span class="long-service-unit">분</span></div>
+          </div>
+          <div id="longServicePrevHelp" class="long-service-setting-help" style="margin:6px 0 0">현재 재직구간에서 이 사이트 연동 전에 이미 사용한 장기재직휴가가 있을 때만 입력합니다.</div>
+        </div>
+      </div>
+      <div class="long-service-excluded-box">
+        <div class="long-service-excluded-head"><div class="long-service-excluded-title">재직기간 제외기간</div><div id="longServiceExcludedSummary" class="long-service-excluded-summary">0일</div></div>
+        <div id="longServiceExcludedList" class="long-service-excluded-list"><div class="long-service-excluded-empty">등록된 제외기간이 없습니다.</div></div>
+        <button id="longServiceAddExcludedBtn" class="long-service-add-excluded" type="button">＋ 제외기간 추가</button>
+        <div class="long-service-setting-help" style="margin:6px 0 0">기간이 서로 겹치면 겹친 날짜는 한 번만 제외합니다.</div>
+      </div>
+      <button id="longServiceSaveBtn" class="primary long-service-save" type="button">저장</button>
+      <div id="longServiceError" class="long-service-error"></div>
+      <div id="longServiceReadOnly" class="long-service-readonly hidden">조회 전용 계정에서는 입사일·이전 사용분·재직 제외기간을 수정할 수 없습니다.</div>
+    </div>
+
+    <div class="long-service-current">
+      <div class="long-service-current-label">현재 인정 재직기간</div>
+      <div id="longServiceTenure" class="long-service-current-value">-</div>
+      <div id="longServiceBand" class="long-service-current-meta">입사일을 입력하면 현재 구간을 계산합니다.</div>
+    </div>
+
+    <div class="long-service-summary">
+      <div class="long-service-summary-item"><div class="long-service-summary-label">발생</div><div id="longServiceEntitled" class="long-service-summary-value">-</div></div>
+      <div class="long-service-summary-item"><div class="long-service-summary-label">사용 완료</div><div id="longServiceUsed" class="long-service-summary-value">-</div></div>
+      <div class="long-service-summary-item"><div class="long-service-summary-label">예정</div><div id="longServiceScheduled" class="long-service-summary-value">-</div></div>
+      <div class="long-service-summary-item"><div class="long-service-summary-label">예정 반영 잔여</div><div id="longServiceBalance" class="long-service-summary-value">-</div></div>
+    </div>
+    <div id="longServicePreviousSummary" class="long-service-sub" style="margin:0 2px 10px"></div>
+    <div id="longServiceExpireWarning" class="long-service-expire-warning hidden"></div>
+
+    <div class="long-service-dday-grid">
+      <div id="longServiceExpireCard" class="long-service-dday"><div class="long-service-dday-label">소멸 예정</div><div id="longServiceExpireDday" class="long-service-dday-value">-</div><div id="longServiceExpireDate" class="long-service-dday-date">-</div></div>
+      <div id="longServiceNextCard" class="long-service-dday"><div class="long-service-dday-label">다음 구간</div><div id="longServiceNextDday" class="long-service-dday-value">-</div><div id="longServiceNextDate" class="long-service-dday-date">-</div></div>
+    </div>
+
+    <div class="long-service-detail">
+      <div class="long-service-detail-head"><div class="long-service-detail-title">현재 구간 사용·예정 상세</div><div id="longServiceDetailCount" class="long-service-detail-count">0건</div></div>
+      <div id="longServiceDetailList" class="long-service-detail-list"><div class="long-service-detail-empty">반영된 ‘장기’ 근태가 없습니다.</div></div>
+    </div>
+
+    <div class="long-service-guide">
+      <button id="longServiceGuideToggle" class="long-service-guide-toggle" type="button" aria-expanded="false"><span>재직기간 산정·장기재직휴가 기준</span><span id="longServiceGuideChevron">⌄</span></button>
+      <div id="longServiceGuideBody" class="long-service-guide-body hidden">
+        <b>재직기간에 포함</b>
+        <ul><li>육아휴직</li><li>육아기 근로시간 단축</li><li>업무상 부상으로 인한 휴직</li><li>군복무 휴직기간</li></ul>
+        <b>재직기간에서 제외</b>
+        <ul><li>위 예외를 제외한 나머지 휴직기간</li><li>정직</li><li>직위해제</li><li>강등 기간</li></ul>
+        <div class="long-service-rule-table"><b>휴가 구간</b><br>1년 이상~5년 미만: 새내기휴가 5일 · 분할 불가(5일 일괄 사용)<br>5년 이상~10년 미만: 10일 · 2회 분할<br>10년 이상~20년 미만: 15일 · 3회 분할<br>20년 이상~30년 미만: 25일 · 5회 분할<br>30년 이상: 30일 · 6회 분할</div>
+        <div class="long-service-rule-table"><b>사용·소멸 안내</b><br>장기재직휴가는 3일 이상 사용 가능하며, 잔여휴가가 3일 미만이면 자동 소멸됩니다. 해당 재직기간 내 사용하지 않은 장기재직휴가는 자동 소멸됩니다.<br><br>이 화면은 규정을 심사해 입력을 막지 않고, 회사 시스템에 실제 등록된 ‘장기’ 근태를 그대로 계산에 반영합니다.</div>
+      </div>
+    </div>
+    <div id="longServiceStatus" class="long-service-status"></div>
+  </section>
+
   <section id="calendarCard" class="card calendar-card">
     <div class="calendar-toolbar">
       <button id="prevMonth" class="nav-btn">이전달</button>
@@ -471,7 +617,7 @@
     <div id="legend" class="legend hidden"><span><i class="dot day"></i>주간</span><span><i class="dot day2"></i>주2</span><span><i class="dot night"></i>야간</span><span><i class="dot off"></i>휴무</span></div>
     <div id="statusLine" class="status-line"></div>
   </section>
-  <button id="versionHistoryBtn" class="version version-btn" type="button" aria-haspopup="dialog" aria-controls="updateHistoryBackdrop">ver20260912-2149 · 업데이트 내역</button>
+  <button id="versionHistoryBtn" class="version version-btn" type="button" aria-haspopup="dialog" aria-controls="updateHistoryBackdrop">ver20260912-2326 · 업데이트 내역</button>
 </main>
 
 <div id="detailBackdrop" class="backdrop" aria-hidden="true">
@@ -757,8 +903,8 @@
     <div class="usage-guide-highlight">평소에는 아무것도 입력하지 않으셔도 됩니다.</div>
     <div class="usage-guide-body"><strong>연가·지참·조퇴·장기·교육 등 근태가 생겼을 때만 등록해 주세요.</strong><br>입력된 내용은 <strong>전체 근무표의 가용인원에 자동 반영</strong>됩니다.</div>
     <div class="usage-guide-body">근태가 누락되면 실제 근무 가능 인원과 다르게 표시될 수 있으니 협조 부탁드립니다.</div>
-    <div class="usage-guide-features">주요 기능은 <strong>내 근무표 확인 / 근태 등록 / 전체 근무표 가용인원 확인 / 연차 현황 / 사내일정 / 개인 메모 / 휴근 관리(일근자)</strong>입니다.</div>
-    <div id="usageGuideReadOnly" class="usage-guide-readonly hidden">발령 후 조회 전용 계정은 기존 근태·휴근·개인 메모·사내일정과 연차 현황을 확인할 수 있으며 새 기록 등록·수정·삭제, 사내일정 변경 및 연차 기준값 수정은 할 수 없습니다.</div>
+    <div class="usage-guide-features">주요 기능은 <strong>내 근무표 확인 / 근태 등록 / 전체 근무표 가용인원 확인 / 연차 현황 / 장기 재직 / 사내일정 / 개인 메모 / 휴근 관리(일근자)</strong>입니다.</div>
+    <div id="usageGuideReadOnly" class="usage-guide-readonly hidden">발령 후 조회 전용 계정은 기존 근태·휴근·개인 메모·사내일정과 연차 현황·장기 재직 현황을 확인할 수 있으며 새 기록 등록·수정·삭제, 사내일정 변경 및 연차·장기 재직 설정 수정은 할 수 없습니다.</div>
     <label class="usage-guide-option"><input id="usageGuideDontShow" type="checkbox"> 다시 보지 않기</label>
     <button id="usageGuideConfirmBtn" class="usage-guide-confirm" type="button">확인</button>
   </div>
@@ -827,8 +973,9 @@
 const SUPABASE_URL = 'https://fnzgjidzdazlodmjhmes.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_asmMoFJpUgX7rLcSkjx1PA_3n2Hk-gG';
 
-const APP_VERSION = 'ver20260912-2149';
+const APP_VERSION = 'ver20260912-2326';
 const UPDATE_HISTORY = [
+  {version:'ver20260912-2326',date:'2026.09.12',items:['장기재직휴가 자동계산 및 근태 연동 기능 추가']},
   {version:'ver20260912-2149',date:'2026.09.12',items:['다크모드 기능 추가']},
   {version:'ver20260912-2057',date:'2026.09.12',items:['잔여연차 자동계산 및 근태 연동 기능 추가']},
   {version:'ver20260911-2138',date:'2026.09.11',items:['휴일근무 기본시간 자동입력 기능 추가']},
@@ -856,6 +1003,7 @@ const LOCAL_MEMO_KEY_PREFIX = 'staffAttendance_localMemos_v1_';
 const LOCAL_HOLIDAY_WORK_KEY = 'staffAttendance_localHolidayWork_v1';
 const LOCAL_COMPANY_EVENT_KEY = 'staffAttendance_localCompanyEvents_v1';
 const LOCAL_ANNUAL_LEAVE_KEY_PREFIX = 'staffAttendance_localAnnualLeave_v1_';
+const LOCAL_LONG_SERVICE_KEY_PREFIX = 'staffAttendance_localLongService_v1_';
 const AUDIT_RETENTION_LIMIT = 1000;
 const AUDIT_PAGE_SIZE = 50;
 const TEXT_SIZE_SCALES = {1:0.750,2:0.780,3:0.810,4:0.840,5:0.870,6:0.900,7:0.930,8:0.950,9:0.970,10:0.985,11:1.000,12:1.050,13:1.100,14:1.150,15:1.200,16:1.260,17:1.320,18:1.380,19:1.450,20:1.530,21:1.620};
@@ -912,6 +1060,7 @@ const ANNUAL_LEAVE_CONDITIONAL_TYPE = '병가';
 const ANNUAL_LEAVE_MINUTES_PER_DAY = 8*60;
 const ANNUAL_LEAVE_2026_BASELINE_DATE = '2026-09-11';
 const ANNUAL_LEAVE_2026_AUTO_START = '2026-09-12';
+const LONG_SERVICE_MINUTES_PER_DAY = 8*60;
 const ATTENDANCE_TYPE_ALIASES = {
   '가족돌봄휴가':'가족돌봄',
   '자녀돌봄휴가':'자녀돌봄',
@@ -1038,7 +1187,7 @@ migrateLegacySessionForDevice();
 
 const state = {
   sessionToken: storedSessionToken(),
-  me:null, employees:[], attendance:[], holidayWorks:[], holidayWorkBackendReady:null, holidayWorkEligibilityReady:null, memos:[], memoBackendReady:null, companyEvents:[], companyEventBackendReady:null, annualLeaveSettings:null, annualLeaveEntries:[], annualLeaveBackendReady:null, annualLeaveYear:null, annualLeaveFormDirty:false, view:'mine', selectedDate:null,
+  me:null, employees:[], attendance:[], holidayWorks:[], holidayWorkBackendReady:null, holidayWorkEligibilityReady:null, memos:[], memoBackendReady:null, companyEvents:[], companyEventBackendReady:null, annualLeaveSettings:null, annualLeaveEntries:[], annualLeaveBackendReady:null, annualLeaveYear:null, annualLeaveFormDirty:false, longServiceProfile:null, longServiceExclusions:[], longServiceEntries:[], longServiceBackendReady:null, longServiceFormDirty:false, view:'mine', selectedDate:null,
   year:Math.min(Math.max(parseDateKey(todayKey()).y,MIN_YEAR),MAX_YEAR), month:parseDateKey(todayKey()).m,
   pickerYear:Math.min(Math.max(parseDateKey(todayKey()).y,MIN_YEAR),MAX_YEAR), mode:'all_day', dateMode:'single', refreshing:false, employeeAction:null, pinStatus:{}
 };
@@ -1627,6 +1776,218 @@ function updateAttendanceLeaveUI(){
   if(!sick && $('annualLeaveDeduct')) $('annualLeaveDeduct').checked=false;
   const help=attendanceBreakTextForForm(); if($('attendanceBreakHelp')){ $('attendanceBreakHelp').textContent=help; $('attendanceBreakHelp').classList.toggle('hidden',!help); }
 }
+
+function longServiceStorageKey(employeeId=state.me?.employee_id){ return `${LOCAL_LONG_SERVICE_KEY_PREFIX}${Number(employeeId)||0}`; }
+function localLongServiceData(employeeId=state.me?.employee_id){
+  try{ const data=JSON.parse(localStorage.getItem(longServiceStorageKey(employeeId))||'{}'); return data&&typeof data==='object'&&!Array.isArray(data)?data:{}; }catch(e){ return {}; }
+}
+function saveLocalLongServiceData(data,employeeId=state.me?.employee_id){ localStorage.setItem(longServiceStorageKey(employeeId),JSON.stringify(data||{})); }
+function lsParseISO(key){
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(String(key||'')))return null;
+  const [y,m,d]=String(key).split('-').map(Number),dt=new Date(Date.UTC(y,m-1,d));
+  return dt.getUTCFullYear()===y&&dt.getUTCMonth()===m-1&&dt.getUTCDate()===d?dt:null;
+}
+function lsISODate(dt){ return `${dt.getUTCFullYear()}-${String(dt.getUTCMonth()+1).padStart(2,'0')}-${String(dt.getUTCDate()).padStart(2,'0')}`; }
+function lsAddDays(key,days){ const d=lsParseISO(key); if(!d)return ''; d.setUTCDate(d.getUTCDate()+Number(days||0)); return lsISODate(d); }
+function lsAddYears(key,years){
+  const d=lsParseISO(key); if(!d)return '';
+  const y=d.getUTCFullYear()+Number(years||0),m=d.getUTCMonth(),day=d.getUTCDate();
+  const out=new Date(Date.UTC(y,m,day));
+  if(out.getUTCMonth()!==m){ out.setUTCDate(0); }
+  return lsISODate(out);
+}
+function lsDaysBetween(a,b){ const x=lsParseISO(a),y=lsParseISO(b); return (!x||!y)?0:Math.round((y-x)/86400000); }
+function lsNormalizeExclusions(periods=state.longServiceExclusions){
+  const list=(periods||[]).map((p,i)=>({id:p.id??null,start_date:String(p.start_date||''),end_date:String(p.end_date||''),reason:String(p.reason||'').trim(),_i:i}))
+    .filter(p=>lsParseISO(p.start_date)&&lsParseISO(p.end_date)&&p.end_date>=p.start_date)
+    .sort((a,b)=>a.start_date.localeCompare(b.start_date)||a.end_date.localeCompare(b.end_date));
+  const merged=[];
+  list.forEach(p=>{
+    const last=merged[merged.length-1];
+    if(last && p.start_date<=lsAddDays(last.end_date,1)){ if(p.end_date>last.end_date)last.end_date=p.end_date; }
+    else merged.push({start_date:p.start_date,end_date:p.end_date});
+  });
+  return {list,merged};
+}
+function lsExcludedDaysUntil(hireISO,targetISO,periods=state.longServiceExclusions){
+  if(!lsParseISO(hireISO)||!lsParseISO(targetISO)||targetISO<hireISO)return 0;
+  const {merged}=lsNormalizeExclusions(periods); let total=0;
+  merged.forEach(p=>{
+    const start=p.start_date<hireISO?hireISO:p.start_date, end=p.end_date>targetISO?targetISO:p.end_date;
+    if(end>=start) total+=lsDaysBetween(start,end)+1;
+  });
+  return total;
+}
+function lsRecognizedTargetISO(hireISO,targetISO,periods=state.longServiceExclusions){
+  const days=lsExcludedDaysUntil(hireISO,targetISO,periods); return lsAddDays(targetISO,-days);
+}
+function lsCompletedYears(hireISO,targetISO){
+  if(!lsParseISO(hireISO)||!lsParseISO(targetISO)||targetISO<hireISO)return -1;
+  let years=lsParseISO(targetISO).getUTCFullYear()-lsParseISO(hireISO).getUTCFullYear();
+  if(lsAddYears(hireISO,years)>targetISO)years--; return years;
+}
+function lsTenureText(hireISO,targetISO=lsTodayISO(),periods=state.longServiceExclusions){
+  const adjusted=lsRecognizedTargetISO(hireISO,targetISO,periods),h=lsParseISO(hireISO),t=lsParseISO(adjusted);
+  if(!h||!t||t<h)return '입사일을 확인하세요';
+  let years=lsCompletedYears(hireISO,adjusted); let cursor=lsParseISO(lsAddYears(hireISO,years)); let months=0;
+  while(months<11){ const next=new Date(cursor); next.setUTCMonth(next.getUTCMonth()+1); if(next>t)break; cursor=next; months++; }
+  const days=Math.floor((t-cursor)/86400000); return `${years}년 ${months}개월 ${days}일`;
+}
+function lsRecognizedAnniversaryDate(hireISO,years,periods=state.longServiceExclusions){
+  const base=lsAddYears(hireISO,years); if(!base)return '';
+  let candidate=base;
+  for(let i=0;i<20;i++){
+    const next=lsAddDays(base,lsExcludedDaysUntil(hireISO,candidate,periods));
+    if(next===candidate)return candidate; candidate=next;
+  }
+  return candidate;
+}
+function lsBandForDate(hireISO,targetISO=lsTodayISO(),periods=state.longServiceExclusions){
+  if(!lsParseISO(hireISO)||!lsParseISO(targetISO)||targetISO<hireISO)return {eligible:false,code:'before',label:'입사 전',type:'',entitledDays:0,split:null,from:'',to:'',nextYears:1};
+  const recognized=lsRecognizedTargetISO(hireISO,targetISO,periods),years=lsCompletedYears(hireISO,recognized);
+  const y1=lsRecognizedAnniversaryDate(hireISO,1,periods),y5=lsRecognizedAnniversaryDate(hireISO,5,periods),y10=lsRecognizedAnniversaryDate(hireISO,10,periods),y20=lsRecognizedAnniversaryDate(hireISO,20,periods),y30=lsRecognizedAnniversaryDate(hireISO,30,periods);
+  if(years<1)return {eligible:false,code:'under1',label:'1년 미만 · 대상 전',type:'',entitledDays:0,split:null,from:hireISO,to:lsAddDays(y1,-1),nextYears:1,nextDate:y1,nextLabel:'새내기휴가 5일'};
+  if(years<5)return {eligible:true,code:'1-5',label:'1년 이상 ~ 5년 미만',type:'새내기휴가',entitledDays:5,split:1,allAtOnce:true,from:y1,to:lsAddDays(y5,-1),nextYears:5,nextDate:y5,nextLabel:'5년 이상 ~ 10년 미만 · 10일'};
+  if(years<10)return {eligible:true,code:'5-10',label:'5년 이상 ~ 10년 미만',type:'장기재직휴가',entitledDays:10,split:2,from:y5,to:lsAddDays(y10,-1),nextYears:10,nextDate:y10,nextLabel:'10년 이상 ~ 20년 미만 · 15일'};
+  if(years<20)return {eligible:true,code:'10-20',label:'10년 이상 ~ 20년 미만',type:'장기재직휴가',entitledDays:15,split:3,from:y10,to:lsAddDays(y20,-1),nextYears:20,nextDate:y20,nextLabel:'20년 이상 ~ 30년 미만 · 25일'};
+  if(years<30)return {eligible:true,code:'20-30',label:'20년 이상 ~ 30년 미만',type:'장기재직휴가',entitledDays:25,split:5,from:y20,to:lsAddDays(y30,-1),nextYears:30,nextDate:y30,nextLabel:'30년 이상 · 30일'};
+  return {eligible:true,code:'30+',label:'30년 이상',type:'장기재직휴가',entitledDays:30,split:6,from:y30,to:'',nextYears:null,nextDate:'',nextLabel:'최종 구간'};
+}
+function lsFormatDate(key){ const d=lsParseISO(key); return d?`${d.getUTCFullYear()}.${String(d.getUTCMonth()+1).padStart(2,'0')}.${String(d.getUTCDate()).padStart(2,'0')}`:'-'; }
+function lsTodayISO(){ return todayKey(); }
+function lsDday(target){ if(!lsParseISO(target))return null; return lsDaysBetween(lsTodayISO(),target); }
+function lsDdayText(target){ const n=lsDday(target); if(n===null)return '-'; if(n===0)return 'D-Day'; return n>0?`D-${n}`:`D+${Math.abs(n)}`; }
+function lsDdayClass(target){ const n=lsDday(target); if(n===null||n>365)return ''; if(n<=30)return 'urgent'; return 'notice'; }
+function lsProfileBandCode(profile=state.longServiceProfile){ return String(profile?.previous_used_band||''); }
+function lsPreviousMinutesForBand(band){
+  if(!band?.eligible)return 0; const p=state.longServiceProfile; if(!p)return 0;
+  return lsProfileBandCode(p)===band.code?Math.max(0,Number(p.previous_used_minutes)||0):0;
+}
+function lsLongRecord(record){ return normalizeAttendanceType(record?.attendance_type||'')==='장기'; }
+function lsRecordMinutesInRange(record,emp,from,to){
+  if(!record||!emp||!lsLongRecord(record)||!from||!to)return 0;
+  return annualLeaveMinutesForRecord({...record,attendance_type:'연가',annual_leave_deduct:false},emp,from,to);
+}
+function lsRecordDetailRows(entries,band){
+  const emp=state.employees.find(e=>Number(e.id)===Number(state.me?.employee_id)); if(!emp||!band?.eligible)return [];
+  const to=band.to||'2100-12-31',today=lsTodayISO(),rows=[];
+  (entries||[]).forEach(r=>{
+    if(!lsLongRecord(r))return;
+    const total=lsRecordMinutesInRange(r,emp,band.from,to); if(total<=0)return;
+    const usedTo=today<to?today:to;
+    const completed=today>=band.from?lsRecordMinutesInRange(r,emp,band.from,usedTo):0;
+    const scheduled=Math.max(0,total-completed);
+    rows.push({record:r,total,completed,scheduled,effectiveStart:String(r.start_date||'')<band.from?band.from:String(r.start_date||''),effectiveEnd:String(r.end_date||'')>to?to:String(r.end_date||'')});
+  });
+  return rows.sort((a,b)=>a.effectiveStart.localeCompare(b.effectiveStart)||Number(a.record.id||0)-Number(b.record.id||0));
+}
+function lsFormatMinutes(value){ return annualLeaveFormatMinutes(value); }
+function lsReadPreviousInputs(){ return annualLeaveReadParts('longServicePrevDays','longServicePrevHours','longServicePrevMinutes'); }
+function lsSetPreviousInputs(value){ const p=annualLeavePartsFromMinutes(value); $('longServicePrevDays').value=String(p.days); $('longServicePrevHours').value=String(p.hours); $('longServicePrevMinutes').value=String(p.minutes); }
+function lsNormalizeProfile(row){ if(!row)return null; return {hire_date:row.hire_date||'',previous_used_minutes:Math.max(0,Number(row.previous_used_minutes)||0),previous_used_band:String(row.previous_used_band||''),updated_at:row.updated_at||null}; }
+function lsNormalizeExclusionRows(rows){ return (rows||[]).map(r=>({id:r.id==null?null:Number(r.id),start_date:String(r.start_date||''),end_date:String(r.end_date||''),reason:String(r.reason||'')})).filter(r=>r.start_date&&r.end_date); }
+function lsRenderExcludedRows(){
+  const box=$('longServiceExcludedList'); if(!box)return;
+  const rows=state.longServiceExclusions||[];
+  if(!rows.length){ box.innerHTML='<div class="long-service-excluded-empty">등록된 제외기간이 없습니다.</div>'; }
+  else box.innerHTML=rows.map((p,i)=>`<div class="long-service-excluded-row" data-ls-exclusion="${i}"><input class="long-service-date-input" type="date" data-ls-field="start_date" value="${escapeHtml(p.start_date||'')}"><span class="long-service-date-wave">~</span><input class="long-service-date-input" type="date" data-ls-field="end_date" value="${escapeHtml(p.end_date||'')}"><input class="long-service-reason-input" type="text" maxlength="80" placeholder="사유 (예: 일반휴직, 정직)" data-ls-field="reason" value="${escapeHtml(p.reason||'')}"><button class="long-service-excluded-delete" type="button" data-ls-delete="${i}" aria-label="제외기간 삭제">×</button></div>`).join('');
+  box.querySelectorAll('[data-ls-field]').forEach(el=>el.addEventListener('input',e=>{ const row=e.target.closest('[data-ls-exclusion]'); if(!row)return; const i=Number(row.dataset.lsExclusion); if(!state.longServiceExclusions[i])return; state.longServiceExclusions[i][e.target.dataset.lsField]=e.target.value; state.longServiceFormDirty=true; $('longServiceError').textContent=''; lsUpdateExcludedSummary(); renderLongService(false); }));
+  box.querySelectorAll('[data-ls-delete]').forEach(btn=>btn.addEventListener('click',()=>{state.longServiceExclusions.splice(Number(btn.dataset.lsDelete),1);state.longServiceFormDirty=true;lsRenderExcludedRows();lsUpdateExcludedSummary();renderLongService(false);}));
+  lsUpdateExcludedSummary();
+}
+function lsUpdateExcludedSummary(){
+  const hire=$('longServiceHireDate')?.value||state.longServiceProfile?.hire_date||'',today=lsTodayISO();
+  const n=hire?lsExcludedDaysUntil(hire,today,state.longServiceExclusions):0;
+  if($('longServiceExcludedSummary'))$('longServiceExcludedSummary').textContent=`현재까지 ${n}일 제외`;
+}
+function lsCollectValidExclusions(){
+  const out=[];
+  for(const p of state.longServiceExclusions||[]){
+    const start=String(p.start_date||''),end=String(p.end_date||''),reason=String(p.reason||'').trim();
+    if(!start&&!end&&!reason)continue;
+    if(!lsParseISO(start)||!lsParseISO(end)||end<start)return {error:'재직 제외기간의 시작일·종료일을 확인해 주세요.'};
+    out.push({start_date:start,end_date:end,reason:reason.slice(0,80)});
+  }
+  return {rows:out};
+}
+async function loadLongServiceData(showSpinner=true){
+  if(!state.me)return;
+  if(showSpinner){$('longServiceStatus').textContent='장기 재직 현황 불러오는 중…';$('longServiceTenure').textContent='-';}
+  try{
+    if(!configured()){
+      const local=localLongServiceData(); state.longServiceProfile=lsNormalizeProfile(local.profile||null); state.longServiceExclusions=lsNormalizeExclusionRows(local.exclusions||[]); state.longServiceEntries=localRecords().filter(r=>Number(r.employee_id)===Number(state.me.employee_id)&&lsLongRecord(r)); state.longServiceBackendReady=true;
+    }else{
+      const [profileRows,exclusions,entries]=await Promise.all([
+        rpc('get_my_long_service_setting',{p_token:state.sessionToken}),
+        rpc('list_my_long_service_exclusions',{p_token:state.sessionToken}),
+        rpc('list_my_long_service_attendance',{p_token:state.sessionToken})
+      ]);
+      const profile=Array.isArray(profileRows)?profileRows[0]:profileRows;
+      state.longServiceProfile=lsNormalizeProfile(profile); state.longServiceExclusions=lsNormalizeExclusionRows(exclusions); state.longServiceEntries=(entries||[]).map(r=>({...r,id:Number(r.id),employee_id:Number(r.employee_id),attendance_type:normalizeAttendanceType(r.attendance_type)})); state.longServiceBackendReady=true;
+    }
+    state.longServiceFormDirty=false; renderLongService(true);
+  }catch(e){
+    state.longServiceBackendReady=false; state.longServiceProfile=null; state.longServiceExclusions=[]; state.longServiceEntries=[]; renderLongService(true); $('longServiceStatus').textContent=userSafeServiceError(e,'장기 재직 현황을 불러오지 못했습니다. 기존 근태 화면은 계속 사용할 수 있습니다.');
+  }
+}
+function renderLongService(syncInputs=true){
+  const profile=state.longServiceProfile,hire=($('longServiceHireDate')?.value||profile?.hire_date||'').trim();
+  if(syncInputs&&!state.longServiceFormDirty){
+    $('longServiceHireDate').value=profile?.hire_date||'';
+    const storedBand=profile?.hire_date?lsBandForDate(profile.hire_date,lsTodayISO(),state.longServiceExclusions):null;
+    const storedPrevious=storedBand?.eligible&&profile?.previous_used_band===storedBand.code?(profile?.previous_used_minutes||0):0;
+    lsSetPreviousInputs(storedPrevious); lsRenderExcludedRows();
+  }
+  const actualHire=($('longServiceHireDate')?.value||profile?.hire_date||'').trim(),band=actualHire?lsBandForDate(actualHire,lsTodayISO(),state.longServiceExclusions):null;
+  const ro=accountReadOnly();
+  ['longServiceHireDate','longServicePrevDays','longServicePrevHours','longServicePrevMinutes','longServiceAddExcludedBtn','longServiceSaveBtn'].forEach(id=>{if($(id))$(id).disabled=ro||state.longServiceBackendReady===false;});
+  $('longServiceExcludedList')?.querySelectorAll('input,button').forEach(el=>el.disabled=ro||state.longServiceBackendReady===false);
+  $('longServiceReadOnly').classList.toggle('hidden',!ro);
+  lsUpdateExcludedSummary();
+  $('longServiceSubtitle').textContent=`${state.me?.display_name||''}님의 장기 재직 · 본인만 조회`;
+  if(!actualHire||!band){
+    $('longServiceTenure').textContent='-';$('longServiceBand').textContent='입사일을 입력하면 현재 구간을 계산합니다.';$('longServiceEntitled').textContent='-';$('longServiceUsed').textContent='-';$('longServiceScheduled').textContent='-';$('longServiceBalance').textContent='-';$('longServicePreviousSummary').textContent='';$('longServiceExpireWarning').classList.add('hidden');$('longServiceExpireDday').textContent='-';$('longServiceExpireDate').textContent='-';$('longServiceNextDday').textContent='-';$('longServiceNextDate').textContent='-';$('longServiceDetailCount').textContent='0건';$('longServiceDetailList').innerHTML='<div class="long-service-detail-empty">입사일을 입력하면 사용·예정 내역을 계산합니다.</div>'; if(state.longServiceBackendReady!==false)$('longServiceStatus').textContent='입사일을 먼저 저장해 주세요.'; return;
+  }
+  $('longServiceTenure').textContent=lsTenureText(actualHire,lsTodayISO(),state.longServiceExclusions);
+  $('longServiceBand').textContent=band.eligible?`${band.label} · ${band.type}${band.allAtOnce?' · 5일 일괄 사용':` · 규정상 ${band.split}회 분할`}`:`${band.label} · ${band.nextLabel||''}`;
+  const previous=lsPreviousMinutesForBand(band),rows=lsRecordDetailRows(state.longServiceEntries,band),completed=rows.reduce((s,r)=>s+r.completed,0),scheduled=rows.reduce((s,r)=>s+r.scheduled,0),entitled=(band.entitledDays||0)*LONG_SERVICE_MINUTES_PER_DAY,balance=band.eligible?entitled-previous-completed-scheduled:null;
+  $('longServiceEntitled').textContent=band.eligible?`${band.entitledDays}일`:'0일';
+  $('longServiceUsed').textContent=band.eligible?lsFormatMinutes(previous+completed):'-';
+  $('longServiceScheduled').textContent=band.eligible?lsFormatMinutes(scheduled):'-';
+  $('longServiceBalance').textContent=balance==null?'-':lsFormatMinutes(balance); $('longServiceBalance').classList.toggle('negative',balance!=null&&balance<0);
+  $('longServicePreviousSummary').textContent=band.eligible?`사용 완료 중 이전 사용분 ${lsFormatMinutes(previous)} · 사이트 근태 사용 완료 ${lsFormatMinutes(completed)}`:'';
+  const warn=$('longServiceExpireWarning');
+  if(band.type==='장기재직휴가'&&balance>0&&balance<3*LONG_SERVICE_MINUTES_PER_DAY){ warn.textContent=`⚠ 계산상 잔여 ${lsFormatMinutes(balance)} · 규정상 잔여휴가 3일 미만은 자동 소멸 대상입니다.`;warn.classList.remove('hidden'); }
+  else if(band.type==='새내기휴가'&&(previous+completed+scheduled)>0&&(previous+completed+scheduled)!==5*LONG_SERVICE_MINUTES_PER_DAY){ warn.textContent=`⚠ 계산상 사용·예정 ${lsFormatMinutes(previous+completed+scheduled)} · 새내기휴가는 규정상 5일을 한 번에 사용합니다.`;warn.classList.remove('hidden'); }
+  else warn.classList.add('hidden');
+  const expireCard=$('longServiceExpireCard'),nextCard=$('longServiceNextCard'); expireCard.className='long-service-dday';nextCard.className='long-service-dday';
+  if(band.eligible&&band.to){$('longServiceExpireDday').textContent=lsDdayText(band.to);$('longServiceExpireDate').textContent=`${lsFormatDate(band.to)} · 현재 구간 미사용분 소멸 예정`; const c=lsDdayClass(band.to);if(c)expireCard.classList.add(c);} else if(band.code==='30+'){ $('longServiceExpireDday').textContent='최종 구간';$('longServiceExpireDate').textContent='내규에서 다음 재직구간 종료 기준이 확인되지 않아 별도 D-Day를 표시하지 않습니다.'; } else { $('longServiceExpireDday').textContent='-';$('longServiceExpireDate').textContent='현재 발생한 장기재직휴가가 없습니다.'; }
+  if(band.nextDate){$('longServiceNextDday').textContent=lsDdayText(band.nextDate);$('longServiceNextDate').textContent=`${lsFormatDate(band.nextDate)} · ${band.nextLabel}`; const c=lsDdayClass(band.nextDate);if(c)nextCard.classList.add(c);} else {$('longServiceNextDday').textContent='최종 구간';$('longServiceNextDate').textContent='다음 재직구간이 없습니다.';}
+  $('longServiceDetailCount').textContent=`${rows.length}건`; $('longServiceDetailList').innerHTML=rows.length?rows.map(({record:r,total,completed,scheduled,effectiveStart,effectiveEnd})=>{ const mode=r.absence_mode==='time'?`${timeShort(r.start_time)}~${timeShort(r.end_time)}`:'종일'; const status=scheduled>0&&completed>0?'사용·예정':scheduled>0?'예정':'사용 완료'; return `<div class="long-service-detail-row"><div class="long-service-detail-date">${escapeHtml(annualLeaveDetailDateText(effectiveStart,effectiveEnd))}</div><div class="long-service-detail-kind">장기 · ${escapeHtml(mode)} · ${status}</div><div class="long-service-detail-minutes">${escapeHtml(lsFormatMinutes(total))}</div></div>`;}).join(''):'<div class="long-service-detail-empty">현재 구간에 반영된 ‘장기’ 근태가 없습니다.</div>';
+  if(state.longServiceBackendReady===false)$('longServiceStatus').textContent='장기 재직 연동 서버 설정을 확인해 주세요. 기존 근태 화면은 계속 사용할 수 있습니다.';
+  else $('longServiceStatus').textContent=`현재 구간 ${band.from?lsFormatDate(band.from):'-'} ~ ${band.to?lsFormatDate(band.to):'최종 구간'} · ‘장기’ 근태와 자동 연동`;
+}
+async function saveLongServiceSetting(){
+  if(!state.me||accountReadOnly())return; $('longServiceError').textContent='';
+  const hire=String($('longServiceHireDate').value||'').trim(); if(!lsParseISO(hire)||hire>lsTodayISO()){ $('longServiceError').textContent='입사일을 올바르게 입력해 주세요.';return; }
+  const previous=lsReadPreviousInputs(); if(previous===null){$('longServiceError').textContent='이전 사용분은 일·시간·분을 올바르게 입력해 주세요. 시간은 0~7, 분은 0~59입니다.';return;}
+  const checked=lsCollectValidExclusions(); if(checked.error){$('longServiceError').textContent=checked.error;return;}
+  const band=lsBandForDate(hire,lsTodayISO(),checked.rows),bandCode=band.eligible?band.code:'';
+  if(!confirm(`입사일 ${lsFormatDate(hire)}${band.eligible?` · 현재 ${band.label}`:''}\n이전 사용분 ${lsFormatMinutes(previous)}로 저장할까요?`))return;
+  showLoading(true);
+  try{
+    if(!configured()){
+      const data={profile:{hire_date:hire,previous_used_minutes:previous,previous_used_band:bandCode,updated_at:new Date().toISOString()},exclusions:checked.rows}; saveLocalLongServiceData(data); state.longServiceProfile=lsNormalizeProfile(data.profile);state.longServiceExclusions=lsNormalizeExclusionRows(data.exclusions);
+    }else{
+      await rpc('save_my_long_service_profile',{p_token:state.sessionToken,p_hire_date:hire,p_previous_used_minutes:previous,p_previous_used_band:bandCode,p_exclusions:checked.rows});
+    }
+    state.longServiceFormDirty=false; await loadLongServiceData(false); showToast('✓ 장기 재직 기준을 저장했습니다.','success');
+  }catch(e){$('longServiceError').textContent=userSafeServiceError(e,'장기 재직 기준을 저장하지 못했습니다. 잠시 후 다시 시도해 주세요.');}
+  finally{showLoading(false);}
+}
+function addLongServiceExclusion(){ state.longServiceExclusions.push({id:null,start_date:'',end_date:'',reason:''}); state.longServiceFormDirty=true; lsRenderExcludedRows(); const rows=$('longServiceExcludedList').querySelectorAll('[data-ls-exclusion]'); rows[rows.length-1]?.querySelector('[data-ls-field="start_date"]')?.focus(); }
+function toggleLongServiceGuide(){ const body=$('longServiceGuideBody'),btn=$('longServiceGuideToggle'),open=body.classList.contains('hidden'); body.classList.toggle('hidden',!open);btn.setAttribute('aria-expanded',open?'true':'false');$('longServiceGuideChevron').textContent=open?'⌃':'⌄'; }
+
 function isHolidayWorkEmployee(emp){ return !!emp && (emp.category==='일근(사무)' || emp.category==='일근(현장)'); }
 function holidayWorkDefaultTimesForEmployee(emp){
   if(emp?.category==='일근(사무)') return {start:'06:00',end:'15:00'};
@@ -2073,7 +2434,7 @@ async function restoreBackupAttendance(){
 
 const CAPACITY_TABLE_LABELS = {
   employees:'직원/발령', attendance_entries:'근태', audit_logs:'변경이력', app_sessions:'로그인 세션',
-  realtime_signals:'실시간 동기화', personal_memos:'개인 메모', memos:'개인 메모', holiday_work_entries:'휴근', company_events:'사내일정', holiday_work_eligibility:'휴근 가능 설정', annual_leave_settings:'연차 설정'
+  realtime_signals:'실시간 동기화', personal_memos:'개인 메모', memos:'개인 메모', holiday_work_entries:'휴근', company_events:'사내일정', holiday_work_eligibility:'휴근 가능 설정', annual_leave_settings:'연차 설정', long_service_settings:'장기 재직 설정', long_service_exclusions:'재직 제외기간'
 };
 function formatBytes(bytes){
   const n=Math.max(0,Number(bytes)||0);
@@ -2386,6 +2747,7 @@ function applyAccountModeUI(){
   if($('attendanceListBackdrop')?.classList.contains('open')) renderAttendanceList();
   if($('memoListBackdrop')?.classList.contains('open')) renderMemoList();
   if(state.view==='leave') renderAnnualLeave();
+  if(state.view==='longservice') renderLongService(false);
 }
 async function enterApp(me){
   state.me={...me,employee_id:Number(me.employee_id),is_admin:!!me.is_admin,is_read_only:false};
@@ -2490,6 +2852,7 @@ async function refresh(){
     if($('memoListBackdrop')?.classList.contains('open')) await loadMemoList(false);
     if($('holidayWorkListBackdrop')?.classList.contains('open')) await loadHolidayWorkList(false);
     if(state.view==='leave') await loadAnnualLeaveData(false);
+    if(state.view==='longservice') await loadLongServiceData(false);
     void loadCompanyEvents(true);
   }catch(e){
     const msg=String(e?.message||'');
@@ -2502,7 +2865,7 @@ async function logout(callServer=true){
   const guideShownKey=usageGuideSessionKey(); if(guideShownKey) sessionStorage.removeItem(guideShownKey);
   await stopRealtime();
   if(callServer && state.sessionToken && configured()){ try{ await rpc('logout_employee',{p_token:state.sessionToken}); }catch{} }
-  clearStoredLoginSession(); state.sessionToken=''; state.me=null; state.employees=[]; state.attendance=[]; state.holidayWorks=[]; state.holidayWorkBackendReady=null; state.memos=[]; state.memoBackendReady=null; state.companyEvents=[]; state.companyEventBackendReady=null; state.annualLeaveSettings=null; state.annualLeaveEntries=[]; state.annualLeaveBackendReady=null; state.annualLeaveYear=null; state.annualLeaveFormDirty=false; state.view='mine';
+  clearStoredLoginSession(); state.sessionToken=''; state.me=null; state.employees=[]; state.attendance=[]; state.holidayWorks=[]; state.holidayWorkBackendReady=null; state.memos=[]; state.memoBackendReady=null; state.companyEvents=[]; state.companyEventBackendReady=null; state.annualLeaveSettings=null; state.annualLeaveEntries=[]; state.annualLeaveBackendReady=null; state.annualLeaveYear=null; state.annualLeaveFormDirty=false; state.longServiceProfile=null; state.longServiceExclusions=[]; state.longServiceEntries=[]; state.longServiceBackendReady=null; state.longServiceFormDirty=false; state.view='mine';
   closeAll(); $('appView').classList.add('hidden'); $('reconnectView').classList.add('hidden'); $('loginView').classList.remove('hidden'); $('adminTools').classList.add('hidden'); setAdminToolsExpanded(false); $('loginPin').value=''; $('loginAdminPin').value=''; if($('pcRememberLogin')) $('pcRememberLogin').checked=false;
 }
 
@@ -2607,15 +2970,17 @@ async function saveAnnualLeaveSetting(){
 function render(){ renderTabs(); renderCalendar(); renderCompanyEventsBanner(); }
 function renderTabs(){
   document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.view===state.view));
-  const leaveView=state.view==='leave';
-  $('calendarCard').classList.toggle('hidden',leaveView);
+  const leaveView=state.view==='leave',longView=state.view==='longservice',specialView=leaveView||longView;
+  $('calendarCard').classList.toggle('hidden',specialView);
   $('annualLeaveCard').classList.toggle('hidden',!leaveView);
-  $('viewTools').classList.toggle('hidden',leaveView);
-  $('companyEventsBanner').classList.toggle('hidden',leaveView);
+  $('longServiceCard').classList.toggle('hidden',!longView);
+  $('viewTools').classList.toggle('hidden',specialView);
+  $('companyEventsBanner').classList.toggle('hidden',specialView);
   $('legend').classList.add('hidden');
   if($('memoListBtn')) $('memoListBtn').classList.toggle('hidden',state.view!=='mine');
   if($('holidayWorkListBtn')) $('holidayWorkListBtn').classList.toggle('hidden',state.view!=='mine' || !(isHolidayWorkEmployee(state.me)||state.me?.is_admin));
   if(leaveView){ populateAnnualLeaveYears(); renderAnnualLeave(); }
+  if(longView) renderLongService(true);
 }
 function renderCalendar(){
   $('monthTitle').textContent=`${state.year}년 ${state.month+1}월`;
@@ -3557,7 +3922,7 @@ function openEmployeeAction(mode,id=null){
   $('employeeNewName').value=''; $('employeeCategory').value='일근(사무)'; $('employeePin').value=isAdd?'0000':''; $('employeeAdminPin').value='';
   $('employeeEffectiveDate').value=todayKey();
   $('employeeActionNote').classList.toggle('hidden',isAdd);
-  if(isReplace) $('employeeActionNote').innerHTML='<b>기존 직원은 적용일부터 조회 전용으로 전환됩니다.</b><br>본인의 과거 근태·휴근·개인 메모와 연차 현황은 계속 확인할 수 있지만 새 근태/휴근/메모 등록·수정·삭제 및 연차 기준값 수정은 할 수 없습니다. 새 직원은 자리·근무조·정렬순서만 이어받고 별도 계정(ID)과 초기비밀번호 0000으로 시작합니다. 같은 성명의 과거 직원이 있으면 로그인 이름은 자동으로 이름2, 이름3처럼 구분되며 달력에는 실제 성명만 표시됩니다. 적용일 이후로 미리 입력된 기존 직원 근태·휴근은 자동 정리됩니다.';
+  if(isReplace) $('employeeActionNote').innerHTML='<b>기존 직원은 적용일부터 조회 전용으로 전환됩니다.</b><br>본인의 과거 근태·휴근·개인 메모와 연차 현황·장기 재직 현황은 계속 확인할 수 있지만 새 근태/휴근/메모 등록·수정·삭제 및 연차·장기 재직 설정 수정은 할 수 없습니다. 새 직원은 자리·근무조·정렬순서만 이어받고 별도 계정(ID)과 초기비밀번호 0000으로 시작합니다. 같은 성명의 과거 직원이 있으면 로그인 이름은 자동으로 이름2, 이름3처럼 구분되며 달력에는 실제 성명만 표시됩니다. 적용일 이후로 미리 입력된 기존 직원 근태·휴근은 자동 정리됩니다.';
   if(isExclude) $('employeeActionNote').innerHTML='<b>적용일부터 근무명단에서 제외되고 로그인도 차단됩니다.</b><br>과거 달력과 기존 근태·개인 메모 데이터는 삭제하지 않지만, 본인은 더 이상 계정에 접속할 수 없습니다.';
   if(isPassword) $('employeeActionNote').innerHTML='<b>근태 기록과 근무조에는 영향을 주지 않습니다.</b><br>변경 즉시 기존 비밀번호로는 로그인할 수 없습니다.';
   $('saveEmployeeActionBtn').textContent=isExclude?'직원 제외':isPassword?'비밀번호 변경':'저장';
@@ -3821,12 +4186,17 @@ function wire(){
   ['annualBaselineHours','annualGrantHours','annualCarryHours'].forEach(id=>bindAnnualLeaveNumberInput(id,7,1));
   ['annualBaselineMinutes','annualGrantMinutes','annualCarryMinutes'].forEach(id=>bindAnnualLeaveNumberInput(id,59,2));
   ['annualBaselineDays','annualBaselineHours','annualBaselineMinutes','annualGrantDays','annualGrantHours','annualGrantMinutes','annualCarryDays','annualCarryHours','annualCarryMinutes'].forEach(id=>$(id).addEventListener('input',()=>{state.annualLeaveFormDirty=true;$('annualLeaveError').textContent='';}));
+  $('longServiceSaveBtn').addEventListener('click',saveLongServiceSetting);
+  $('longServiceAddExcludedBtn').addEventListener('click',addLongServiceExclusion);
+  $('longServiceGuideToggle').addEventListener('click',toggleLongServiceGuide);
+  $('longServiceHireDate').addEventListener('input',()=>{state.longServiceFormDirty=true;$('longServiceError').textContent='';lsUpdateExcludedSummary();renderLongService(false);});
+  ['longServicePrevDays','longServicePrevHours','longServicePrevMinutes'].forEach((id,i)=>{bindAnnualLeaveNumberInput(id,i===0?999:(i===1?7:59),i===0?3:(i===1?1:2));$(id).addEventListener('input',()=>{state.longServiceFormDirty=true;$('longServiceError').textContent='';renderLongService(false);});});
   $('attendanceTypeBtn').addEventListener('click',openTypePicker);
   $('typeGrid').addEventListener('click',e=>{const b=e.target.closest('[data-type]');if(b)chooseAttendanceType(b.dataset.type)});
   $('reconnectNowBtn').addEventListener('click',()=>{clearSessionRestoreRetry(false);restoreSession(true)});
   $('loginBtn').addEventListener('click',login); $('loginPin').addEventListener('keydown',e=>{if(e.key==='Enter'){if($('loginName').value.trim()===ADMIN_NAME)$('loginAdminPin').focus();else login()}}); $('loginAdminPin').addEventListener('keydown',e=>{if(e.key==='Enter')login()}); $('loginName').addEventListener('input',toggleAdminPinField); $('loginName').addEventListener('keydown',e=>{if(e.key==='Enter')$('loginPin').focus()});
   $('logoutBtn').addEventListener('click',()=>logout(true)); $('refreshBtn').addEventListener('click',refresh); $('employeeManageBtn').addEventListener('click',openEmployeeManager); $('auditBtn').addEventListener('click',openAudit); $('refreshAuditBtn').addEventListener('click',()=>loadAuditPage(true)); $('auditMoreBtn').addEventListener('click',()=>loadAuditPage(false)); $('capacityBtn').addEventListener('click',openCapacity); $('refreshCapacityBtn').addEventListener('click',loadCapacity); $('backupBtn').addEventListener('click',manualBackup); $('backupSuccessOkBtn').addEventListener('click',()=>closeBackdrop('backupSuccessBackdrop')); $('restoreBackupBtn').addEventListener('click',openRestoreBackup); $('restoreFile').addEventListener('change',e=>prepareRestoreFile(e.target.files?.[0])); $('confirmRestoreBtn').addEventListener('click',restoreBackupAttendance); $('restoreSuccessOkBtn').addEventListener('click',()=>closeBackdrop('restoreSuccessBackdrop')); $('addEmployeeBtn').addEventListener('click',()=>openEmployeeAction('add')); $('resetCurrentPinsBtn').addEventListener('click',openResetCurrentPins); $('confirmResetPinsBtn').addEventListener('click',resetCurrentPins); $('resetPinsSuccessOkBtn').addEventListener('click',()=>closeBackdrop('resetPinsSuccessBackdrop')); $('saveEmployeeActionBtn').addEventListener('click',saveEmployeeAction); $('employeeSuccessOkBtn').addEventListener('click',()=>closeBackdrop('employeeSuccessBackdrop')); $('resetAllBtn').addEventListener('click',openResetAll); $('confirmResetBtn').addEventListener('click',resetAllAttendance); $('resetSuccessOkBtn').addEventListener('click',()=>closeBackdrop('resetSuccessBackdrop'));
-  document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',async()=>{state.view=b.dataset.view;renderTabs();if(state.view==='leave')await loadAnnualLeaveData(true);else renderCalendar();}));
+  document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',async()=>{state.view=b.dataset.view;renderTabs();if(state.view==='leave')await loadAnnualLeaveData(true);else if(state.view==='longservice')await loadLongServiceData(true);else renderCalendar();}));
   $('prevMonth').addEventListener('click',()=>moveMonth(-1)); $('todayBtn').addEventListener('click',goToday); $('nextMonth').addEventListener('click',()=>moveMonth(1)); $('monthTitle').addEventListener('click',openMonthPicker);
   $('addAttendanceBtn').addEventListener('click',()=>{if(state.view==='mine')openForm(state.selectedDate)}); $('saveAttendanceBtn').addEventListener('click',saveAttendance);
   document.querySelectorAll('.mode-btn').forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.mode)));

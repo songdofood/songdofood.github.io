@@ -419,6 +419,12 @@
   .long-service-setting-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 13px;background:#f8fafc;color:#374151;font-size:calc(12.5px * var(--text-scale,1));font-weight:950;text-align:left}
   .long-service-setting-body{padding:0 12px 12px}
   .long-service-setting-body>.long-service-setting-help:first-child{margin-top:0;padding-top:1px}
+  .annual-leave-setting{padding:0;overflow:hidden;background:#fff;border-color:#e5e7eb}
+  .annual-leave-setting-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 13px;background:#f8fafc;color:#374151;font-size:calc(12.5px * var(--text-scale,1));font-weight:950;text-align:left}
+  .annual-leave-setting-toggle .annual-leave-setting-title{margin:0;color:inherit;font-size:inherit;font-weight:inherit;line-height:1.35}
+  .annual-leave-setting-chevron{flex:0 0 auto;font-size:calc(14px * var(--text-scale,1));font-weight:950;color:#6b7280}
+  .annual-leave-setting-body{padding:0 11px 11px}
+  .annual-leave-setting-body>.annual-leave-setting-help:first-child{margin-top:0;padding-top:9px}
 
   /* 연차/장기 기준 박스는 같은 색상·같은 접기 UI */
   .leave-rule-guide{padding:0!important;border:1px solid #bfdbfe!important;border-radius:14px!important;background:#eff6ff!important;color:#1e40af!important;overflow:hidden}
@@ -446,6 +452,9 @@
 
   html[data-theme="dark"] .long-service-setting{background:#111827;border-color:#3b4656}
   html[data-theme="dark"] .long-service-setting-toggle{background:#18212e;color:#e5e7eb}
+  html[data-theme="dark"] .annual-leave-setting{background:#111827;border-color:#3b4656}
+  html[data-theme="dark"] .annual-leave-setting-toggle{background:#18212e;color:#e5e7eb}
+  html[data-theme="dark"] .annual-leave-setting-chevron{color:#94a3b8}
   html[data-theme="dark"] .leave-rule-guide{background:#172b4d!important;border-color:#31558a!important;color:#bfdbfe!important}
   html[data-theme="dark"] .leave-rule-guide-toggle{background:#172b4d!important;color:#bfdbfe!important}
   html[data-theme="dark"] .leave-rule-guide-toggle span:last-child{color:#93c5fd}
@@ -535,37 +544,42 @@
       <select id="annualLeaveYear" class="annual-leave-year" aria-label="연차 연도"></select>
     </div>
     <div id="annualLeaveSetting" class="annual-leave-setting">
-      <div id="annualLeaveSettingTitle" class="annual-leave-setting-title">2026년 기준 잔여연차 설정</div>
-      <div id="annualLeaveSettingHelp" class="annual-leave-setting-help"></div>
-      <div id="annualLeaveBaselineBlock" class="annual-leave-setting-block">
-        <label class="annual-leave-setting-label">2026.09.11 기준 잔여연차</label>
-        <div class="annual-leave-input-grid">
-          <div class="annual-leave-input-part"><input id="annualBaselineDays" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="3"><span class="annual-leave-unit">일</span></div>
-          <div class="annual-leave-input-part"><input id="annualBaselineHours" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2"><span class="annual-leave-unit">시간</span></div>
-          <div class="annual-leave-input-part"><input id="annualBaselineMinutes" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2"><span class="annual-leave-unit">분</span></div>
-        </div>
-      </div>
-      <div id="annualLeaveNormalBlocks" class="hidden">
-        <div class="annual-leave-setting-block">
-          <label class="annual-leave-setting-label">올해 부여연차</label>
+      <button id="annualLeaveSettingToggle" class="annual-leave-setting-toggle" type="button" aria-expanded="false">
+        <span id="annualLeaveSettingTitle" class="annual-leave-setting-title">2026년 기준 잔여연차 설정</span>
+        <span id="annualLeaveSettingChevron" class="annual-leave-setting-chevron">⌄</span>
+      </button>
+      <div id="annualLeaveSettingBody" class="annual-leave-setting-body hidden">
+        <div id="annualLeaveSettingHelp" class="annual-leave-setting-help"></div>
+        <div id="annualLeaveBaselineBlock" class="annual-leave-setting-block">
+          <label class="annual-leave-setting-label">2026.09.11 기준 잔여연차</label>
           <div class="annual-leave-input-grid">
-            <div class="annual-leave-input-part"><input id="annualGrantDays" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="3"><span class="annual-leave-unit">일</span></div>
-            <div class="annual-leave-input-part"><input id="annualGrantHours" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2"><span class="annual-leave-unit">시간</span></div>
-            <div class="annual-leave-input-part"><input id="annualGrantMinutes" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2"><span class="annual-leave-unit">분</span></div>
+            <div class="annual-leave-input-part"><input id="annualBaselineDays" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="3"><span class="annual-leave-unit">일</span></div>
+            <div class="annual-leave-input-part"><input id="annualBaselineHours" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2"><span class="annual-leave-unit">시간</span></div>
+            <div class="annual-leave-input-part"><input id="annualBaselineMinutes" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2"><span class="annual-leave-unit">분</span></div>
           </div>
         </div>
-        <div class="annual-leave-setting-block">
-          <label class="annual-leave-setting-label">이월연차</label>
-          <div class="annual-leave-input-grid">
-            <div class="annual-leave-input-part"><input id="annualCarryDays" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="3"><span class="annual-leave-unit">일</span></div>
-            <div class="annual-leave-input-part"><input id="annualCarryHours" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2"><span class="annual-leave-unit">시간</span></div>
-            <div class="annual-leave-input-part"><input id="annualCarryMinutes" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2"><span class="annual-leave-unit">분</span></div>
+        <div id="annualLeaveNormalBlocks" class="hidden">
+          <div class="annual-leave-setting-block">
+            <label class="annual-leave-setting-label">올해 부여연차</label>
+            <div class="annual-leave-input-grid">
+              <div class="annual-leave-input-part"><input id="annualGrantDays" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="3"><span class="annual-leave-unit">일</span></div>
+              <div class="annual-leave-input-part"><input id="annualGrantHours" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2"><span class="annual-leave-unit">시간</span></div>
+              <div class="annual-leave-input-part"><input id="annualGrantMinutes" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2"><span class="annual-leave-unit">분</span></div>
+            </div>
+          </div>
+          <div class="annual-leave-setting-block">
+            <label class="annual-leave-setting-label">이월연차</label>
+            <div class="annual-leave-input-grid">
+              <div class="annual-leave-input-part"><input id="annualCarryDays" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="3"><span class="annual-leave-unit">일</span></div>
+              <div class="annual-leave-input-part"><input id="annualCarryHours" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2"><span class="annual-leave-unit">시간</span></div>
+              <div class="annual-leave-input-part"><input id="annualCarryMinutes" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2"><span class="annual-leave-unit">분</span></div>
+            </div>
           </div>
         </div>
+        <button id="annualLeaveSaveBtn" class="primary annual-leave-save" type="button">저장</button>
+        <div id="annualLeaveError" class="annual-leave-error"></div>
+        <div id="annualLeaveReadOnly" class="annual-leave-readonly hidden">조회 전용 계정에서는 연차 기준값을 수정할 수 없습니다.</div>
       </div>
-      <button id="annualLeaveSaveBtn" class="primary annual-leave-save" type="button">저장</button>
-      <div id="annualLeaveError" class="annual-leave-error"></div>
-      <div id="annualLeaveReadOnly" class="annual-leave-readonly hidden">조회 전용 계정에서는 연차 기준값을 수정할 수 없습니다.</div>
     </div>
     <div class="annual-leave-balance">
       <div class="annual-leave-balance-label">현재 잔여연차</div>
@@ -674,7 +688,7 @@
     <div id="legend" class="legend hidden"><span><i class="dot day"></i>주간</span><span><i class="dot day2"></i>주2</span><span><i class="dot night"></i>야간</span><span><i class="dot off"></i>휴무</span></div>
     <div id="statusLine" class="status-line"></div>
   </section>
-  <button id="versionHistoryBtn" class="version version-btn" type="button" aria-haspopup="dialog" aria-controls="updateHistoryBackdrop">ver20260913-0039 · 업데이트 내역</button>
+  <button id="versionHistoryBtn" class="version version-btn" type="button" aria-haspopup="dialog" aria-controls="updateHistoryBackdrop">ver20260913-0053 · 업데이트 내역</button>
 </main>
 
 <div id="detailBackdrop" class="backdrop" aria-hidden="true">
@@ -1030,7 +1044,7 @@
 const SUPABASE_URL = 'https://fnzgjidzdazlodmjhmes.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_asmMoFJpUgX7rLcSkjx1PA_3n2Hk-gG';
 
-const APP_VERSION = 'ver20260913-0039';
+const APP_VERSION = 'ver20260913-0053';
 const UPDATE_HISTORY = [
   {version:'ver20260913-0039',date:'2026.09.13',items:['장기재직휴가 자동계산 및 근태 연동 기능 추가']},
   {version:'ver20260912-2149',date:'2026.09.12',items:['다크모드 기능 추가']},
@@ -2046,6 +2060,7 @@ function addLongServiceExclusion(){ state.longServiceExclusions.push({id:null,st
 function toggleSimpleSection(bodyId,buttonId,chevronId){ const body=$(bodyId),btn=$(buttonId),chevron=$(chevronId); if(!body||!btn)return; const open=body.classList.contains('hidden'); body.classList.toggle('hidden',!open); btn.setAttribute('aria-expanded',open?'true':'false'); if(chevron)chevron.textContent=open?'⌃':'⌄'; }
 function toggleLongServiceGuide(){ toggleSimpleSection('longServiceGuideBody','longServiceGuideToggle','longServiceGuideChevron'); }
 function toggleLongServiceSetting(){ toggleSimpleSection('longServiceSettingBody','longServiceSettingToggle','longServiceSettingChevron'); }
+function toggleAnnualLeaveSetting(){ toggleSimpleSection('annualLeaveSettingBody','annualLeaveSettingToggle','annualLeaveSettingChevron'); }
 function toggleAnnualLeaveRule(){ toggleSimpleSection('annualLeaveRuleBody','annualLeaveRuleToggle','annualLeaveRuleChevron'); }
 
 function isHolidayWorkEmployee(emp){ return !!emp && (emp.category==='일근(사무)' || emp.category==='일근(현장)'); }
@@ -4250,6 +4265,7 @@ function wire(){
   $('longServiceAddExcludedBtn').addEventListener('click',addLongServiceExclusion);
   $('longServiceGuideToggle').addEventListener('click',toggleLongServiceGuide);
   $('longServiceSettingToggle').addEventListener('click',toggleLongServiceSetting);
+  $('annualLeaveSettingToggle').addEventListener('click',toggleAnnualLeaveSetting);
   $('annualLeaveRuleToggle').addEventListener('click',toggleAnnualLeaveRule);
   $('longServiceHireDate').addEventListener('input',()=>{state.longServiceFormDirty=true;$('longServiceError').textContent='';lsUpdateExcludedSummary();renderLongService(false);});
   ['longServicePrevDays','longServicePrevHours','longServicePrevMinutes'].forEach((id,i)=>{bindAnnualLeaveNumberInput(id,i===0?999:(i===1?7:59),i===0?3:(i===1?1:2));$(id).addEventListener('input',()=>{state.longServiceFormDirty=true;$('longServiceError').textContent='';renderLongService(false);});});

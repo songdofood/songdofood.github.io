@@ -543,6 +543,26 @@
     #annualLeaveCard,#longServiceCard{max-width:960px;margin-left:auto;margin-right:auto}
   }
 
+  /* ===== 상단 관리자 기능 정리 =====
+     관리자 제어는 공통 상단에 한 번만 두고, 모든 탭에서 같은 위치를 유지합니다. */
+  .user-meta-line{display:flex;align-items:center;gap:2px;min-width:0;margin-top:4px;flex-wrap:wrap}
+  .user-meta-line .who{margin-top:0;flex:0 1 auto;max-width:100%}
+  .admin-tools{display:inline-flex;align-items:center;margin:0;flex:0 0 auto}
+  .admin-tools-toggle{display:inline-flex;align-items:center;justify-content:center;gap:3px;min-width:0;min-height:0;padding:1px 3px;border:0;border-radius:7px;background:transparent;color:#991b1b;font-size:calc(13px * var(--text-scale,1));font-weight:900;line-height:1.25;text-align:left;box-shadow:none}
+  .admin-tools-toggle:active{background:#fff1f2}
+  .admin-tools-toggle .admin-toggle-label{white-space:nowrap}
+  .admin-tools-toggle .admin-chevron{font-size:calc(11px * var(--text-scale,1));transition:transform .16s ease}
+  .admin-tools-toggle[aria-expanded="true"] .admin-chevron{transform:rotate(180deg)}
+  .admin-action-group.admin-top-group{margin:-3px 0 12px;padding:9px 10px;border-radius:13px}
+  html[data-theme="dark"] .admin-tools-toggle{background:transparent;color:#fca5a5;border:0;box-shadow:none}
+  html[data-theme="dark"] .admin-tools-toggle:active{background:#3b1d29}
+  @media(max-width:520px){
+    .user-meta-line{gap:1px}
+    .admin-tools{margin:0}
+    .admin-tools-toggle{min-width:0;min-height:0;padding:1px 2px;font-size:calc(13px * var(--text-scale,1))}
+    .admin-action-group.admin-top-group{margin:-2px 0 10px;gap:5px}
+  }
+
 </style>
 </head>
 <body>
@@ -577,7 +597,12 @@
     <button id="viewMenuBtn" class="view-menu-btn" type="button" aria-label="보기 설정 열기" title="보기"><span class="view-menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></button>
     <div class="userbox">
       <div class="title">직원 근태 현황</div>
-      <div id="whoText" class="who"></div>
+      <div class="user-meta-line">
+        <div id="whoText" class="who"></div>
+        <div id="adminTools" class="admin-tools hidden">
+          <button id="adminToolsToggle" class="admin-tools-toggle" type="button" aria-expanded="false" aria-controls="adminActionGroup"><span class="admin-toggle-label">· 관리자 기능</span><span class="admin-chevron">⌄</span></button>
+        </div>
+      </div>
       <div id="realtimeStatus" class="realtime-status connecting" role="status" aria-live="polite"><span class="realtime-dot"></span><span id="realtimeStatusText">실시간 연결 중</span></div>
     </div>
     <div class="top-actions">
@@ -585,6 +610,8 @@
       <button id="logoutBtn" class="icon-btn">로그아웃</button>
     </div>
   </div>
+
+  <div id="adminActionGroup" class="admin-action-group admin-top-group collapsed"><button id="employeeManageBtn" class="manage-btn">직원 관리</button><button id="auditBtn" class="audit-btn">최근 변경</button><button id="capacityBtn" class="capacity-btn">용량 관리</button><button id="backupBtn" class="backup-btn">백업</button><button id="restoreBackupBtn" class="restore-btn">복원</button><button id="resetAllBtn" class="reset-btn">전체 초기화</button></div>
 
   <div class="tabbar">
     <button class="tab active" data-view="mine">내 근무표</button>
@@ -596,11 +623,6 @@
   <div id="readOnlyAccountNotice" class="readonly-account-notice hidden">발령 후 조회 전용 계정입니다. 기존 근태·휴근·개인 메모·사내일정과 연차 현황·장기 재직 현황은 확인할 수 있으며, 새 근태/휴근 등록·수정·삭제와 메모 저장·수정·삭제, 사내일정 변경, 연차·장기 재직 설정 수정은 할 수 없습니다.</div>
 
   <div id="viewTools" class="view-tools"><div class="view-tool-actions"><button id="memoListBtn" class="memo-list-btn">메모 목록</button><button id="holidayWorkListBtn" class="holiday-work-list-btn hidden">휴근 목록</button><button id="attendanceListBtn" class="attendance-list-btn">근태 목록</button><button id="usageGuideOpenBtn" class="usage-guide-open-btn">이용안내</button><button id="selfPinBtn" class="self-pin-btn">내 비밀번호 변경</button></div></div>
-
-  <div id="adminTools" class="admin-tools hidden">
-    <button id="adminToolsToggle" class="admin-tools-toggle" type="button" aria-expanded="false" aria-controls="adminActionGroup"><span class="admin-toggle-label">관리자<br>기능</span><span class="admin-chevron">⌄</span></button>
-    <div id="adminActionGroup" class="admin-action-group collapsed"><button id="employeeManageBtn" class="manage-btn">직원 관리</button><button id="auditBtn" class="audit-btn">최근 변경</button><button id="capacityBtn" class="capacity-btn">용량 관리</button><button id="backupBtn" class="backup-btn">백업</button><button id="restoreBackupBtn" class="restore-btn">복원</button><button id="resetAllBtn" class="reset-btn">전체 초기화</button></div>
-  </div>
 
   <button id="companyEventsBanner" class="company-events-banner" type="button" aria-label="사내일정 보기">
     <span class="company-events-banner-icon" aria-hidden="true">📅</span>
@@ -758,7 +780,7 @@
     <div id="legend" class="legend hidden"><span><i class="dot day"></i>주간</span><span><i class="dot day2"></i>주2</span><span><i class="dot night"></i>야간</span><span><i class="dot off"></i>휴무</span></div>
     <div id="statusLine" class="status-line"></div>
   </section>
-  <button id="versionHistoryBtn" class="version version-btn" type="button" aria-haspopup="dialog" aria-controls="updateHistoryBackdrop">ver20260913-1210 · 업데이트 내역</button>
+  <button id="versionHistoryBtn" class="version version-btn" type="button" aria-haspopup="dialog" aria-controls="updateHistoryBackdrop">ver20260913-1255 · 업데이트 내역</button>
 </main>
 
 <div id="detailBackdrop" class="backdrop" aria-hidden="true">
@@ -1114,7 +1136,7 @@
 const SUPABASE_URL = 'https://fnzgjidzdazlodmjhmes.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_asmMoFJpUgX7rLcSkjx1PA_3n2Hk-gG';
 
-const APP_VERSION = 'ver20260913-1210';
+const APP_VERSION = 'ver20260913-1255';
 const UPDATE_HISTORY = [
   {version:'ver20260913-1210',date:'2026.09.13',items:['PC·태블릿 화면 최적화 기능 추가']},
   {version:'ver20260913-0039',date:'2026.09.13',items:['장기재직휴가 자동계산 및 근태 연동 기능 추가']},
@@ -2912,7 +2934,7 @@ async function loadAccountStatus(){
 function applyAccountModeUI(){
   if(!state.me)return;
   const ro=accountReadOnly();
-  $('whoText').textContent=`${state.me.display_name} · ${state.me.category}${state.me.is_admin?' · 관리자':''}${ro?' · 발령자 · 조회 전용':''}${configured()?'':' · 테스트모드'}`;
+  $('whoText').textContent=`${state.me.display_name} · ${state.me.category}${ro?' · 발령자 · 조회 전용':''}${configured()?'':' · 테스트모드'}`;
   $('readOnlyAccountNotice').classList.toggle('hidden',!ro);
   if(ro && $('formBackdrop')?.classList.contains('open')) closeBackdrop('formBackdrop');
   if($('detailBackdrop')?.classList.contains('open') && state.selectedDate) renderDetail(state.selectedDate);

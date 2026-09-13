@@ -482,6 +482,67 @@
     .long-service-summary-value{font-size:calc(15.5px * var(--text-scale,1))}
   }
 
+
+  /* ===== 태블릿·PC 반응형 최적화 =====
+     모바일 기본 화면은 그대로 유지하고, 넓은 화면에서만 공간 활용을 확장합니다. */
+  @media (min-width:768px){
+    .wrap{max-width:920px;padding:18px 14px calc(40px + env(safe-area-inset-bottom))}
+    .calendar-card{padding:14px 12px 15px}
+    .calendar-toolbar{grid-template-columns:66px minmax(0,1fr) 52px 66px;gap:9px}
+    .day-cell{min-height:86px;padding:6px 4px}
+    .shift-wrap{height:52px}
+    .shift-circle{width:39px;height:39px;font-size:calc(15.5px * var(--text-scale,1))}
+    .shift-day2{font-size:calc(13px * var(--text-scale,1))}
+    .availability{font-size:calc(8.2px * var(--text-scale,1));line-height:1.25;padding-top:4px}
+    .holiday-mini{font-size:calc(7.2px * var(--text-scale,1));max-width:48px}
+    .day-num{font-size:calc(11px * var(--text-scale,1))}
+    .modal{width:min(680px,calc(100vw - 32px))}
+    .date-picker-modal{max-width:680px}
+    .date-picker-cell{min-height:84px;padding:6px 4px}
+    .date-picker-cell .shift-wrap{height:52px}
+    .date-picker-cell .shift-circle{width:39px;height:39px;font-size:calc(15.5px * var(--text-scale,1))}
+    .date-picker-daynum{font-size:calc(11px * var(--text-scale,1))}
+    .date-picker-holiday{font-size:calc(7.2px * var(--text-scale,1));max-width:48px}
+    #annualLeaveCard,#longServiceCard{max-width:860px;margin-left:auto;margin-right:auto}
+  }
+
+  @media (min-width:1100px){
+    .wrap{max-width:1180px;padding:22px 20px calc(48px + env(safe-area-inset-bottom))}
+    .topbar{margin-bottom:15px}
+    .tabbar{gap:9px;padding:6px;margin-bottom:15px}
+    .tab{padding:12px 10px}
+    .view-tools{margin:-2px 0 12px}
+    .company-events-banner{margin-bottom:14px}
+    .calendar-card{padding:16px 14px 17px}
+    .calendar-toolbar{grid-template-columns:74px minmax(0,1fr) 58px 74px;gap:10px;margin-bottom:10px}
+    .nav-btn,.today-btn,.month-title{height:44px}
+    .day-cell{min-height:102px;padding:7px 5px}
+    .day-head{min-height:18px}
+    .day-num{font-size:calc(12px * var(--text-scale,1))}
+    .holiday-mini{font-size:calc(8px * var(--text-scale,1));max-width:62px;padding:2px 4px}
+    .shift-wrap{height:60px}
+    .shift-circle{width:44px;height:44px;font-size:calc(17px * var(--text-scale,1))}
+    .shift-day2{font-size:calc(14px * var(--text-scale,1))}
+    .shift-off{font-size:calc(19px * var(--text-scale,1))}
+    .availability{font-size:calc(9px * var(--text-scale,1));line-height:1.3;padding-top:5px}
+    .availability .name{margin-top:2px;padding:2px 3px}
+    .holiday-work-badge{min-width:52px;height:36px;font-size:calc(10px * var(--text-scale,1))}
+    .memo-mark{width:16px;height:16px;font-size:calc(9px * var(--text-scale,1))}
+    .att-dot,.calendar-term-mini{font-size:calc(8px * var(--text-scale,1));bottom:5px}
+    .legend{font-size:calc(11px * var(--text-scale,1));gap:10px 16px;margin-top:11px}
+    .status-line{font-size:calc(12px * var(--text-scale,1));margin-top:11px}
+    .modal{width:min(720px,calc(100vw - 48px))}
+    .date-picker-modal{max-width:720px}
+    .date-picker-toolbar{grid-template-columns:74px minmax(0,1fr) 58px 74px;gap:10px}
+    .date-picker-nav,.date-picker-today,.date-picker-month-title{height:44px}
+    .date-picker-cell{min-height:92px;padding:7px 5px}
+    .date-picker-cell .shift-wrap{height:56px}
+    .date-picker-cell .shift-circle{width:42px;height:42px;font-size:calc(16px * var(--text-scale,1))}
+    .date-picker-daynum{font-size:calc(12px * var(--text-scale,1))}
+    .date-picker-holiday{font-size:calc(8px * var(--text-scale,1));max-width:62px;padding:2px 4px}
+    #annualLeaveCard,#longServiceCard{max-width:960px;margin-left:auto;margin-right:auto}
+  }
+
 </style>
 </head>
 <body>
@@ -697,7 +758,7 @@
     <div id="legend" class="legend hidden"><span><i class="dot day"></i>주간</span><span><i class="dot day2"></i>주2</span><span><i class="dot night"></i>야간</span><span><i class="dot off"></i>휴무</span></div>
     <div id="statusLine" class="status-line"></div>
   </section>
-  <button id="versionHistoryBtn" class="version version-btn" type="button" aria-haspopup="dialog" aria-controls="updateHistoryBackdrop">ver20260913-0115 · 업데이트 내역</button>
+  <button id="versionHistoryBtn" class="version version-btn" type="button" aria-haspopup="dialog" aria-controls="updateHistoryBackdrop">ver20260913-1210 · 업데이트 내역</button>
 </main>
 
 <div id="detailBackdrop" class="backdrop" aria-hidden="true">
@@ -1053,8 +1114,9 @@
 const SUPABASE_URL = 'https://fnzgjidzdazlodmjhmes.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_asmMoFJpUgX7rLcSkjx1PA_3n2Hk-gG';
 
-const APP_VERSION = 'ver20260913-0128';
+const APP_VERSION = 'ver20260913-1210';
 const UPDATE_HISTORY = [
+  {version:'ver20260913-1210',date:'2026.09.13',items:['PC·태블릿 화면 최적화 기능 추가']},
   {version:'ver20260913-0039',date:'2026.09.13',items:['장기재직휴가 자동계산 및 근태 연동 기능 추가']},
   {version:'ver20260912-2149',date:'2026.09.12',items:['다크모드 기능 추가']},
   {version:'ver20260912-2057',date:'2026.09.12',items:['잔여연차 자동계산 및 근태 연동 기능 추가']},
